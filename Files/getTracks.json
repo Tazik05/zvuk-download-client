@@ -1,0 +1,9 @@
+{
+  "operationName": "getTracks",
+  "variables": {
+    "ids": [
+      123456789123
+    ]
+  },
+  "query": "query getTracks($ids: [ID!]!) {\n  getTracks(ids: $ids) {\n    id\n    title\n    searchTitle\n    position\n    duration\n    availability\n    artistTemplate\n    condition\n    explicit\n    lyrics\n    zchan\n    hasFlac\n    artists {\n      id\n      title\n    }\n    release {\n      id\n      title\n      image {\n        src\n        palette\n        paletteBottom\n      }\n    }\n  }\n}"
+}

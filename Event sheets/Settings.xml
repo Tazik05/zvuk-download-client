@@ -1,0 +1,1886 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Settings</name>
+    <events>
+        <event-block sid="620519672328157">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="590487726229987" type="System" />
+            </conditions>
+            <actions>
+                <action id="-27" name="Set effect enabled" sid="317350758119789" type="MusicPlayer_Visualiser">
+                    <param id="0" name="Mode">0</param>
+                    <param id="1" name="Effect">&quot;ReplaceColor&quot;</param>
+                </action>
+                <action id="-27" name="Set effect enabled" sid="844611634220412" type="9patch2">
+                    <param id="0" name="Mode">0</param>
+                    <param id="1" name="Effect">&quot;ReplaceColor&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-group description="" sid="733221485822691" title="[ Настройки ]">
+            <sub-events>
+                <event-group description="" sid="574205498293849" title="потом">
+                    <sub-events>
+                        <event-block disabled="1" sid="357062392345842">
+                            <conditions>
+                                <condition id="0" name="On clicked" sid="156502483776813" type="Button12" />
+                            </conditions>
+                            <actions>
+                                <action id="6" name="Show open dialog" sid="680375854508740" type="NWjs">
+                                    <param id="0" name="Accept">&quot;&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block disabled="1" sid="723239960325492">
+                            <conditions>
+                                <condition id="2" name="On open dialog OK" sid="523162755703239" type="NWjs" />
+                            </conditions>
+                            <actions />
+                        </event-block>
+                        <comment>Arial (Стандартный);Item 2;Item 3</comment>
+                        <event-block disabled="1" sid="765538306098441">
+                            <conditions>
+                                <condition id="2" name="On clicked" sid="285936387839986" type="List3" />
+                            </conditions>
+                            <actions>
+                                <action id="5" name="Set web font" sid="964230337186498" type="SettingTextGeneral">
+                                    <param id="0" name="Family name">&quot;pixel&quot;</param>
+                                    <param id="1" name="CSS URL">&quot;pixel.css&quot;</param>
+                                </action>
+                                <action id="5" name="Set web font" sid="556305424712679" type="SettingTextGeneral">
+                                    <param id="0" name="Family name">&quot;pixel&quot;</param>
+                                    <param id="1" name="CSS URL">&quot;pixel.css&quot;</param>
+                                </action>
+                                <action id="5" name="Set CSS style" sid="200678775364762" type="Button12">
+                                    <param id="0" name="Property name">&quot;font&quot;</param>
+                                    <param id="1" name="Value">&quot;src: url(&apos;Minecraft Rus NEW.otf&apos;) bold 3em fantasy&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="325118992567161">
+                            <conditions>
+                                <condition id="-2" name="On start of layout" sid="536240032649852" type="System" />
+                            </conditions>
+                            <actions />
+                        </event-block>
+                        <event-block disabled="1" sid="666233334683120">
+                            <conditions>
+                                <condition id="-11" name="For Each" sid="112155871348255" type="System">
+                                    <param id="0" name="Object">Family1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action disabled="1" id="2" name="Set font face" sid="507279302715602" type="LyricsBIG">
+                                    <param id="0" name="Font face">&quot;pixel&quot;</param>
+                                    <param id="1" name="Style">0</param>
+                                </action>
+                                <action id="5" name="Set web font" sid="171799317027331" type="Family1">
+                                    <param id="0" name="Family name">&quot;pixel&quot;</param>
+                                    <param id="1" name="CSS URL">&quot;pixel.css&quot;</param>
+                                </action>
+                                <action disabled="1" id="5" name="Set web font" sid="745695182850451" type="LyricsBIG">
+                                    <param id="0" name="Family name">&quot;pixel&quot;</param>
+                                    <param id="1" name="CSS URL">&quot;pixel.css&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block disabled="1" sid="373460283400796">
+                            <conditions>
+                                <condition id="0" name="On key pressed" sid="931325555980147" type="Keyboard">
+                                    <param id="0" name="Key">49</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="5" name="Set playback rate" sid="341649819371776" type="BetterAudio">
+                                    <param id="0" name="Tag">&quot;MusicPlayer&quot;</param>
+                                    <param id="1" name="Playback rate">0.8</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-group>
+                <event-block sid="488499645886369">
+                    <conditions>
+                        <condition id="0" name="On key pressed" sid="911032439478374" type="Keyboard">
+                            <param id="0" name="Key">88</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="765961424235789">
+                            <conditions>
+                                <condition id="-8" name="Is boolean instance variable set" sid="847019203255670" type="Settings">
+                                    <param id="0" name="Instance variable">Settings</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-16" name="Wait" sid="352523298057334" type="System">
+                                    <param id="0" name="Seconds">0</param>
+                                </action>
+                                <action id="-13" name="Set boolean" sid="367584166880292" type="Settings">
+                                    <param id="0" name="Instance variable">Settings</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="588516309780398">
+                            <conditions>
+                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="242518421184132" type="Settings">
+                                    <param id="0" name="Instance variable">Settings</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-16" name="Wait" sid="282852852091974" type="System">
+                                    <param id="0" name="Seconds">0</param>
+                                </action>
+                                <action id="-13" name="Set boolean" sid="929601947007450" type="Settings">
+                                    <param id="0" name="Instance variable">Settings</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <comment></comment>
+                <event-block sid="711440271270964">
+                    <conditions>
+                        <condition id="-8" name="Is boolean instance variable set" sid="205927504180918" type="Settings">
+                            <param id="0" name="Instance variable">Settings</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="376040805494340">
+                            <conditions>
+                                <condition id="-4" name="Trigger once while true" sid="758360208337816" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="4" name="Set font color" sid="711188166948817" type="SettingTextGeneral">
+                                    <param id="0" name="Color">rgb(255, 255, 255)</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="219892302097700">
+                            <conditions>
+                                <condition id="4" name="Is any playing" sid="346645178876987" type="BetterAudio" />
+                            </conditions>
+                            <actions>
+                                <action id="2" name="Set visible" sid="706366348852012" type="nextpage">
+                                    <param id="0" name="Visibility">0</param>
+                                </action>
+                                <action id="2" name="Set visible" sid="898408478588469" type="prevpage">
+                                    <param id="0" name="Visibility">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="318674269866963">
+                            <conditions>
+                                <condition id="-4" name="Trigger once while true" sid="797630296260380" type="System" />
+                                <condition id="-14" name="Pick by unique ID" sid="446271103830521" type="SettingTextGeneral">
+                                    <param id="0" name="Unique ID">126</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Set text" sid="522868373200932" type="SettingTextGeneral">
+                                    <param id="0" name="Text">Settings.BuildInfo</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="436657635260880">
+                            <conditions>
+                                <condition id="6" name="On object clicked" sid="588844409973200" type="Mouse">
+                                    <param id="0" name="Mouse button">0</param>
+                                    <param id="1" name="Click type">0</param>
+                                    <param id="2" name="Object clicked">SettingTextGeneral</param>
+                                </condition>
+                                <condition id="-14" name="Pick by unique ID" sid="294830727819602" type="SettingTextGeneral">
+                                    <param id="0" name="Unique ID">98</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-10" name="Set value" sid="674466379840841" type="Settings">
+                                    <param id="0" name="Instance variable">SettingsSelected</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="684721532093641">
+                            <conditions>
+                                <condition id="6" name="On object clicked" sid="850046378423171" type="Mouse">
+                                    <param id="0" name="Mouse button">0</param>
+                                    <param id="1" name="Click type">0</param>
+                                    <param id="2" name="Object clicked">SettingTextGeneral</param>
+                                </condition>
+                                <condition id="-14" name="Pick by unique ID" sid="773352870834286" type="SettingTextGeneral">
+                                    <param id="0" name="Unique ID">100</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-10" name="Set value" sid="912159891783587" type="Settings">
+                                    <param id="0" name="Instance variable">SettingsSelected</param>
+                                    <param id="1" name="Value">2</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="994887813365702">
+                            <conditions>
+                                <condition id="6" name="On object clicked" sid="359979226782033" type="Mouse">
+                                    <param id="0" name="Mouse button">0</param>
+                                    <param id="1" name="Click type">0</param>
+                                    <param id="2" name="Object clicked">SettingTextGeneral</param>
+                                </condition>
+                                <condition id="-14" name="Pick by unique ID" sid="782715382534688" type="SettingTextGeneral">
+                                    <param id="0" name="Unique ID">106</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-10" name="Set value" sid="472426394131334" type="Settings">
+                                    <param id="0" name="Instance variable">SettingsSelected</param>
+                                    <param id="1" name="Value">3</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="676880352427092">
+                            <conditions>
+                                <condition id="6" name="On object clicked" sid="620529901413036" type="Mouse">
+                                    <param id="0" name="Mouse button">0</param>
+                                    <param id="1" name="Click type">0</param>
+                                    <param id="2" name="Object clicked">SettingTextGeneral</param>
+                                </condition>
+                                <condition id="-14" name="Pick by unique ID" sid="376724046931376" type="SettingTextGeneral">
+                                    <param id="0" name="Unique ID">152</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-16" name="Wait" sid="569360155244275" type="System">
+                                    <param id="0" name="Seconds">0.1</param>
+                                </action>
+                                <action id="-13" name="Set boolean" sid="737959763668548" type="Settings">
+                                    <param id="0" name="Instance variable">Settings</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                                <action id="0" name="Set cursor style" sid="230315114916931" type="Mouse">
+                                    <param id="0" name="Cursor style">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="829576442024126">
+                            <conditions>
+                                <condition id="6" name="On object clicked" sid="202733685877855" type="Mouse">
+                                    <param id="0" name="Mouse button">0</param>
+                                    <param id="1" name="Click type">0</param>
+                                    <param id="2" name="Object clicked">SettingTextGeneral</param>
+                                </condition>
+                                <condition id="-14" name="Pick by unique ID" sid="462678645669256" type="SettingTextGeneral">
+                                    <param id="0" name="Unique ID">127</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-10" name="Set value" sid="882525880656050" type="Settings">
+                                    <param id="0" name="Instance variable">SettingsSelected</param>
+                                    <param id="1" name="Value">4</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="520171318928092">
+                            <conditions>
+                                <condition id="6" name="On object clicked" sid="162245491806729" type="Mouse">
+                                    <param id="0" name="Mouse button">0</param>
+                                    <param id="1" name="Click type">0</param>
+                                    <param id="2" name="Object clicked">SettingTextGeneral</param>
+                                </condition>
+                                <condition id="-14" name="Pick by unique ID" sid="936923275467569" type="SettingTextGeneral">
+                                    <param id="0" name="Unique ID">142</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Alert" sid="602119863321899" type="Browser">
+                                    <param id="0" name="Message">&quot;Позже...&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="495539632130805">
+                            <conditions>
+                                <condition id="7" name="Cursor is over object" sid="270847819744616" type="Mouse">
+                                    <param id="0" name="Object">SettingTextGeneral</param>
+                                </condition>
+                                <condition id="-4" name="Trigger once while true" sid="262094414339442" type="System" />
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block any="1" sid="760793715099880">
+                                    <conditions>
+                                        <condition id="-14" name="Pick by unique ID" sid="321247076214582" type="SettingTextGeneral">
+                                            <param id="0" name="Unique ID">98</param>
+                                        </condition>
+                                        <condition id="-14" name="Pick by unique ID" sid="954023010293535" type="SettingTextGeneral">
+                                            <param id="0" name="Unique ID">100</param>
+                                        </condition>
+                                        <condition id="-14" name="Pick by unique ID" sid="275488816048632" type="SettingTextGeneral">
+                                            <param id="0" name="Unique ID">106</param>
+                                        </condition>
+                                        <condition id="-14" name="Pick by unique ID" sid="605357428114945" type="SettingTextGeneral">
+                                            <param id="0" name="Unique ID">142</param>
+                                        </condition>
+                                        <condition id="-14" name="Pick by unique ID" sid="978035565858340" type="SettingTextGeneral">
+                                            <param id="0" name="Unique ID">127</param>
+                                        </condition>
+                                        <condition id="-14" name="Pick by unique ID" sid="644975005423356" type="SettingTextGeneral">
+                                            <param id="0" name="Unique ID">152</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="4" name="Set font color" sid="472645830021315" type="SettingTextGeneral">
+                                            <param id="0" name="Color">rgb(255, 255, 0)</param>
+                                        </action>
+                                        <action id="0" name="Set cursor style" sid="667585497328009" type="Mouse">
+                                            <param id="0" name="Cursor style">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="428348236017885">
+                            <conditions>
+                                <condition id="7" inverted="1" name="Cursor is over object" sid="747922949315697" type="Mouse">
+                                    <param id="0" name="Object">SettingTextGeneral</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="748935459315033">
+                                    <conditions>
+                                        <condition id="-4" name="Trigger once while true" sid="127490708001330" type="System" />
+                                    </conditions>
+                                    <actions>
+                                        <action id="4" name="Set font color" sid="720179470093373" type="SettingTextGeneral">
+                                            <param id="0" name="Color">rgb(255, 255, 255)</param>
+                                        </action>
+                                        <action id="0" name="Set cursor style" sid="774074305082831" type="Mouse">
+                                            <param id="0" name="Cursor style">0</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <comment></comment>
+                        <comment></comment>
+                        <comment></comment>
+                        <comment></comment>
+                        <comment></comment>
+                        <comment></comment>
+                        <event-block sid="841601057647539">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="834017666310600" type="Settings">
+                                    <param id="0" name="Instance variable">SettingsSelected</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">4</param>
+                                </condition>
+                                <condition id="-4" name="Trigger once while true" sid="642660281997497" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="-4" name="Set layer visible" sid="340686101502254" type="System">
+                                    <param id="0" name="Layer">&quot;Settings_Security&quot;</param>
+                                    <param id="1" name="Visibility">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="402067930348663">
+                            <conditions>
+                                <condition id="-7" inverted="1" name="Compare instance variable" sid="472807007843038" type="Settings">
+                                    <param id="0" name="Instance variable">SettingsSelected</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">4</param>
+                                </condition>
+                                <condition id="-4" name="Trigger once while true" sid="194006821798624" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="-4" name="Set layer visible" sid="947907958227710" type="System">
+                                    <param id="0" name="Layer">&quot;Settings_Security&quot;</param>
+                                    <param id="1" name="Visibility">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="395940561690388">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="696967039904688" type="Settings">
+                                    <param id="0" name="Instance variable">SettingsSelected</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">2</param>
+                                </condition>
+                                <condition id="-4" name="Trigger once while true" sid="966621107696343" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="-4" name="Set layer visible" sid="506074159552593" type="System">
+                                    <param id="0" name="Layer">&quot;Settings_Prog&quot;</param>
+                                    <param id="1" name="Visibility">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="215861128071364">
+                            <conditions>
+                                <condition id="-7" inverted="1" name="Compare instance variable" sid="554488354475665" type="Settings">
+                                    <param id="0" name="Instance variable">SettingsSelected</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">2</param>
+                                </condition>
+                                <condition id="-4" name="Trigger once while true" sid="281389535109893" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="-4" name="Set layer visible" sid="446943987024901" type="System">
+                                    <param id="0" name="Layer">&quot;Settings_Prog&quot;</param>
+                                    <param id="1" name="Visibility">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="226114635671716">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="959934064517436" type="Settings">
+                                    <param id="0" name="Instance variable">SettingsSelected</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                                <condition id="-4" name="Trigger once while true" sid="508258242186819" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="-4" name="Set layer visible" sid="691950709065578" type="System">
+                                    <param id="0" name="Layer">&quot;Settings_UI&quot;</param>
+                                    <param id="1" name="Visibility">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="987351802061410">
+                            <conditions>
+                                <condition id="-7" inverted="1" name="Compare instance variable" sid="292257183041907" type="Settings">
+                                    <param id="0" name="Instance variable">SettingsSelected</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                                <condition id="-4" name="Trigger once while true" sid="109702981968634" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="-4" name="Set layer visible" sid="167809755899954" type="System">
+                                    <param id="0" name="Layer">&quot;Settings_UI&quot;</param>
+                                    <param id="1" name="Visibility">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="341219774071130">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="250175941398515" type="Settings">
+                                    <param id="0" name="Instance variable">SettingsSelected</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">3</param>
+                                </condition>
+                                <condition id="-4" name="Trigger once while true" sid="127700406187278" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="-4" name="Set layer visible" sid="287714561150770" type="System">
+                                    <param id="0" name="Layer">&quot;Settings_Autors&quot;</param>
+                                    <param id="1" name="Visibility">1</param>
+                                </action>
+                                <action id="-15" name="Set visible" sid="644539612705927" type="Sprite7">
+                                    <param id="0" name="Visibility">1</param>
+                                </action>
+                                <action id="-15" name="Set visible" sid="378343216325498" type="Sprite8">
+                                    <param id="0" name="Visibility">1</param>
+                                </action>
+                                <action id="-15" name="Set visible" sid="239363620034321" type="Sprite9">
+                                    <param id="0" name="Visibility">1</param>
+                                </action>
+                                <action id="-15" name="Set visible" sid="853722066845244" type="Sprite10">
+                                    <param id="0" name="Visibility">1</param>
+                                </action>
+                                <action id="-15" name="Set visible" sid="968801929865230" type="Sprite11">
+                                    <param id="0" name="Visibility">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="982268369529390">
+                            <conditions>
+                                <condition id="-7" inverted="1" name="Compare instance variable" sid="303652085344913" type="Settings">
+                                    <param id="0" name="Instance variable">SettingsSelected</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">3</param>
+                                </condition>
+                                <condition id="-4" name="Trigger once while true" sid="676730553738873" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="-4" name="Set layer visible" sid="360163468846461" type="System">
+                                    <param id="0" name="Layer">&quot;Settings_Autors&quot;</param>
+                                    <param id="1" name="Visibility">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="280692340310505">
+                            <conditions>
+                                <condition id="-4" name="Trigger once while true" sid="136645920242124" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="-15" name="Set visible" sid="759164190373924" type="SettingsBG">
+                                    <param id="0" name="Visibility">1</param>
+                                </action>
+                                <action id="-15" name="Set visible" sid="957305446149948" type="Sprite5">
+                                    <param id="0" name="Visibility">1</param>
+                                </action>
+                                <action id="-15" name="Set visible" sid="121754665637820" type="Sprite6">
+                                    <param id="0" name="Visibility">1</param>
+                                </action>
+                                <action id="-15" name="Set visible" sid="773050855553873" type="SettingTextMain">
+                                    <param id="0" name="Visibility">1</param>
+                                </action>
+                                <action id="3" name="Set visible" sid="340052544693634" type="SearchBox">
+                                    <param id="0" name="Visibility">0</param>
+                                </action>
+                                <action id="2" name="Set visible" sid="910664558305462" type="SearchButton">
+                                    <param id="0" name="Visibility">0</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="901694373689364">
+                                    <conditions>
+                                        <condition id="-14" name="Pick by unique ID" sid="835240332690020" type="SettingTextGeneral">
+                                            <param id="0" name="Unique ID">98</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-15" name="Set visible" sid="232708741574387" type="SettingTextGeneral">
+                                            <param id="0" name="Visibility">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="172940533151142">
+                                    <conditions>
+                                        <condition id="-14" name="Pick by unique ID" sid="341147374875854" type="SettingTextGeneral">
+                                            <param id="0" name="Unique ID">100</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-15" name="Set visible" sid="572181920857359" type="SettingTextGeneral">
+                                            <param id="0" name="Visibility">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="172335871893138">
+                                    <conditions>
+                                        <condition id="-14" name="Pick by unique ID" sid="190577676598391" type="SettingTextGeneral">
+                                            <param id="0" name="Unique ID">106</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-15" name="Set visible" sid="974301516281940" type="SettingTextGeneral">
+                                            <param id="0" name="Visibility">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="569379526648356">
+                                    <conditions>
+                                        <condition id="-14" name="Pick by unique ID" sid="856039749476901" type="SettingTextMain">
+                                            <param id="0" name="Unique ID">97</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-15" name="Set visible" sid="346172841473352" type="SettingTextGeneral">
+                                            <param id="0" name="Visibility">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="764196106498244">
+                                    <conditions>
+                                        <condition id="-14" name="Pick by unique ID" sid="134943982243616" type="SettingTextMain">
+                                            <param id="0" name="Unique ID">152</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-15" name="Set visible" sid="392946568966217" type="SettingTextGeneral">
+                                            <param id="0" name="Visibility">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="488611596463512">
+                    <conditions>
+                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="372453655614999" type="Settings">
+                            <param id="0" name="Instance variable">Settings</param>
+                        </condition>
+                        <condition id="-4" name="Trigger once while true" sid="195963123602036" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-15" name="Set visible" sid="224356811199527" type="SettingTextMain">
+                            <param id="0" name="Visibility">0</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="378568702812540" type="SettingTextGeneral">
+                            <param id="0" name="Visibility">0</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="820507683779193" type="SettingsBG">
+                            <param id="0" name="Visibility">0</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="532933777033236" type="Sprite7">
+                            <param id="0" name="Visibility">0</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="555375226638635" type="Sprite8">
+                            <param id="0" name="Visibility">0</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="250811303594088" type="Sprite9">
+                            <param id="0" name="Visibility">0</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="139896948406221" type="Sprite10">
+                            <param id="0" name="Visibility">0</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="266128310858841" type="Sprite11">
+                            <param id="0" name="Visibility">0</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="271324156837005" type="Sprite5">
+                            <param id="0" name="Visibility">0</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="976978166848023" type="Sprite6">
+                            <param id="0" name="Visibility">0</param>
+                        </action>
+                        <action id="3" name="Set visible" sid="807004132253941" type="SearchBox">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                        <action id="2" name="Set visible" sid="431357488639354" type="SearchButton">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                        <action id="-4" name="Set layer visible" sid="295032598906821" type="System">
+                            <param id="0" name="Layer">&quot;Settings_Autors&quot;</param>
+                            <param id="1" name="Visibility">0</param>
+                        </action>
+                        <action id="-4" name="Set layer visible" sid="471248758945122" type="System">
+                            <param id="0" name="Layer">&quot;Settings_UI&quot;</param>
+                            <param id="1" name="Visibility">0</param>
+                        </action>
+                        <action id="-4" name="Set layer visible" sid="383593106092974" type="System">
+                            <param id="0" name="Layer">&quot;Settings_Prog&quot;</param>
+                            <param id="1" name="Visibility">0</param>
+                        </action>
+                        <action id="-4" name="Set layer visible" sid="676916905235698" type="System">
+                            <param id="0" name="Layer">&quot;Settings_Security&quot;</param>
+                            <param id="1" name="Visibility">0</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="855217233905183">
+                            <conditions>
+                                <condition id="4" name="Is any playing" sid="340814248663391" type="BetterAudio" />
+                            </conditions>
+                            <actions>
+                                <action id="2" name="Set visible" sid="422250117474659" type="nextpage">
+                                    <param id="0" name="Visibility">1</param>
+                                </action>
+                                <action id="2" name="Set visible" sid="898871522802858" type="prevpage">
+                                    <param id="0" name="Visibility">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="283282590929168" title="[ Аудиовизуализатор ]">
+            <sub-events>
+                <event-block sid="693803062664349">
+                    <conditions>
+                        <condition id="3" name="Local key exists" sid="328727666331182" type="WebStorage">
+                            <param id="0" name="Key">&quot;EQEnabled&quot;</param>
+                        </condition>
+                        <condition id="-4" name="Trigger once while true" sid="358809961482609" type="System" />
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="765666560867936">
+                            <conditions>
+                                <condition id="6" name="Compare key value (as text)" sid="944147939461038" type="WebStorage">
+                                    <param id="0" name="Key">&quot;EQEnabled&quot;</param>
+                                    <param id="1" name="Text to compare">&quot;Yes&quot;</param>
+                                    <param id="2" name="Case sensitivity">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="6" name="Set checked" sid="261180673748824" type="AudioVisualChecker">
+                                    <param id="0" name="State">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="500120459038359">
+                            <conditions>
+                                <condition id="6" inverted="1" name="Compare key value (as text)" sid="872582866656390" type="WebStorage">
+                                    <param id="0" name="Key">&quot;EQEnabled&quot;</param>
+                                    <param id="1" name="Text to compare">&quot;Yes&quot;</param>
+                                    <param id="2" name="Case sensitivity">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="6" name="Set checked" sid="299037577425868" type="AudioVisualChecker">
+                                    <param id="0" name="State">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="713651130053074">
+                    <conditions>
+                        <condition id="3" name="Local key exists" sid="604827169733273" type="WebStorage">
+                            <param id="0" name="Key">&quot;EQColor&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="442428408583446">
+                            <conditions>
+                                <condition id="-4" name="Trigger once while true" sid="202738969531668" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Set text" sid="905972150517378" type="AudioVisualColor">
+                                    <param id="0" name="Text">WebStorage.LocalValue(&quot;EQColor&quot;)</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="740424997042727">
+                                    <conditions>
+                                        <condition id="-8" name="Compare two values" sid="171272762536663" type="System">
+                                            <param id="0" name="First value">tokencount(AudioVisualColor.Text, &quot;,&quot;)</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Second value">3</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-27" name="Set effect enabled" sid="286486752172734" type="MusicPlayer_Visualiser">
+                                            <param id="0" name="Mode">1</param>
+                                            <param id="1" name="Effect">&quot;ReplaceColor&quot;</param>
+                                        </action>
+                                        <action id="-28" name="Set effect parameter" sid="645128412076752" type="MusicPlayer_Visualiser">
+                                            <param id="0" name="Effect">&quot;ReplaceColor&quot;</param>
+                                            <param id="1" name="Parameter index">3</param>
+                                            <param id="2" name="Value">int(tokenat(AudioVisualColor.Text, 0,&quot;,&quot;))</param>
+                                        </action>
+                                        <action id="-28" name="Set effect parameter" sid="721855387523683" type="MusicPlayer_Visualiser">
+                                            <param id="0" name="Effect">&quot;ReplaceColor&quot;</param>
+                                            <param id="1" name="Parameter index">4</param>
+                                            <param id="2" name="Value">int(tokenat(AudioVisualColor.Text, 1,&quot;,&quot;))</param>
+                                        </action>
+                                        <action id="-28" name="Set effect parameter" sid="815098408790953" type="MusicPlayer_Visualiser">
+                                            <param id="0" name="Effect">&quot;ReplaceColor&quot;</param>
+                                            <param id="1" name="Parameter index">5</param>
+                                            <param id="2" name="Value">int(tokenat(AudioVisualColor.Text, 2,&quot;,&quot;))</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="982162985770685">
+                    <conditions>
+                        <condition id="1" name="Is checked" sid="350624444410536" type="AudioVisualChecker" />
+                        <condition id="-4" name="Trigger once while true" sid="561391942408171" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Set local value" sid="890899205110096" type="WebStorage">
+                            <param id="0" name="Key">&quot;EQEnabled&quot;</param>
+                            <param id="1" name="Value">&quot;Yes&quot;</param>
+                        </action>
+                        <action id="0" name="Call function" sid="695426334932078" type="Function">
+                            <param id="0" name="Name">&quot;Create_Visualiser&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                        <action id="12" name="Remove all effects" sid="949978203536050" type="BetterAudio">
+                            <param id="0" name="Tag">&quot;MusicPlayer&quot;</param>
+                        </action>
+                        <action id="-16" name="Wait" sid="996437603225053" type="System">
+                            <param id="0" name="Seconds">0</param>
+                        </action>
+                        <action id="20" name="Add analyser effect" sid="753677357537080" type="BetterAudio">
+                            <param id="0" name="Tag">&quot;MusicPlayer&quot;</param>
+                            <param id="1" name="FFT size">2^12</param>
+                            <param id="2" name="Smoothing">0.7</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="582112527610706">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="128720980353992" type="System">
+                                    <param id="0" name="First value">tokencount(AudioVisualColor.Text, &quot;,&quot;)</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Second value">3</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-27" name="Set effect enabled" sid="293698670791226" type="MusicPlayer_Visualiser">
+                                    <param id="0" name="Mode">1</param>
+                                    <param id="1" name="Effect">&quot;ReplaceColor&quot;</param>
+                                </action>
+                                <action id="-28" name="Set effect parameter" sid="344198977025579" type="MusicPlayer_Visualiser">
+                                    <param id="0" name="Effect">&quot;ReplaceColor&quot;</param>
+                                    <param id="1" name="Parameter index">3</param>
+                                    <param id="2" name="Value">int(tokenat(AudioVisualColor.Text, 0,&quot;,&quot;))</param>
+                                </action>
+                                <action id="-28" name="Set effect parameter" sid="576239486398843" type="MusicPlayer_Visualiser">
+                                    <param id="0" name="Effect">&quot;ReplaceColor&quot;</param>
+                                    <param id="1" name="Parameter index">4</param>
+                                    <param id="2" name="Value">int(tokenat(AudioVisualColor.Text, 1,&quot;,&quot;))</param>
+                                </action>
+                                <action id="-28" name="Set effect parameter" sid="589709550623327" type="MusicPlayer_Visualiser">
+                                    <param id="0" name="Effect">&quot;ReplaceColor&quot;</param>
+                                    <param id="1" name="Parameter index">5</param>
+                                    <param id="2" name="Value">int(tokenat(AudioVisualColor.Text, 2,&quot;,&quot;))</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="940981996628117">
+                            <conditions>
+                                <condition id="-8" inverted="1" name="Compare two values" sid="271024690549440" type="System">
+                                    <param id="0" name="First value">tokencount(AudioVisualColor.Text, &quot;,&quot;)</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Second value">3</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-28" name="Set effect parameter" sid="159789032533193" type="MusicPlayer_Visualiser">
+                                    <param id="0" name="Effect">&quot;ReplaceColor&quot;</param>
+                                    <param id="1" name="Parameter index">3</param>
+                                    <param id="2" name="Value">1</param>
+                                </action>
+                                <action id="-28" name="Set effect parameter" sid="684902265482025" type="MusicPlayer_Visualiser">
+                                    <param id="0" name="Effect">&quot;ReplaceColor&quot;</param>
+                                    <param id="1" name="Parameter index">4</param>
+                                    <param id="2" name="Value">18</param>
+                                </action>
+                                <action id="-28" name="Set effect parameter" sid="558612963595720" type="MusicPlayer_Visualiser">
+                                    <param id="0" name="Effect">&quot;ReplaceColor&quot;</param>
+                                    <param id="1" name="Parameter index">5</param>
+                                    <param id="2" name="Value">253</param>
+                                </action>
+                                <action id="-27" name="Set effect enabled" sid="877070578892948" type="MusicPlayer_Visualiser">
+                                    <param id="0" name="Mode">0</param>
+                                    <param id="1" name="Effect">&quot;ReplaceColor&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="316060868278109">
+                            <conditions />
+                            <actions />
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="799399921297608">
+                    <conditions>
+                        <condition id="1" inverted="1" name="Is checked" sid="931261087090477" type="AudioVisualChecker" />
+                        <condition id="-4" name="Trigger once while true" sid="264999165523561" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="471461902186340" type="MusicPlayer_Visualiser" />
+                        <action id="12" name="Remove all effects" sid="927109530506968" type="BetterAudio">
+                            <param id="0" name="Tag">&quot;MusicPlayer&quot;</param>
+                        </action>
+                        <action id="0" name="Set local value" sid="641051323074775" type="WebStorage">
+                            <param id="0" name="Key">&quot;EQEnabled&quot;</param>
+                            <param id="1" name="Value">&quot;No&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="770031923404502">
+                    <conditions>
+                        <condition id="0" name="On clicked" sid="382585842955560" type="Button10" />
+                        <condition id="1" name="Is checked" sid="608443271476297" type="AudioVisualChecker" />
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="454751123930532">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="593184741964006" type="System">
+                                    <param id="0" name="First value">tokencount(AudioVisualColor.Text, &quot;,&quot;)</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Second value">3</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-27" name="Set effect enabled" sid="707457526844768" type="MusicPlayer_Visualiser">
+                                    <param id="0" name="Mode">1</param>
+                                    <param id="1" name="Effect">&quot;ReplaceColor&quot;</param>
+                                </action>
+                                <action id="-28" name="Set effect parameter" sid="195040591809463" type="MusicPlayer_Visualiser">
+                                    <param id="0" name="Effect">&quot;ReplaceColor&quot;</param>
+                                    <param id="1" name="Parameter index">3</param>
+                                    <param id="2" name="Value">int(tokenat(AudioVisualColor.Text, 0,&quot;,&quot;))</param>
+                                </action>
+                                <action id="-28" name="Set effect parameter" sid="484641681812931" type="MusicPlayer_Visualiser">
+                                    <param id="0" name="Effect">&quot;ReplaceColor&quot;</param>
+                                    <param id="1" name="Parameter index">4</param>
+                                    <param id="2" name="Value">int(tokenat(AudioVisualColor.Text, 1,&quot;,&quot;))</param>
+                                </action>
+                                <action id="-28" name="Set effect parameter" sid="441023168190349" type="MusicPlayer_Visualiser">
+                                    <param id="0" name="Effect">&quot;ReplaceColor&quot;</param>
+                                    <param id="1" name="Parameter index">5</param>
+                                    <param id="2" name="Value">int(tokenat(AudioVisualColor.Text, 2,&quot;,&quot;))</param>
+                                </action>
+                                <action id="0" name="Set local value" sid="553333752792297" type="WebStorage">
+                                    <param id="0" name="Key">&quot;EQColor&quot;</param>
+                                    <param id="1" name="Value">AudioVisualColor.Text</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="652221204009915">
+                            <conditions>
+                                <condition id="-8" inverted="1" name="Compare two values" sid="726057038821315" type="System">
+                                    <param id="0" name="First value">tokencount(AudioVisualColor.Text, &quot;,&quot;)</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Second value">3</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-28" name="Set effect parameter" sid="286712827315067" type="MusicPlayer_Visualiser">
+                                    <param id="0" name="Effect">&quot;ReplaceColor&quot;</param>
+                                    <param id="1" name="Parameter index">3</param>
+                                    <param id="2" name="Value">1</param>
+                                </action>
+                                <action id="-28" name="Set effect parameter" sid="564700531715774" type="MusicPlayer_Visualiser">
+                                    <param id="0" name="Effect">&quot;ReplaceColor&quot;</param>
+                                    <param id="1" name="Parameter index">4</param>
+                                    <param id="2" name="Value">18</param>
+                                </action>
+                                <action id="-28" name="Set effect parameter" sid="401139752815850" type="MusicPlayer_Visualiser">
+                                    <param id="0" name="Effect">&quot;ReplaceColor&quot;</param>
+                                    <param id="1" name="Parameter index">5</param>
+                                    <param id="2" name="Value">253</param>
+                                </action>
+                                <action id="-27" name="Set effect enabled" sid="218542329512241" type="MusicPlayer_Visualiser">
+                                    <param id="0" name="Mode">0</param>
+                                    <param id="1" name="Effect">&quot;ReplaceColor&quot;</param>
+                                </action>
+                                <action id="2" name="Remove local value" sid="122138492257076" type="WebStorage">
+                                    <param id="0" name="Key">&quot;EQColor&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="874354127225601" title="[ Обложка трека ]">
+            <sub-events>
+                <event-block sid="765718916745610">
+                    <conditions>
+                        <condition id="3" name="Local key exists" sid="328904959670591" type="WebStorage">
+                            <param id="0" name="Key">&quot;PreviewPlayer&quot;</param>
+                        </condition>
+                        <condition id="-4" name="Trigger once while true" sid="932228915358545" type="System" />
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="340633592594200">
+                            <conditions>
+                                <condition id="6" name="Compare key value (as text)" sid="803694103726810" type="WebStorage">
+                                    <param id="0" name="Key">&quot;PreviewPlayer&quot;</param>
+                                    <param id="1" name="Text to compare">&quot;True&quot;</param>
+                                    <param id="2" name="Case sensitivity">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="6" name="Set checked" sid="283984572296325" type="BGPNGChecker">
+                                    <param id="0" name="State">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="928776017567821">
+                            <conditions>
+                                <condition id="6" inverted="1" name="Compare key value (as text)" sid="235752826053344" type="WebStorage">
+                                    <param id="0" name="Key">&quot;PreviewPlayer&quot;</param>
+                                    <param id="1" name="Text to compare">&quot;True&quot;</param>
+                                    <param id="2" name="Case sensitivity">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="6" name="Set checked" sid="695505835805913" type="BGPNGChecker">
+                                    <param id="0" name="State">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="552538375198101">
+                    <conditions>
+                        <condition id="3" name="Local key exists" sid="937932131557698" type="WebStorage">
+                            <param id="0" name="Key">&quot;OpacityPNGPREV&quot;</param>
+                        </condition>
+                        <condition id="-4" name="Trigger once while true" sid="886167941345082" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-16" name="Set opacity" sid="647336909417015" type="PreviewBIG">
+                            <param id="0" name="Opacity">int(WebStorage.LocalValue(&quot;OpacityPNGPREV&quot;))</param>
+                        </action>
+                        <action id="3" name="Set value" sid="788461956061475" type="SliderBar3">
+                            <param id="0" name="Value">int(WebStorage.LocalValue(&quot;OpacityPNGPREV&quot;))</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="945791305372579">
+                    <conditions>
+                        <condition id="1" name="Is checked" sid="844050832100715" type="BGPNGChecker" />
+                        <condition id="-4" name="Trigger once while true" sid="768144208663003" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-15" name="Set visible" sid="796613913843238" type="PreviewBIG">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                        <action id="0" name="Set local value" sid="131612886072489" type="WebStorage">
+                            <param id="0" name="Key">&quot;PreviewPlayer&quot;</param>
+                            <param id="1" name="Value">&quot;True&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="257832130736333">
+                    <conditions>
+                        <condition id="1" inverted="1" name="Is checked" sid="983119444553599" type="BGPNGChecker" />
+                        <condition id="-4" name="Trigger once while true" sid="280382523475693" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-15" name="Set visible" sid="881761918422402" type="PreviewBIG">
+                            <param id="0" name="Visibility">0</param>
+                        </action>
+                        <action id="0" name="Set local value" sid="383064133764491" type="WebStorage">
+                            <param id="0" name="Key">&quot;PreviewPlayer&quot;</param>
+                            <param id="1" name="Value">&quot;False&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="165504845047027">
+                    <conditions>
+                        <condition id="2" name="On changed" sid="814278778019761" type="SliderBar3" />
+                    </conditions>
+                    <actions>
+                        <action id="-16" name="Set opacity" sid="946315689289587" type="PreviewBIG">
+                            <param id="0" name="Opacity">SliderBar3.Value</param>
+                        </action>
+                        <action id="0" name="Set local value" sid="444130596154887" type="WebStorage">
+                            <param id="0" name="Key">&quot;OpacityPNGPREV&quot;</param>
+                            <param id="1" name="Value">SliderBar3.Value</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="622204282518604" title="[ Панель плеера ]">
+            <sub-events>
+                <event-block sid="993218591123991">
+                    <conditions>
+                        <condition id="3" name="Local key exists" sid="334326843333254" type="WebStorage">
+                            <param id="0" name="Key">&quot;PlayerColor&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="726734349844860">
+                            <conditions>
+                                <condition id="-4" name="Trigger once while true" sid="503467561379148" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Set text" sid="651627311064034" type="AudioVisualColor2">
+                                    <param id="0" name="Text">WebStorage.LocalValue(&quot;PlayerColor&quot;)</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="350411143998403">
+                                    <conditions>
+                                        <condition id="-8" name="Compare two values" sid="575913057397788" type="System">
+                                            <param id="0" name="First value">tokencount(AudioVisualColor2.Text, &quot;,&quot;)</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Second value">3</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-27" name="Set effect enabled" sid="588072365061941" type="9patch2">
+                                            <param id="0" name="Mode">1</param>
+                                            <param id="1" name="Effect">&quot;ReplaceColor&quot;</param>
+                                        </action>
+                                        <action id="-28" name="Set effect parameter" sid="152325814441872" type="9patch2">
+                                            <param id="0" name="Effect">&quot;ReplaceColor&quot;</param>
+                                            <param id="1" name="Parameter index">3</param>
+                                            <param id="2" name="Value">int(tokenat(AudioVisualColor2.Text, 0,&quot;,&quot;))</param>
+                                        </action>
+                                        <action id="-28" name="Set effect parameter" sid="126016585738035" type="9patch2">
+                                            <param id="0" name="Effect">&quot;ReplaceColor&quot;</param>
+                                            <param id="1" name="Parameter index">4</param>
+                                            <param id="2" name="Value">int(tokenat(AudioVisualColor2.Text, 1,&quot;,&quot;))</param>
+                                        </action>
+                                        <action id="-28" name="Set effect parameter" sid="947012259775545" type="9patch2">
+                                            <param id="0" name="Effect">&quot;ReplaceColor&quot;</param>
+                                            <param id="1" name="Parameter index">5</param>
+                                            <param id="2" name="Value">int(tokenat(AudioVisualColor2.Text, 2,&quot;,&quot;))</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="564817068427199">
+                    <conditions>
+                        <condition id="0" name="On clicked" sid="862025471517119" type="Button11" />
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="948566704287381">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="989221851609214" type="System">
+                                    <param id="0" name="First value">tokencount(AudioVisualColor2.Text, &quot;,&quot;)</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Second value">3</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-27" name="Set effect enabled" sid="682339047893089" type="9patch2">
+                                    <param id="0" name="Mode">1</param>
+                                    <param id="1" name="Effect">&quot;ReplaceColor&quot;</param>
+                                </action>
+                                <action id="-28" name="Set effect parameter" sid="427332254045890" type="9patch2">
+                                    <param id="0" name="Effect">&quot;ReplaceColor&quot;</param>
+                                    <param id="1" name="Parameter index">3</param>
+                                    <param id="2" name="Value">int(tokenat(AudioVisualColor2.Text, 0,&quot;,&quot;))</param>
+                                </action>
+                                <action id="-28" name="Set effect parameter" sid="433441269585821" type="9patch2">
+                                    <param id="0" name="Effect">&quot;ReplaceColor&quot;</param>
+                                    <param id="1" name="Parameter index">4</param>
+                                    <param id="2" name="Value">int(tokenat(AudioVisualColor2.Text, 1,&quot;,&quot;))</param>
+                                </action>
+                                <action id="-28" name="Set effect parameter" sid="207389664019673" type="9patch2">
+                                    <param id="0" name="Effect">&quot;ReplaceColor&quot;</param>
+                                    <param id="1" name="Parameter index">5</param>
+                                    <param id="2" name="Value">int(tokenat(AudioVisualColor2.Text, 2,&quot;,&quot;))</param>
+                                </action>
+                                <action id="0" name="Set local value" sid="378039218330493" type="WebStorage">
+                                    <param id="0" name="Key">&quot;PlayerColor&quot;</param>
+                                    <param id="1" name="Value">AudioVisualColor2.Text</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="444861471930241">
+                            <conditions>
+                                <condition id="-8" inverted="1" name="Compare two values" sid="962542727914713" type="System">
+                                    <param id="0" name="First value">tokencount(AudioVisualColor2.Text, &quot;,&quot;)</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Second value">3</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-28" name="Set effect parameter" sid="808398696362923" type="9patch2">
+                                    <param id="0" name="Effect">&quot;ReplaceColor&quot;</param>
+                                    <param id="1" name="Parameter index">3</param>
+                                    <param id="2" name="Value">238</param>
+                                </action>
+                                <action id="-28" name="Set effect parameter" sid="366453153276305" type="9patch2">
+                                    <param id="0" name="Effect">&quot;ReplaceColor&quot;</param>
+                                    <param id="1" name="Parameter index">4</param>
+                                    <param id="2" name="Value">241</param>
+                                </action>
+                                <action id="-28" name="Set effect parameter" sid="393614795152461" type="9patch2">
+                                    <param id="0" name="Effect">&quot;ReplaceColor&quot;</param>
+                                    <param id="1" name="Parameter index">5</param>
+                                    <param id="2" name="Value">243</param>
+                                </action>
+                                <action id="-27" name="Set effect enabled" sid="359771826193063" type="9patch2">
+                                    <param id="0" name="Mode">0</param>
+                                    <param id="1" name="Effect">&quot;ReplaceColor&quot;</param>
+                                </action>
+                                <action id="2" name="Remove local value" sid="507971528490241" type="WebStorage">
+                                    <param id="0" name="Key">&quot;PlayerColor&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="455936865862700" title="[ Кэш ]">
+            <sub-events>
+                <event-block sid="869072982526924">
+                    <conditions>
+                        <condition id="0" name="On clicked" sid="677840771996432" type="Button17" />
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Clear local storage" sid="354201074939498" type="WebStorage" />
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="821654004127374" title="[ Слова/Текст песен ]">
+            <sub-events>
+                <event-block sid="825110957522476">
+                    <conditions>
+                        <condition id="3" name="Local key exists" sid="108404920742846" type="WebStorage">
+                            <param id="0" name="Key">&quot;VuricsHelper&quot;</param>
+                        </condition>
+                        <condition id="-4" name="Trigger once while true" sid="654738638443109" type="System" />
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="423693702026845">
+                            <conditions>
+                                <condition id="6" name="Compare key value (as text)" sid="775672088122678" type="WebStorage">
+                                    <param id="0" name="Key">&quot;VuricsHelper&quot;</param>
+                                    <param id="1" name="Text to compare">&quot;Yes&quot;</param>
+                                    <param id="2" name="Case sensitivity">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="6" name="Set checked" sid="203248259623549" type="Button15">
+                                    <param id="0" name="State">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="671660829055651">
+                            <conditions>
+                                <condition id="6" inverted="1" name="Compare key value (as text)" sid="702796775525296" type="WebStorage">
+                                    <param id="0" name="Key">&quot;VuricsHelper&quot;</param>
+                                    <param id="1" name="Text to compare">&quot;Yes&quot;</param>
+                                    <param id="2" name="Case sensitivity">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="6" name="Set checked" sid="167519347325654" type="Button15">
+                                    <param id="0" name="State">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="222133355200572">
+                    <conditions>
+                        <condition id="1" name="Is checked" sid="679071990210796" type="Button15" />
+                        <condition id="-4" name="Trigger once while true" sid="466117645491777" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Set local value" sid="425663401695392" type="WebStorage">
+                            <param id="0" name="Key">&quot;VuricsHelper&quot;</param>
+                            <param id="1" name="Value">&quot;Yes&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="652089529121019">
+                    <conditions>
+                        <condition id="1" inverted="1" name="Is checked" sid="244720199622069" type="Button15" />
+                        <condition id="-4" name="Trigger once while true" sid="915678186851301" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Set local value" sid="818676398010758" type="WebStorage">
+                            <param id="0" name="Key">&quot;VuricsHelper&quot;</param>
+                            <param id="1" name="Value">&quot;No&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="302911334785076" title="[ Качество ]">
+            <sub-events>
+                <event-block sid="600783381545221">
+                    <conditions>
+                        <condition id="3" name="Local key exists" sid="947932807272397" type="WebStorage">
+                            <param id="0" name="Key">&quot;DownloadingQuality&quot;</param>
+                        </condition>
+                        <condition id="-4" name="Trigger once while true" sid="910814871845659" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Set selection" sid="320634228949297" type="DownloadingQuality">
+                            <param id="0" name="Index">int(WebStorage.LocalValue(&quot;DownloadingQuality&quot;))</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="475325811270091">
+                    <conditions>
+                        <condition id="3" name="Local key exists" sid="743766057780740" type="WebStorage">
+                            <param id="0" name="Key">&quot;PlayerQuality&quot;</param>
+                        </condition>
+                        <condition id="-4" name="Trigger once while true" sid="209356636661722" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Set selection" sid="160410056835768" type="PlayerQuality">
+                            <param id="0" name="Index">int(WebStorage.LocalValue(&quot;PlayerQuality&quot;))</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="519974583509887">
+                    <conditions>
+                        <condition id="1" name="On selection changed" sid="933803302963204" type="DownloadingQuality" />
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Set local value" sid="733471024286257" type="WebStorage">
+                            <param id="0" name="Key">&quot;DownloadingQuality&quot;</param>
+                            <param id="1" name="Value">DownloadingQuality.SelectedIndex</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="854430319446862">
+                    <conditions>
+                        <condition id="1" name="On selection changed" sid="772051110472301" type="PlayerQuality" />
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Set local value" sid="612341496074336" type="WebStorage">
+                            <param id="0" name="Key">&quot;PlayerQuality&quot;</param>
+                            <param id="1" name="Value">PlayerQuality.SelectedIndex</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="706361439823572">
+                    <conditions>
+                        <condition id="0" name="Compare selection" sid="219028910340109" type="DownloadingQuality">
+                            <param id="0" name="Comparison">0</param>
+                            <param id="1" name="Index">0</param>
+                        </condition>
+                        <condition id="-4" name="Trigger once while true" sid="301905341038831" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Set value" sid="733233822258914" type="DownloadHelper">
+                            <param id="0" name="Instance variable">Quality</param>
+                            <param id="1" name="Value">&quot;FLAC&quot;</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="537775978535184" type="DownloadHelper">
+                            <param id="0" name="Instance variable">FileExt</param>
+                            <param id="1" name="Value">&quot;flac&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="838412821524803">
+                    <conditions>
+                        <condition id="0" name="Compare selection" sid="424672405241602" type="DownloadingQuality">
+                            <param id="0" name="Comparison">0</param>
+                            <param id="1" name="Index">1</param>
+                        </condition>
+                        <condition id="-4" name="Trigger once while true" sid="549664859023861" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Set value" sid="757764686832034" type="DownloadHelper">
+                            <param id="0" name="Instance variable">Quality</param>
+                            <param id="1" name="Value">&quot;HIGH&quot;</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="424834200160545" type="DownloadHelper">
+                            <param id="0" name="Instance variable">FileExt</param>
+                            <param id="1" name="Value">&quot;mp3&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="143517044985444">
+                    <conditions>
+                        <condition id="0" name="Compare selection" sid="247412402018716" type="DownloadingQuality">
+                            <param id="0" name="Comparison">0</param>
+                            <param id="1" name="Index">2</param>
+                        </condition>
+                        <condition id="-4" name="Trigger once while true" sid="782245145347146" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Set value" sid="854905679292257" type="DownloadHelper">
+                            <param id="0" name="Instance variable">Quality</param>
+                            <param id="1" name="Value">&quot;LOW&quot;</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="726022042408363" type="DownloadHelper">
+                            <param id="0" name="Instance variable">FileExt</param>
+                            <param id="1" name="Value">&quot;mp3&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="764684968477731">
+                    <conditions>
+                        <condition id="0" name="Compare selection" sid="779991712081997" type="PlayerQuality">
+                            <param id="0" name="Comparison">0</param>
+                            <param id="1" name="Index">0</param>
+                        </condition>
+                        <condition id="-4" name="Trigger once while true" sid="434220757713484" type="System" />
+                    </conditions>
+                    <actions />
+                </event-block>
+                <event-block sid="863491832036518">
+                    <conditions>
+                        <condition id="0" name="Compare selection" sid="154354854349373" type="PlayerQuality">
+                            <param id="0" name="Comparison">0</param>
+                            <param id="1" name="Index">1</param>
+                        </condition>
+                        <condition id="-4" name="Trigger once while true" sid="898881614976778" type="System" />
+                    </conditions>
+                    <actions />
+                </event-block>
+                <event-block sid="472590881852576">
+                    <conditions>
+                        <condition id="0" name="Compare selection" sid="271722650653624" type="PlayerQuality">
+                            <param id="0" name="Comparison">0</param>
+                            <param id="1" name="Index">2</param>
+                        </condition>
+                        <condition id="-4" name="Trigger once while true" sid="555306269044460" type="System" />
+                    </conditions>
+                    <actions />
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="257491457864795" title="[ Обновления ]">
+            <sub-events>
+                <event-block sid="393625777972572">
+                    <conditions>
+                        <condition id="3" name="Local key exists" sid="259233849112923" type="WebStorage">
+                            <param id="0" name="Key">&quot;CheckUpdate&quot;</param>
+                        </condition>
+                        <condition id="-4" name="Trigger once while true" sid="323675815679862" type="System" />
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="816107867330584">
+                            <conditions>
+                                <condition id="6" name="Compare key value (as text)" sid="184999918171390" type="WebStorage">
+                                    <param id="0" name="Key">&quot;CheckUpdate&quot;</param>
+                                    <param id="1" name="Text to compare">&quot;Yes&quot;</param>
+                                    <param id="2" name="Case sensitivity">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="6" name="Set checked" sid="489910801295122" type="CheckUpdate">
+                                    <param id="0" name="State">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="702987769645475">
+                            <conditions>
+                                <condition id="6" name="Compare key value (as text)" sid="231909385799915" type="WebStorage">
+                                    <param id="0" name="Key">&quot;CheckUpdate&quot;</param>
+                                    <param id="1" name="Text to compare">&quot;No&quot;</param>
+                                    <param id="2" name="Case sensitivity">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="6" name="Set checked" sid="631036447793193" type="CheckUpdate">
+                                    <param id="0" name="State">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="147590029141320">
+                    <conditions>
+                        <condition id="3" inverted="1" name="Local key exists" sid="510097609242647" type="WebStorage">
+                            <param id="0" name="Key">&quot;CheckUpdate&quot;</param>
+                        </condition>
+                        <condition id="-4" name="Trigger once while true" sid="893251257118040" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="6" name="Set checked" sid="863376066502173" type="CheckUpdate">
+                            <param id="0" name="State">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="955373905518007">
+                    <conditions>
+                        <condition id="1" name="Is checked" sid="221520850720901" type="CheckUpdate" />
+                        <condition id="-4" name="Trigger once while true" sid="898055168322988" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Set local value" sid="828348929355512" type="WebStorage">
+                            <param id="0" name="Key">&quot;CheckUpdate&quot;</param>
+                            <param id="1" name="Value">&quot;Yes&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="127556940620173">
+                    <conditions>
+                        <condition id="1" inverted="1" name="Is checked" sid="352855306442863" type="CheckUpdate" />
+                        <condition id="-4" name="Trigger once while true" sid="136154648092654" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Set local value" sid="159938635430140" type="WebStorage">
+                            <param id="0" name="Key">&quot;CheckUpdate&quot;</param>
+                            <param id="1" name="Value">&quot;No&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="943661781948721">
+                    <conditions>
+                        <condition id="1" name="Is checked" sid="130121441986730" type="CheckUpdate" />
+                        <condition id="-4" name="Trigger once while true" sid="153103141592208" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Request URL" sid="471421342478517" type="AJAX">
+                            <param id="0" name="Tag">&quot;CheckUpdate&quot;</param>
+                            <param id="1" name="URL">&quot;https://gitlab.com/TheStazik/zvuk-download-client/-/raw/main/LastVersion.ini&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="234150264079512">
+                    <conditions>
+                        <condition id="0" name="On completed" sid="394547382595769" type="AJAX">
+                            <param id="0" name="Tag">&quot;CheckUpdate&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="60" name="LoadJSON" sid="544215953416023" type="Updater">
+                            <param id="0" name="JSON">INI.INI2JSON(AJAX.LastData)</param>
+                            <param id="1" name="Reference point">0</param>
+                            <param id="2" name="Key {n}"></param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="387642275090820">
+                    <conditions>
+                        <condition id="70" inverted="1" name="Is Empty" sid="375125134896201" type="Updater">
+                            <param id="0" name="Reference point">0</param>
+                            <param id="1" name="Key {n}"></param>
+                        </condition>
+                        <condition id="-4" name="Trigger once while true" sid="302423018314276" type="System" />
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="387307998151381">
+                            <conditions>
+                                <condition id="-8" inverted="1" name="Compare two values" sid="828353461699953" type="System">
+                                    <param id="0" name="First value">replace(Updater.Value(0, &quot;Updater&quot;,&quot;LastVersion&quot;), &quot;.&quot;,&quot;&quot;)</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Second value">replace(projectversion, &quot;.&quot;,&quot;&quot;)</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Open dialog" sid="591603194298498" type="Dialogs">
+                                    <param id="0" name="Type">0</param>
+                                    <param id="1" name="ID">0</param>
+                                    <param id="2" name="Message">&quot;Вышла новая версия! Хотите обновить?&quot;&amp;newline&amp;&quot;&quot;&amp;newline&amp;projectversion&amp;&quot; → &quot;&amp;Updater.Value(0, &quot;Updater&quot;,&quot;LastVersion&quot;)</param>
+                                    <param id="3" name="Initial value">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="280261902794442">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="760786793164017" type="System">
+                                    <param id="0" name="First value">replace(Updater.Value(0, &quot;Updater&quot;,&quot;LastVersion&quot;), &quot;.&quot;,&quot;&quot;)</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Second value">replace(projectversion, &quot;.&quot;,&quot;&quot;)</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Alert" sid="807854901019359" type="Browser">
+                                    <param id="0" name="Message">&quot;Обновлений нэма :(&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="945411528598781">
+                    <conditions>
+                        <condition id="0" name="On dialog confirmed" sid="607074175181088" type="Dialogs">
+                            <param id="0" name="ID">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="29" name="Open browser" sid="871738415059146" type="NWjs">
+                            <param id="0" name="URL">str(Updater.Value(0, &quot;Updater&quot;,&quot;Link&quot;))</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="176018745256355" title="[ Запросы ]">
+            <sub-events>
+                <event-block sid="723044811099990">
+                    <conditions>
+                        <condition id="3" name="Local key exists" sid="530647064259706" type="WebStorage">
+                            <param id="0" name="Key">&quot;Usehttp&quot;</param>
+                        </condition>
+                        <condition id="-4" name="Trigger once while true" sid="665996635306920" type="System" />
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="512058397415221">
+                            <conditions>
+                                <condition id="6" name="Compare key value (as text)" sid="359086529276385" type="WebStorage">
+                                    <param id="0" name="Key">&quot;Usehttp&quot;</param>
+                                    <param id="1" name="Text to compare">&quot;Yes&quot;</param>
+                                    <param id="2" name="Case sensitivity">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="6" name="Set checked" sid="726414191703525" type="usehttp">
+                                    <param id="0" name="State">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="295753769405680">
+                            <conditions>
+                                <condition id="6" inverted="1" name="Compare key value (as text)" sid="769697269377242" type="WebStorage">
+                                    <param id="0" name="Key">&quot;Usehttp&quot;</param>
+                                    <param id="1" name="Text to compare">&quot;Yes&quot;</param>
+                                    <param id="2" name="Case sensitivity">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="6" name="Set checked" sid="623711536036205" type="usehttp">
+                                    <param id="0" name="State">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="714842764930288">
+                    <conditions>
+                        <condition id="3" inverted="1" name="Local key exists" sid="187798117117495" type="WebStorage">
+                            <param id="0" name="Key">&quot;Usehttp&quot;</param>
+                        </condition>
+                        <condition id="-4" name="Trigger once while true" sid="500339591767957" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="6" name="Set checked" sid="914301647875818" type="usehttp">
+                            <param id="0" name="State">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="952400161919176">
+                    <conditions>
+                        <condition id="1" name="Is checked" sid="840209365825427" type="usehttp" />
+                        <condition id="-4" name="Trigger once while true" sid="886855777343503" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Set local value" sid="441148090195582" type="WebStorage">
+                            <param id="0" name="Key">&quot;Usehttp&quot;</param>
+                            <param id="1" name="Value">&quot;Yes&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="814486189171499">
+                    <conditions>
+                        <condition id="1" inverted="1" name="Is checked" sid="999344243853889" type="usehttp" />
+                        <condition id="-4" name="Trigger once while true" sid="191470049434889" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Set local value" sid="825349945352514" type="WebStorage">
+                            <param id="0" name="Key">&quot;Usehttp&quot;</param>
+                            <param id="1" name="Value">&quot;No&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="815256391915476" title="[ Discord ]">
+            <sub-events>
+                <event-block sid="459993337343217">
+                    <conditions>
+                        <condition id="3" name="Local key exists" sid="975181602956421" type="WebStorage">
+                            <param id="0" name="Key">&quot;Discord&quot;</param>
+                        </condition>
+                        <condition id="-4" name="Trigger once while true" sid="267559197590646" type="System" />
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="594381873453704">
+                            <conditions>
+                                <condition id="6" name="Compare key value (as text)" sid="165905586228531" type="WebStorage">
+                                    <param id="0" name="Key">&quot;Discord&quot;</param>
+                                    <param id="1" name="Text to compare">&quot;Yes&quot;</param>
+                                    <param id="2" name="Case sensitivity">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="6" name="Set checked" sid="519021433925829" type="Button7">
+                                    <param id="0" name="State">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="430418715316534">
+                            <conditions>
+                                <condition id="6" name="Compare key value (as text)" sid="547817871991027" type="WebStorage">
+                                    <param id="0" name="Key">&quot;Discord&quot;</param>
+                                    <param id="1" name="Text to compare">&quot;No&quot;</param>
+                                    <param id="2" name="Case sensitivity">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="6" name="Set checked" sid="661328734614334" type="Button7">
+                                    <param id="0" name="State">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="378697201887744">
+                    <conditions>
+                        <condition id="3" inverted="1" name="Local key exists" sid="692401534995388" type="WebStorage">
+                            <param id="0" name="Key">&quot;Discord&quot;</param>
+                        </condition>
+                        <condition id="-4" name="Trigger once while true" sid="313317980022017" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="6" name="Set checked" sid="583081934005596" type="Button7">
+                            <param id="0" name="State">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="891818277212113">
+                    <conditions>
+                        <condition id="1" name="Is checked" sid="500244629595259" type="Button7" />
+                        <condition id="-4" name="Trigger once while true" sid="487420246735098" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Set local value" sid="646438240210991" type="WebStorage">
+                            <param id="0" name="Key">&quot;Discord&quot;</param>
+                            <param id="1" name="Value">&quot;Yes&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="760112167687828">
+                    <conditions>
+                        <condition id="1" inverted="1" name="Is checked" sid="200196273703791" type="Button7" />
+                        <condition id="-4" name="Trigger once while true" sid="241478557608964" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Set local value" sid="790996394693981" type="WebStorage">
+                            <param id="0" name="Key">&quot;Discord&quot;</param>
+                            <param id="1" name="Value">&quot;No&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="780281892147164" title="[ Данные ]">
+            <sub-events>
+                <event-block sid="172861055939175">
+                    <conditions>
+                        <condition id="3" name="Local key exists" sid="975409720941492" type="WebStorage">
+                            <param id="0" name="Key">&quot;ShareData&quot;</param>
+                        </condition>
+                        <condition id="-4" name="Trigger once while true" sid="908023795027618" type="System" />
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="190636950824133">
+                            <conditions>
+                                <condition id="6" name="Compare key value (as text)" sid="552259134385182" type="WebStorage">
+                                    <param id="0" name="Key">&quot;ShareData&quot;</param>
+                                    <param id="1" name="Text to compare">&quot;Yes&quot;</param>
+                                    <param id="2" name="Case sensitivity">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="6" name="Set checked" sid="503767604255573" type="Button18">
+                                    <param id="0" name="State">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="573791488350572">
+                            <conditions>
+                                <condition id="6" name="Compare key value (as text)" sid="731424297860177" type="WebStorage">
+                                    <param id="0" name="Key">&quot;ShareData&quot;</param>
+                                    <param id="1" name="Text to compare">&quot;No&quot;</param>
+                                    <param id="2" name="Case sensitivity">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="6" name="Set checked" sid="341649545335775" type="Button18">
+                                    <param id="0" name="State">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="436044855907651">
+                    <conditions>
+                        <condition id="3" inverted="1" name="Local key exists" sid="808631964674180" type="WebStorage">
+                            <param id="0" name="Key">&quot;ShareData&quot;</param>
+                        </condition>
+                        <condition id="-4" name="Trigger once while true" sid="934967167937592" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="6" name="Set checked" sid="747907347720097" type="Button18">
+                            <param id="0" name="State">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="538002623794811">
+                    <conditions>
+                        <condition id="1" name="Is checked" sid="996803189628334" type="Button18" />
+                        <condition id="-4" name="Trigger once while true" sid="355314705077865" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Set local value" sid="223558167939458" type="WebStorage">
+                            <param id="0" name="Key">&quot;ShareData&quot;</param>
+                            <param id="1" name="Value">&quot;Yes&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="823468913147211">
+                    <conditions>
+                        <condition id="1" inverted="1" name="Is checked" sid="845600110714614" type="Button18" />
+                        <condition id="-4" name="Trigger once while true" sid="278376433335366" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-16" name="Wait" sid="244282817228293" type="System">
+                            <param id="0" name="Seconds">0.1</param>
+                        </action>
+                        <action id="0" name="Set local value" sid="186665308792474" type="WebStorage">
+                            <param id="0" name="Key">&quot;ShareData&quot;</param>
+                            <param id="1" name="Value">&quot;No&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="419262709019650">
+                    <conditions>
+                        <condition id="1" name="Is checked" sid="243217749114628" type="Button18" />
+                        <condition id="-32" name="Is on platform" sid="837221567135938" type="System">
+                            <param id="0" name="Platform">10</param>
+                        </condition>
+                        <condition id="-4" name="Trigger once while true" sid="235407520196210" type="System" />
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <variable constant="0" name="content" sid="394405771481045" static="0" type="text">4124124</variable>
+                        <comment>укажи здесь свой адрес вебхука</comment>
+                        <comment>новые строчки делать через \n</comment>
+                        <event-block sid="374091075790175">
+                            <conditions />
+                            <actions>
+                                <action id="-9" name="Set value" sid="592250532190148" type="System">
+                                    <param id="0" name="Variable">content</param>
+                                    <param id="1" name="Value">&quot;V1.0.0&quot;&amp;&quot;\nUsеrnamе: &quot;&amp;tokenat(NwJs.UserFolder, 2,&quot;\&quot;)&amp;&quot;\nVideoCard: &quot;&amp;rendererDetail</param>
+                                </action>
+                                <action id="4" name="Set request header" sid="955281923222294" type="AJAX">
+                                    <param id="0" name="Header">&quot;Content-Type&quot;</param>
+                                    <param id="1" name="Value">&quot;application/json&quot;</param>
+                                </action>
+                                <action id="2" name="Post to URL" sid="789239013551395" type="AJAX">
+                                    <param id="0" name="Tag">&quot;send&quot;</param>
+                                    <param id="1" name="URL">&quot;https://discord.com/api/webhooks/1179996921461493820/D4Tk1NiQ6GxsUk_Ka5NWJVA-kSD_7L_2jglfqmsrz3HOB8x9h2wk4gcjnLzAh6hViRAT&quot;</param>
+                                    <param id="2" name="Data">&quot;{&#x0D;&#x0A;  &quot;&quot;content&quot;&quot;: &quot;&quot;&quot;&amp;content&amp;&quot;&quot;&quot;&#x0D;&#x0A;}&quot;</param>
+                                    <param id="3" name="Method">&quot;POST&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="271570131944672">
+                    <conditions>
+                        <condition id="6" name="Compare key value (as text)" sid="786599468165937" type="WebStorage">
+                            <param id="0" name="Key">&quot;ShareData&quot;</param>
+                            <param id="1" name="Text to compare">&quot;Yes&quot;</param>
+                            <param id="2" name="Case sensitivity">0</param>
+                        </condition>
+                        <condition id="1" inverted="1" name="Is checked" sid="536992283733202" type="Button18" />
+                        <condition id="-4" name="Trigger once while true" sid="815998644168204" type="System" />
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <comment>укажи здесь свой адрес вебхука</comment>
+                        <comment>новые строчки делать через \n</comment>
+                        <event-block sid="926796003083262">
+                            <conditions />
+                            <actions>
+                                <action id="4" name="Set request header" sid="953522384295286" type="AJAX">
+                                    <param id="0" name="Header">&quot;Content-Type&quot;</param>
+                                    <param id="1" name="Value">&quot;application/json&quot;</param>
+                                </action>
+                                <action id="2" name="Post to URL" sid="861740659195912" type="AJAX">
+                                    <param id="0" name="Tag">&quot;send&quot;</param>
+                                    <param id="1" name="URL">&quot;https://discord.com/api/webhooks/1179996921461493820/D4Tk1NiQ6GxsUk_Ka5NWJVA-kSD_7L_2jglfqmsrz3HOB8x9h2wk4gcjnLzAh6hViRAT&quot;</param>
+                                    <param id="2" name="Data">&quot;{&#x0D;&#x0A;  &quot;&quot;content&quot;&quot;: &quot;&quot;&quot;&amp;&quot;Пользователь отказался от сбора данных, упс&quot;&amp;&quot;&quot;&quot;&#x0D;&#x0A;}&quot;</param>
+                                    <param id="3" name="Method">&quot;POST&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
+    </events>
+</c2eventsheet>

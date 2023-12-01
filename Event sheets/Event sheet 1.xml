@@ -1,0 +1,202 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Event sheet 1</name>
+    <events>
+        <event-block sid="113440857468740">
+            <conditions>
+                <condition id="0" name="On clicked" sid="321498867965051" type="Button" />
+            </conditions>
+            <actions>
+                <action id="4" name="Set request header" sid="110500856049754" type="AJAX">
+                    <param id="0" name="Header">&quot;Content-Type&quot;</param>
+                    <param id="1" name="Value">&quot;application/json&quot;</param>
+                </action>
+                <action id="4" name="Set request header" sid="323712975757925" type="AJAX">
+                    <param id="0" name="Header">&quot;X-Auth-Token&quot;</param>
+                    <param id="1" name="Value">TextBox.Text</param>
+                </action>
+                <action id="2" name="Post to URL" sid="265262630389085" type="AJAX">
+                    <param id="0" name="Tag">&quot;GetTrackInfo&quot;</param>
+                    <param id="1" name="URL">TextBox3.Text</param>
+                    <param id="2" name="Data">TextBox2.Text</param>
+                    <param id="3" name="Method">&quot;POST&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block disabled="1" sid="754447222865185">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="649898732309711" type="System" />
+            </conditions>
+            <actions>
+                <action id="4" name="Set request header" sid="906645416681493" type="AJAX">
+                    <param id="0" name="Header">&quot;X-Auth-Token&quot;</param>
+                    <param id="1" name="Value">TextBox.Text</param>
+                </action>
+                <action id="2" name="Post to URL" sid="373440168797899" type="AJAX">
+                    <param id="0" name="Tag">&quot;GetTrackInfo&quot;</param>
+                    <param id="1" name="URL">TextBox3.Text</param>
+                    <param id="2" name="Data">TextBox2.Text</param>
+                    <param id="3" name="Method">&quot;POST&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="171161512761144">
+            <conditions>
+                <condition id="0" name="On completed" sid="897615498188421" type="AJAX">
+                    <param id="0" name="Tag">&quot;GetTrackInfo&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Alert" sid="245138627232270" type="Browser">
+                    <param id="0" name="Message">AJAX.LastData</param>
+                </action>
+                <action id="0" name="Set text" sid="788677459558260" type="resp">
+                    <param id="0" name="Text">AJAX.LastData</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="490172239660447">
+            <conditions>
+                <condition id="1" name="On error" sid="969984736342198" type="AJAX">
+                    <param id="0" name="Tag">&quot;GetTrackInfo&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Alert" sid="583216159636582" type="Browser">
+                    <param id="0" name="Message">AJAX.LastData</param>
+                </action>
+            </actions>
+        </event-block>
+        <comment>&#x0D;&#x0A;https://zvuk.com/api/v1/graphql</comment>
+        <event-block sid="471263732623462">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="790622506073619" type="System" />
+            </conditions>
+            <actions />
+        </event-block>
+        <event-block sid="945978556690054">
+            <conditions>
+                <condition id="0" name="On clicked" sid="583477425256969" type="Button2" />
+            </conditions>
+            <actions>
+                <action id="6" name="Show open dialog" sid="461091212317711" type="NWjs">
+                    <param id="0" name="Accept">&quot;.txt,.json&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="188934508968222">
+            <conditions>
+                <condition id="2" name="On open dialog OK" sid="245700337328110" type="NWjs" />
+            </conditions>
+            <actions>
+                <action id="0" name="Set text" sid="391334440073018" type="TextBox2">
+                    <param id="0" name="Text">NWjs.ReadFile(NWjs.ChosenPath)</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block disabled="1" sid="796618647990165">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="247134854880502" type="System" />
+            </conditions>
+            <actions>
+                <action id="4" name="Set request header" sid="475364311352792" type="AJAX">
+                    <param id="0" name="Header">&quot;X-Auth-Token&quot;</param>
+                    <param id="1" name="Value">&quot;ZFVrGDhZA4ZWhssqCHWDaDqIWJjGuPjX&quot;</param>
+                </action>
+                <action id="0" name="Request URL" sid="392343759344757" type="AJAX">
+                    <param id="0" name="Tag">&quot;test&quot;</param>
+                    <param id="1" name="URL">&quot;https://zvuk.com/api/tiny/profile&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block any="1" disabled="1" sid="839584806257322">
+            <conditions>
+                <condition id="0" name="On completed" sid="824238334787921" type="AJAX">
+                    <param id="0" name="Tag">&quot;test&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Alert" sid="210214919630680" type="Browser">
+                    <param id="0" name="Message">AJAX.LastData</param>
+                </action>
+            </actions>
+        </event-block>
+        <comment>для получения стрима:</comment>
+        <comment>{&#x0D;&#x0A;  &quot;operationName&quot;: &quot;getStream&quot;,&#x0D;&#x0A;  &quot;variables&quot;: {&#x0D;&#x0A;    &quot;ids&quot;: [&#x0D;&#x0A;      20425876&#x0D;&#x0A;    ]&#x0D;&#x0A;  },&#x0D;&#x0A;  &quot;query&quot;: &quot;query getStream($ids: [ID!]!) {\n  mediaContents(ids: $ids) {\n    ... on Track {\n      stream {\n        expire\n        expireDelta\n        flacdrm\n        high\n        mid\n      }\n    }\n    ... on Episode {\n      stream {\n        expire\n        expireDelta\n        high\n        mid\n      }\n    }\n    ... on Chapter {\n      stream {\n        expire\n        expireDelta\n        high\n        mid\n      }\n    }\n  }\n}&quot;&#x0D;&#x0A;}</comment>
+        <comment>для получения списка треков:</comment>
+        <comment>{&#x0D;&#x0A;  &quot;operationName&quot;: &quot;getPlaylistFirstTracks&quot;,&#x0D;&#x0A;  &quot;variables&quot;: {&#x0D;&#x0A;    &quot;firstTracks&quot;: 4,&#x0D;&#x0A;    &quot;ids&quot;: [&#x0D;&#x0A;      9096249&#x0D;&#x0A;    ]&#x0D;&#x0A;  },&#x0D;&#x0A;  &quot;query&quot;: &quot;query getPlaylistFirstTracks($ids: [ID!]!, $firstTracks: Int = 4) {\n  getPlaylists(ids: $ids) {\n    id\n    ftracksV1(first: $firstTracks, uniqueReleases: true) {\n      id\n      credits\n      title\n      searchTitle\n      position\n      duration\n      availability\n      artistTemplate\n      condition\n      explicit\n      lyrics\n      hasFlac\n      zchan\n      artists {\n        id\n        title\n      }\n      release {\n        id\n        title\n        image {\n          src\n          palette\n          paletteBottom\n        }\n      }\n    }\n  }\n}&quot;&#x0D;&#x0A;}</comment>
+        <event-block sid="883393961295094">
+            <conditions>
+                <condition id="0" name="On clicked" sid="355736507675041" type="Button3" />
+            </conditions>
+            <actions>
+                <action id="4" name="Set request header" sid="951125528765614" type="AJAX">
+                    <param id="0" name="Header">&quot;Content-Type&quot;</param>
+                    <param id="1" name="Value">&quot;application/json&quot;</param>
+                </action>
+                <action id="4" name="Set request header" sid="497554959325264" type="AJAX">
+                    <param id="0" name="Header">&quot;X-Auth-Token&quot;</param>
+                    <param id="1" name="Value">Settings.AuthToken</param>
+                </action>
+                <action id="2" name="Post to URL" sid="261457429227236" type="AJAX">
+                    <param id="0" name="Tag">&quot;getPlaylistFirstTracks&quot;</param>
+                    <param id="1" name="URL">TextBox3.Text</param>
+                    <param id="2" name="Data">TextBox2.Text</param>
+                    <param id="3" name="Method">&quot;POST&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="358376789967323">
+            <conditions>
+                <condition id="0" name="On completed" sid="478776200800469" type="AJAX">
+                    <param id="0" name="Tag">&quot;getPlaylistFirstTracks&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Alert" sid="195052930659988" type="Browser">
+                    <param id="0" name="Message">&quot;ok&quot;</param>
+                </action>
+                <action id="60" name="LoadJSON" sid="770211288526784" type="getPlaylistFirstTracks">
+                    <param id="0" name="JSON">AJAX.LastData</param>
+                    <param id="1" name="Reference point">0</param>
+                    <param id="2" name="Key {n}"></param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="215894026146512">
+            <conditions>
+                <condition id="0" name="On clicked" sid="967468347357603" type="Button5" />
+            </conditions>
+            <actions>
+                <action id="0" name="Alert" sid="898675764799478" type="Browser">
+                    <param id="0" name="Message">&quot;tracks: &quot;&amp;getPlaylistFirstTracks.Size(0,&quot;data&quot;,&quot;getPlaylists&quot;,0,&quot;ftracksV1&quot;)</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="212893640721768">
+            <conditions>
+                <condition id="0" name="On clicked" sid="115780079488567" type="Button6" />
+            </conditions>
+            <actions>
+                <action id="11" name="Clear" sid="111158313576649" type="List" />
+            </actions>
+            <sub-events>
+                <event-block sid="833241048669726">
+                    <conditions>
+                        <condition id="-10" name="For" sid="447232875665628" type="System">
+                            <param id="0" name="Name">&quot;GetTracksInfo&quot;</param>
+                            <param id="1" name="Start index">0</param>
+                            <param id="2" name="End index">getPlaylistFirstTracks.Size(0,&quot;data&quot;,&quot;getPlaylists&quot;,0,&quot;ftracksV1&quot;)-1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="7" name="Add item" sid="265826472638708" type="List">
+                            <param id="0" name="Text">getPlaylistFirstTracks.Value(0,&quot;data&quot;,&quot;getPlaylists&quot;,0,&quot;ftracksV1&quot;,loopindex,&quot;release&quot;,&quot;title&quot;)</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+    </events>
+</c2eventsheet>

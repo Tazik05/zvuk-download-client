@@ -1,0 +1,382 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Event sheet 2</name>
+    <events>
+        <event-block sid="806556810147164">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="255115061192451" type="System" />
+            </conditions>
+            <actions>
+                <action id="7" name="Set CSS style" sid="781615438571827" type="TokenBox">
+                    <param id="0" name="Property name">&quot;background-color&quot;</param>
+                    <param id="1" name="Value">&quot;#1B1C1D&quot;</param>
+                </action>
+                <action id="7" name="Set CSS style" sid="429458370885907" type="TokenBox">
+                    <param id="0" name="Property name">&quot;color&quot;</param>
+                    <param id="1" name="Value">&quot;White&quot;</param>
+                </action>
+                <action id="7" name="Set CSS style" sid="396771977036181" type="TokenBox">
+                    <param id="0" name="Property name">&quot;border-radius&quot;</param>
+                    <param id="1" name="Value">&quot;24px&quot;</param>
+                </action>
+                <action id="7" name="Set CSS style" sid="619231471330593" type="TokenBox">
+                    <param id="0" name="Property name">&quot;outline&quot;</param>
+                    <param id="1" name="Value">&quot;none&quot;</param>
+                </action>
+                <action id="7" name="Set CSS style" sid="585372321671955" type="TokenBox">
+                    <param id="0" name="Property name">&quot;border&quot;</param>
+                    <param id="1" name="Value">&quot;none&quot;</param>
+                </action>
+                <action id="5" name="Set CSS style" sid="162782978416935" type="Buttons">
+                    <param id="0" name="Property name">&quot;border&quot;</param>
+                    <param id="1" name="Value">&quot;none&quot;</param>
+                </action>
+                <action id="5" name="Set CSS style" sid="654078724575715" type="Buttons">
+                    <param id="0" name="Property name">&quot;border-radius&quot;</param>
+                    <param id="1" name="Value">&quot;24px&quot;</param>
+                </action>
+                <action id="5" name="Set CSS style" sid="279359308352360" type="Buttons">
+                    <param id="0" name="Property name">&quot;background&quot;</param>
+                    <param id="1" name="Value">&quot;#151210&quot;</param>
+                </action>
+                <action id="5" name="Set CSS style" sid="611708858757350" type="Buttons">
+                    <param id="0" name="Property name">&quot;color&quot;</param>
+                    <param id="1" name="Value">&quot;Black&quot;</param>
+                </action>
+                <action id="5" name="Set CSS style" sid="549806905684026" type="Buttons">
+                    <param id="0" name="Property name">&quot;background-color&quot;</param>
+                    <param id="1" name="Value">&quot;White&quot;</param>
+                </action>
+                <action disabled="1" id="5" name="Set CSS style" sid="443485483495933" type="Buttons">
+                    <param id="0" name="Property name">&quot;font-weight&quot;</param>
+                    <param id="1" name="Value">&quot;Bold&quot;</param>
+                </action>
+                <action id="5" name="Set CSS style" sid="722169229644434" type="Buttons">
+                    <param id="0" name="Property name">&quot;outline&quot;</param>
+                    <param id="1" name="Value">&quot;none&quot;</param>
+                </action>
+                <action id="5" name="Set CSS style" sid="634571352628253" type="Buttons">
+                    <param id="0" name="Property name">&quot;border&quot;</param>
+                    <param id="1" name="Value">&quot;none&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="438217074219471">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="493311459690915" type="System" />
+            </conditions>
+            <actions>
+                <action id="15" name="Set height" sid="525072863812524" type="NWjs">
+                    <param id="0" name="Height">Self.WindowHeight+1</param>
+                </action>
+                <action id="-16" name="Wait" sid="727757872894893" type="System">
+                    <param id="0" name="Seconds">0.1</param>
+                </action>
+                <action id="15" name="Set height" sid="932913862902727" type="NWjs">
+                    <param id="0" name="Height">Self.WindowHeight-1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block disabled="1" sid="801289788450078">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="327239796472766" type="System" />
+            </conditions>
+            <actions>
+                <action id="3" name="Add clickable notification" sid="215514041076681" type="Notifications">
+                    <param id="0" name="ID">&quot;2&quot;</param>
+                    <param id="1" name="Title">&quot;1 Этап&quot;</param>
+                    <param id="2" name="Text">&quot;Зайдите на сайт &apos;https://zvuk.com/&apos; и нажмите на кнопку &apos;войти&apos;, после чего выполните вход&quot;</param>
+                    <param id="3" name="Image">&quot;&quot;</param>
+                    <param id="4" name="Sticky">1</param>
+                    <param id="5" name="Notification style">8</param>
+                    <param id="6" name="Time">150000</param>
+                    <param id="7" name="Close on click">1</param>
+                </action>
+                <action id="3" name="Add clickable notification" sid="945915846359630" type="Notifications">
+                    <param id="0" name="ID">&quot;3&quot;</param>
+                    <param id="1" name="Title">&quot;2 Этап&quot;</param>
+                    <param id="2" name="Text">&quot;После входа перейдите на сайт &apos;https://zvuk.com/api/tiny/profile&apos; и найдите строчку &apos;token&apos;, после двух точек, в кавычках будет ваш токен &quot;</param>
+                    <param id="3" name="Image">&quot;&quot;</param>
+                    <param id="4" name="Sticky">1</param>
+                    <param id="5" name="Notification style">8</param>
+                    <param id="6" name="Time">150000</param>
+                    <param id="7" name="Close on click">1</param>
+                </action>
+                <action id="3" name="Add clickable notification" sid="676962003258240" type="Notifications">
+                    <param id="0" name="ID">&quot;4&quot;</param>
+                    <param id="1" name="Title">&quot;3 Этап&quot;</param>
+                    <param id="2" name="Text">&quot;Скопируйте токен и вставьте его в поле для токена, после чего нажмите в программе на кнопку &apos;войти&apos;&quot;</param>
+                    <param id="3" name="Image">&quot;&quot;</param>
+                    <param id="4" name="Sticky">1</param>
+                    <param id="5" name="Notification style">8</param>
+                    <param id="6" name="Time">150000</param>
+                    <param id="7" name="Close on click">1</param>
+                </action>
+                <action id="3" name="Add clickable notification" sid="972572494721443" type="Notifications">
+                    <param id="0" name="ID">&quot;5&quot;</param>
+                    <param id="1" name="Title">&quot;Конец&quot;</param>
+                    <param id="2" name="Text">&quot;Приятного использования!&quot;</param>
+                    <param id="3" name="Image">&quot;&quot;</param>
+                    <param id="4" name="Sticky">1</param>
+                    <param id="5" name="Notification style">8</param>
+                    <param id="6" name="Time">150000</param>
+                    <param id="7" name="Close on click">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block disabled="1" sid="819017803314711">
+            <conditions>
+                <condition id="0" name="On notification clicked" sid="473511816218460" type="Notifications">
+                    <param id="0" name="ID">&quot;2&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Show simple dialogue" sid="968680813495133" type="DialogSystemSimple">
+                    <param id="0" name="ID">&quot;&quot;</param>
+                    <param id="1" name="Text">&quot;Скопировано!&quot;</param>
+                    <param id="2" name="Sticky">0</param>
+                    <param id="3" name="Dialogue style">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="595870519395231">
+            <conditions>
+                <condition id="7" name="Cursor is over object" sid="575163450126454" type="Mouse">
+                    <param id="0" name="Object">Text3</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="4" name="Set font color" sid="300191740508536" type="Text3">
+                    <param id="0" name="Color">rgb(255, 255, 0)</param>
+                </action>
+                <action id="0" name="Set cursor style" sid="643658768335791" type="Mouse">
+                    <param id="0" name="Cursor style">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="937873705832432">
+            <conditions>
+                <condition id="7" inverted="1" name="Cursor is over object" sid="229311023426974" type="Mouse">
+                    <param id="0" name="Object">Text3</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="4" name="Set font color" sid="806673560829692" type="Text3">
+                    <param id="0" name="Color">rgb(255, 255, 255)</param>
+                </action>
+                <action id="0" name="Set cursor style" sid="650163329038981" type="Mouse">
+                    <param id="0" name="Cursor style">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="991527907316215">
+            <conditions>
+                <condition id="6" name="On object clicked" sid="994893501343703" type="Mouse">
+                    <param id="0" name="Mouse button">0</param>
+                    <param id="1" name="Click type">0</param>
+                    <param id="2" name="Object clicked">Text3</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action disabled="1" id="1" name="Delete all notifications" sid="509363910085503" type="Notifications" />
+                <action disabled="1" id="-16" name="Wait" sid="270465174151151" type="System">
+                    <param id="0" name="Seconds">0.1</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="207419091196021">
+                    <conditions>
+                        <condition id="-14" name="Pick by unique ID" sid="683436936151897" type="Text3">
+                            <param id="0" name="Unique ID">24</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="3" name="Add clickable notification" sid="851833220103875" type="Notifications">
+                            <param id="0" name="ID">&quot;2&quot;</param>
+                            <param id="1" name="Title">&quot;1 Этап&quot;</param>
+                            <param id="2" name="Text">&quot;Зайдите на сайт &apos;https://zvuk.com/&apos; и нажмите на кнопку &apos;войти&apos;, после чего выполните вход&quot;</param>
+                            <param id="3" name="Image">&quot;&quot;</param>
+                            <param id="4" name="Sticky">1</param>
+                            <param id="5" name="Notification style">8</param>
+                            <param id="6" name="Time">150000</param>
+                            <param id="7" name="Close on click">0</param>
+                        </action>
+                        <action id="3" name="Add clickable notification" sid="176593057987204" type="Notifications">
+                            <param id="0" name="ID">&quot;3&quot;</param>
+                            <param id="1" name="Title">&quot;2 Этап&quot;</param>
+                            <param id="2" name="Text">&quot;После входа перейдите на сайт &apos;https://zvuk.com/api/tiny/profile&apos; и найдите строчку &apos;token&apos;, после двух точек, в кавычках будет ваш токен &quot;</param>
+                            <param id="3" name="Image">&quot;&quot;</param>
+                            <param id="4" name="Sticky">1</param>
+                            <param id="5" name="Notification style">8</param>
+                            <param id="6" name="Time">150000</param>
+                            <param id="7" name="Close on click">0</param>
+                        </action>
+                        <action id="3" name="Add clickable notification" sid="335279384487125" type="Notifications">
+                            <param id="0" name="ID">&quot;4&quot;</param>
+                            <param id="1" name="Title">&quot;3 Этап&quot;</param>
+                            <param id="2" name="Text">&quot;Скопируйте токен и вставьте его в поле для токена, после чего нажмите в программе на кнопку &apos;войти&apos;&quot;</param>
+                            <param id="3" name="Image">&quot;&quot;</param>
+                            <param id="4" name="Sticky">1</param>
+                            <param id="5" name="Notification style">8</param>
+                            <param id="6" name="Time">150000</param>
+                            <param id="7" name="Close on click">0</param>
+                        </action>
+                        <action id="3" name="Add clickable notification" sid="323259004971047" type="Notifications">
+                            <param id="0" name="ID">&quot;5&quot;</param>
+                            <param id="1" name="Title">&quot;Конец&quot;</param>
+                            <param id="2" name="Text">&quot;Приятного использования!&quot;</param>
+                            <param id="3" name="Image">&quot;&quot;</param>
+                            <param id="4" name="Sticky">1</param>
+                            <param id="5" name="Notification style">8</param>
+                            <param id="6" name="Time">150000</param>
+                            <param id="7" name="Close on click">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="902411902604333">
+                    <conditions>
+                        <condition id="-14" name="Pick by unique ID" sid="503537820235471" type="Text3">
+                            <param id="0" name="Unique ID">161</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Request URL" sid="488555871996421" type="AJAX">
+                            <param id="0" name="Tag">&quot;GetProfile_TempToken&quot;</param>
+                            <param id="1" name="URL">&quot;https://zvuk.com/api/tiny/profile&quot;</param>
+                        </action>
+                        <action id="0" name="Show simple dialogue" sid="837656928165215" type="DialogSystemSimple">
+                            <param id="0" name="ID">&quot;&quot;</param>
+                            <param id="1" name="Text">&quot;Гостевой аккаунт не даст возможности скачивать треки, даже слова нельзя! (Зачем этот пункт сделан? Я тоже не знаю)&quot;</param>
+                            <param id="2" name="Sticky">0</param>
+                            <param id="3" name="Dialogue style">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="765284497122068">
+            <conditions>
+                <condition id="0" name="On completed" sid="140389162141419" type="AJAX">
+                    <param id="0" name="Tag">&quot;GetProfile_TempToken&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="60" name="LoadJSON" sid="816914787316842" type="Profile">
+                    <param id="0" name="JSON">AJAX.LastData</param>
+                    <param id="1" name="Reference point">0</param>
+                    <param id="2" name="Key {n}"></param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="651792479820867">
+            <conditions>
+                <condition id="0" name="On clicked" sid="834805074197192" type="Login" />
+                <condition id="0" inverted="1" name="Compare text" sid="866205961109193" type="TokenBox">
+                    <param id="0" name="Text">&quot;&quot;</param>
+                    <param id="1" name="Case">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-10" name="Set value" sid="461307472593895" type="Settings">
+                    <param id="0" name="Instance variable">AuthToken</param>
+                    <param id="1" name="Value">TokenBox.Text</param>
+                </action>
+                <action id="55" name="Clear" sid="237004546429283" type="Profile">
+                    <param id="0" name="Reference point">0</param>
+                    <param id="1" name="Key {n}"></param>
+                </action>
+                <action id="4" name="Set request header" sid="374710900972829" type="AJAX">
+                    <param id="0" name="Header">&quot;Content-Type&quot;</param>
+                    <param id="1" name="Value">&quot;application/json&quot;</param>
+                </action>
+                <action id="4" name="Set request header" sid="551660607092690" type="AJAX">
+                    <param id="0" name="Header">&quot;X-Auth-Token&quot;</param>
+                    <param id="1" name="Value">Settings.AuthToken</param>
+                </action>
+                <action id="0" name="Request URL" sid="329628291617576" type="AJAX">
+                    <param id="0" name="Tag">&quot;getProfile&quot;</param>
+                    <param id="1" name="URL">&quot;https://zvuk.com/api/tiny/profile&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="376542761767030">
+            <conditions>
+                <condition id="0" name="On completed" sid="405041360387584" type="AJAX">
+                    <param id="0" name="Tag">&quot;getProfile&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="60" name="LoadJSON" sid="523241421104287" type="Profile">
+                    <param id="0" name="JSON">AJAX.LastData</param>
+                    <param id="1" name="Reference point">0</param>
+                    <param id="2" name="Key {n}"></param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="404979552191896">
+            <conditions>
+                <condition id="-8" name="Compare two values" sid="672901405802059" type="System">
+                    <param id="0" name="First value">Profile.Value(0,&quot;result&quot;,&quot;is_anonymous&quot;)</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Second value">0</param>
+                </condition>
+            </conditions>
+            <actions />
+        </event-block>
+        <event-block sid="323674922473114">
+            <conditions>
+                <condition id="70" inverted="1" name="Is Empty" sid="246293844448185" type="Profile">
+                    <param id="0" name="Reference point">0</param>
+                    <param id="1" name="Key {n}"></param>
+                </condition>
+                <condition id="-8" name="Compare two values" sid="347419132754207" type="System">
+                    <param id="0" name="First value">Profile.Value(0,&quot;result&quot;,&quot;is_anonymous&quot;)</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Second value">1</param>
+                </condition>
+                <condition id="-8" name="Compare two values" sid="632359952736714" type="System">
+                    <param id="0" name="First value">Profile.Value(0,&quot;result&quot;,&quot;is_registered&quot;)</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Second value">&quot;undefined&quot;</param>
+                </condition>
+                <condition id="-4" name="Trigger once while true" sid="635534071883560" type="System" />
+            </conditions>
+            <actions>
+                <action id="-10" name="Set value" sid="136746174080307" type="Settings">
+                    <param id="0" name="Instance variable">AuthToken</param>
+                    <param id="1" name="Value">Profile.Value(0,&quot;result&quot;,&quot;token&quot;)</param>
+                </action>
+                <action id="-2" name="Go to layout" sid="127592882967026" type="System">
+                    <param id="0" name="Layout">Downloader</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="734137257523180">
+            <conditions>
+                <condition id="-8" name="Compare two values" sid="162713366218204" type="System">
+                    <param id="0" name="First value">Profile.Value(0,&quot;result&quot;,&quot;is_registered&quot;)</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Second value">1</param>
+                </condition>
+                <condition id="-4" name="Trigger once while true" sid="514811302988353" type="System" />
+            </conditions>
+            <actions>
+                <action id="-2" name="Go to layout" sid="105233134979423" type="System">
+                    <param id="0" name="Layout">Downloader</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block disabled="1" sid="724777989016112">
+            <conditions>
+                <condition id="-22" name="Else" sid="794292932999065" type="System" />
+                <condition id="-4" name="Trigger once while true" sid="748946726654926" type="System" />
+            </conditions>
+            <actions>
+                <action id="0" name="Alert" sid="232236628120606" type="Browser">
+                    <param id="0" name="Message">&quot;Ошибка&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>

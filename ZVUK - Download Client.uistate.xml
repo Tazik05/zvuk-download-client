@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2uistate>
+    <!--This is a UI state file - its content describes the user interface settings when the project was last open.
+It is entirely optional and the project will load without it.  If you are placing the project under source control,
+you probably do not want to add any .uistate.xml files to the repository.-->
+    <configurations>
+        <active>
+            <configuration name="HTML5" />
+        </active>
+        <display name="HTML5" />
+    </configurations>
+    <open-tabs>
+        <layout order="0">Downloader</layout>
+        <layout order="1">Auth</layout>
+        <layout order="3">test</layout>
+        <layout order="5">Layout 1</layout>
+        <event-sheet order="2">Settings</event-sheet>
+        <event-sheet order="4">Event sheet 2</event-sheet>
+        <event-sheet active="1" order="6">Downloader</event-sheet>
+    </open-tabs>
+    <properties>
+        <property expanded="1" name="About" />
+        <property expanded="1" name="Project settings" />
+        <property expanded="0" name="Window Size" />
+        <property expanded="1" name="Configuration Settings" />
+    </properties>
+    <families-expanded root="0">
+        <family expanded="0" name="Buttons" />
+        <family expanded="0" name="Family1" />
+    </families-expanded>
+    <folders-expanded>
+        <folder expanded="1" path="object-folder/" />
+        <folder expanded="1" path="object-folder/JSON/" />
+        <folder expanded="1" path="object-folder/.System/" />
+        <folder expanded="1" path="layout-folder/" />
+        <folder expanded="0" path="event-folder/" />
+        <folder expanded="1" path="file-folder/" />
+        <folder expanded="1" path="sound-folder/" />
+        <folder expanded="1" path="music-folder/" />
+        <folder expanded="1" path="file-folder/Icons/" />
+        <folder expanded="1" path="file-folder/JSONS/" />
+        <folder expanded="1" path="file-folder/Fonts/" />
+        <folder expanded="1" path="animation-folder/Preview/" />
+        <folder expanded="1" path="animation-folder/Sprite2/" />
+        <folder expanded="1" path="animation-folder/volumeico/" />
+        <folder expanded="1" path="animation-folder/PrevPlay/" />
+        <folder expanded="1" path="animation-folder/NextPlay/" />
+        <folder expanded="1" path="animation-folder/PauseStop/" />
+        <folder expanded="1" path="animation-folder/more/" />
+        <folder expanded="1" path="animation-folder/TrackPlayButton/" />
+        <folder expanded="1" path="animation-folder/MusicPlayer_Visualiser/" />
+        <folder expanded="1" path="animation-folder/Black/" />
+        <folder expanded="1" path="animation-folder/MiniPreview/" />
+        <folder expanded="1" path="animation-folder/Rounder/" />
+        <folder expanded="1" path="animation-folder/VolumePNGActive/" />
+        <folder expanded="1" path="animation-folder/VolumePNGInctive/" />
+        <folder expanded="1" path="animation-folder/BG/" />
+        <folder expanded="1" path="animation-folder/TiledSprite/" />
+        <folder expanded="1" path="animation-folder/PreviewBIG/" />
+        <folder expanded="1" path="animation-folder/ProfileIconBG/" />
+        <folder expanded="1" path="animation-folder/Sprite4/" />
+        <folder expanded="1" path="animation-folder/ProfileIcon/" />
+        <folder expanded="1" path="animation-folder/LyricsBG/" />
+        <folder expanded="1" path="animation-folder/CloseLyrics/" />
+        <folder expanded="1" path="animation-folder/Zone1/" />
+        <folder expanded="1" path="animation-folder/SettingsBG/" />
+        <folder expanded="1" path="animation-folder/Sprite5/" />
+        <folder expanded="1" path="animation-folder/Sprite6/" />
+        <folder expanded="1" path="animation-folder/Sprite7/" />
+        <folder expanded="1" path="animation-folder/Sprite8/" />
+        <folder expanded="1" path="animation-folder/Sprite9/" />
+        <folder expanded="1" path="animation-folder/Sprite10/" />
+        <folder expanded="1" path="animation-folder/Sprite11/" />
+    </folders-expanded>
+</c2uistate>

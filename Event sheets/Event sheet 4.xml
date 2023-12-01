@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Event sheet 4</name>
+    <events>
+        <event-block sid="238766262332468">
+            <conditions>
+                <condition id="0" name="On clicked" sid="626166320399652" type="Button8" />
+            </conditions>
+            <actions>
+                <action id="0" name="Start download a file" sid="545084955171571" type="NodeDownloader">
+                    <param id="0" name="Tag">&quot;&quot;</param>
+                    <param id="1" name="URL">&quot;http://cdn66.zvuk.com/track/134216144/streamhq?md5=TkzUUuseA5xFzw-UxHeHRQ&amp;e=1701096417&quot;</param>
+                    <param id="2" name="Path">&quot;G:\mp3test.mp3&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="964334999683953">
+            <conditions>
+                <condition id="-1" name="Every tick" sid="522704872083923" type="System" />
+            </conditions>
+            <actions>
+                <action id="16" name="Set title" sid="878675306009409" type="NWjs">
+                    <param id="0" name="Title">&quot;f: &quot;&amp;NodeDownloader.Percent</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>

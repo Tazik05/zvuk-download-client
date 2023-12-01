@@ -1,0 +1,10 @@
+{
+  "operationName": "getPlaylistTracks",
+  "variables": {
+    "limit": 999999999,
+    "offset": 0,
+    "withStream": false,
+    "id": LISTIDYESYES
+  },
+  "query": "query getPlaylistTracks($id: ID!, $limit: Int = 5, $offset: Int = 0, $withStream: Boolean = false) {\n  playlistTracks(id: $id, limit: $limit, offset: $offset) {\n    artistTemplate\n    artistNames\n    childParam\n    artists {\n      id\n      title\n      image {\n        src\n        palette\n      }\n    }\n    hasFlac\n    zchan\n    lyrics\n    title\n    searchTitle\n    explicit\n    credits\n    availability\n    position\n    duration\n    id\n    condition\n    release {\n      id\n      genres {\n        name\n      }\n      title\n      image {\n        src\n        palette\n        palette_bottom: paletteBottom\n      }\n    }\n    searchTitle\n    title\n    stream @include(if: $withStream) {\n      expire\n      expireDelta\n      high\n      mid\n    }\n  }\n}"
+}

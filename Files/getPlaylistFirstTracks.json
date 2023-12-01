@@ -1,0 +1,10 @@
+{
+  "operationName": "getPlaylistFirstTracks",
+  "variables": {
+    "firstTracks": 999999999,
+    "ids": [
+      LISTIDYESYES
+    ]
+  },
+  "query": "query getPlaylistFirstTracks($ids: [ID!]!, $firstTracks: Int = 4) {\n  getPlaylists(ids: $ids) {\n    id\n    ftracksV1(first: $firstTracks, uniqueReleases: true) {\n      id\n      credits\n      title\n      searchTitle\n      position\n      duration\n      availability\n      artistTemplate\n      condition\n      explicit\n      lyrics\n      hasFlac\n      zchan\n      artists {\n        id\n        title\n      }\n      release {\n        id\n        title\n        image {\n          src\n          palette\n          paletteBottom\n        }\n      }\n    }\n  }\n}"
+}

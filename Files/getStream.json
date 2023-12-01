@@ -1,0 +1,9 @@
+{
+  "operationName": "getStream",
+  "variables": {
+    "ids": [
+      TRACKID
+    ]
+  },
+  "query": "query getStream($ids: [ID!]!) {\n  mediaContents(ids: $ids) {\n    ... on Track {\n      stream {\n        expire\n        expireDelta\n        flacdrm\n        high\n        mid\n      }\n    }\n    ... on Episode {\n      stream {\n        expire\n        expireDelta\n        high\n        mid\n      }\n    }\n    ... on Chapter {\n      stream {\n        expire\n        expireDelta\n        high\n        mid\n      }\n    }\n  }\n}"
+}

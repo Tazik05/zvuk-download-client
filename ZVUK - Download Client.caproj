@@ -1,0 +1,952 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2project>
+    <name>ZVUK - Download Client</name>
+    <description></description>
+    <version>1.0.0</version>
+    <author></author>
+    <author-email></author-email>
+    <author-website>http://</author-website>
+    <app-id>com.mycompany.myapp</app-id>
+    <unique-id>2m2oqhlgof90t</unique-id>
+    <saved-with-version>28000</saved-with-version>
+    <used-plugins>
+        <plugin author="Scirra" id="AJAX" version="1">AJAX</plugin>
+        <plugin author="Scirra (edited by XYZT)" id="BetterAudio" version="1">BetterAudio</plugin>
+        <plugin author="Scirra" id="Browser" version="1">Browser</plugin>
+        <plugin author="Scirra" id="Button" version="1">Button</plugin>
+        <plugin author="Gregory Georges" id="DialogBox" version="1">Dialog Box</plugin>
+        <plugin author="Scirra" id="Dictionary" version="1">Dictionary</plugin>
+        <plugin author="Scirra" id="Function" version="1">Function</plugin>
+        <plugin author="Toby R" id="Globals" version="1">Globals</plugin>
+        <plugin author="Yann Granjon" id="JSON" version="1">JSON</plugin>
+        <plugin author="Scirra" id="Keyboard" version="1">Keyboard</plugin>
+        <plugin author="Scirra" id="List" version="1">List</plugin>
+        <plugin author="FrezerTop" id="MoreCursors" version="1">More Cursors</plugin>
+        <plugin author="Scirra" id="Mouse" version="1">Mouse</plugin>
+        <plugin author="Scirra" id="NinePatch" version="1">9-patch</plugin>
+        <plugin author="Mojtaba Qasemzade Tehrany" id="NodeDownloader" version="1">Node Downloader</plugin>
+        <plugin author="Scirra" id="NodeWebkit" version="1">NW.js</plugin>
+        <plugin author="&lt;your name/organisation&gt;" id="PKP_SweetAlert" version="1">PKP_SweetAlert</plugin>
+        <plugin author="Rex.Rainbow" id="Rex_INI" version="0.100000001">INI</plugin>
+        <plugin author="Rex.Rainbow" id="Rex_PromptWrap" version="0.100000001">Prompt wrap</plugin>
+        <plugin author="Rex.Rainbow" id="Rex_Waker" version="0.100000001">Waker</plugin>
+        <plugin author="Rex.Rainbow" id="Rex_jsshell" version="1">JS Shell</plugin>
+        <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
+        <plugin author="Scirra" id="Text" version="1">Text</plugin>
+        <plugin author="Scirra" id="TextBox" version="1">Text box</plugin>
+        <plugin author="Scirra" id="TiledBg" version="1">Tiled Background</plugin>
+        <plugin author="Sir_G" id="TiledSprite" version="2">Tiled Sprite</plugin>
+        <plugin author="Valera Popov" id="ValerypopoffJSPlugin" version="1">ValerypopoffJS</plugin>
+        <plugin author="Zack0Wack0/Scirra" id="WebStorage" version="1">WebStorage</plugin>
+        <plugin author="Joe7" id="cjs" version="1">Call JS</plugin>
+        <plugin author="Eren Ertuğrul" id="eren_DiscordRPC" version="1">DiscordRPC</plugin>
+        <plugin author="Manuel D.S. Kempf" id="pix_dialogs" version="1">Dialogs</plugin>
+        <plugin author="Scirra" id="progressbar" version="1">Progress bar</plugin>
+        <plugin author="SirG" id="sirg_dialogsystem_simple" version="0.100000001">Dialog System (Simple)</plugin>
+        <plugin author="SirG" id="sirg_fancyBox" version="1">fancyBox</plugin>
+        <plugin author="SirG" id="sirg_notifications" version="1.299999952">Notifications</plugin>
+        <plugin author="Scirra" id="sliderbar" version="1">Slider bar</plugin>
+    </used-plugins>
+    <used-behaviors>
+        <behavior author="Scirra" id="Timer" version="1">Timer</behavior>
+    </used-behaviors>
+    <used-effects>
+        <effect author="Scirra" id="blurhorizontal">Blur Horizontal</effect>
+        <effect author="Scirra" id="blurvertical">Blur Vertical</effect>
+        <effect author="Scirra" id="glowhorizontal">Glow Horizontal</effect>
+        <effect author="Scirra" id="replacecolor">Replace color</effect>
+    </used-effects>
+    <configurations>
+        <configuration exporter-descname="HTML5" exporter-id="html5" name="HTML5" />
+    </configurations>
+    <window-size>
+        <width>854</width>
+        <height>480</height>
+    </window-size>
+    <pixel-rounding>0</pixel-rounding>
+    <preview-effects>1</preview-effects>
+    <first-layout>Auth</first-layout>
+    <use-loader-layout>0</use-loader-layout>
+    <configuration-settings>
+        <prop name="Clear background">No</prop>
+        <prop name="Downscaling">Low quality</prop>
+        <prop name="Enable WebGL">On</prop>
+        <prop name="Fullscreen in browser">Letterbox scale</prop>
+        <prop name="Fullscreen scaling">High quality</prop>
+        <prop name="Loader style">Progress bar &amp; logo</prop>
+        <prop name="Orientations">Landscape</prop>
+        <prop name="Pause on unfocus">No</prop>
+        <prop name="Physics engine">Box2D asm.js</prop>
+        <prop name="Preview browser">NW.js</prop>
+        <prop name="Sampling">Point</prop>
+        <prop name="Use high-DPI display">Yes</prop>
+    </configuration-settings>
+    <object-folder>
+        <object-folder name="JSON">
+            <object-type global="1" name="getPlaylistFirstTracks" sid="665173705644889">
+                <plugin id="JSON" />
+            </object-type>
+            <object-type global="1" name="getStream" sid="335712371305668">
+                <plugin id="JSON" />
+            </object-type>
+            <object-type global="1" name="TempStorageMusicPath" sid="635674076949069">
+                <plugin id="JSON" />
+            </object-type>
+            <object-type global="1" name="Profile" sid="132356262304586">
+                <plugin id="JSON" />
+            </object-type>
+            <object-type global="1" name="Lyrics" sid="865610099093851">
+                <plugin id="JSON" />
+            </object-type>
+            <object-type global="1" name="getuserCollection" sid="999456126450936">
+                <plugin id="JSON" />
+            </object-type>
+            <object-type global="1" name="TrackInfo" sid="377108267461946">
+                <plugin id="JSON" />
+            </object-type>
+            <object-type global="1" name="Updater" sid="242679535008461">
+                <plugin id="JSON" />
+            </object-type>
+        </object-folder>
+        <object-folder name=".System">
+            <object-type name="AJAX" sid="786078397470826">
+                <plugin id="AJAX" />
+            </object-type>
+            <object-type name="BetterAudio" sid="141688813579430">
+                <plugin id="BetterAudio" />
+            </object-type>
+            <object-type name="Function" sid="514461915448437">
+                <plugin id="Function" />
+            </object-type>
+            <object-type name="Browser" sid="733066422697379">
+                <plugin id="Browser" />
+            </object-type>
+            <object-type name="Mouse" sid="576874224544148">
+                <plugin id="Mouse" />
+            </object-type>
+            <object-type name="NWjs" sid="595100982172964">
+                <plugin id="NodeWebkit" />
+            </object-type>
+            <object-type name="Keyboard" sid="319474782640062">
+                <plugin id="Keyboard" />
+            </object-type>
+            <object-type global="1" name="Settings" sid="666328304604098">
+                <plugin id="Globals" />
+                <instance-variables>
+                    <instance-variable comment="Токен, который нужен для взаимодействия с сайтом" name="AuthToken" sid="732065775897713" type="string" />
+                    <instance-variable name="PlaylistID" sid="349294598414943" type="string" />
+                    <instance-variable name="TrackID" sid="139855630012889" type="string" />
+                    <instance-variable name="PushJSON_GPFT" sid="957204926166171" type="string" />
+                    <instance-variable name="PushJSON_GS" sid="113158638941897" type="string" />
+                    <instance-variable name="PushJSON_GUC" sid="804319456754351" type="string" />
+                    <instance-variable name="PushJSON_GT" sid="623730011302414" type="string" />
+                    <instance-variable name="LastPreviewY" sid="377040523921465" type="number" />
+                    <instance-variable name="LoopIndexImage" sid="111915340087215" type="number" />
+                    <instance-variable name="StartIndex" sid="766304014745984" type="number" />
+                    <instance-variable name="EndIndex" sid="290157389064966" type="number" />
+                    <instance-variable name="LastImage" sid="971119045489611" type="number" />
+                    <instance-variable name="CurrentPage" sid="277594819768644" type="number" />
+                    <instance-variable name="MusicLoad" sid="440890870617324" type="boolean" />
+                    <instance-variable name="PreviewTrack" sid="903549735176877" type="string" />
+                    <instance-variable name="Played" sid="306060638721907" type="boolean" />
+                    <instance-variable name="EQVISUALSPEED" sid="313365975211741" type="number" />
+                    <instance-variable name="TrackInfo" sid="633623262725900" type="string" />
+                    <instance-variable name="PlayListSize" sid="240030189410490" type="number" />
+                    <instance-variable name="CurPlaying" sid="722505534382023" type="number" />
+                    <instance-variable name="MasterValue" sid="149548282656254" type="number" />
+                    <instance-variable name="ValueTo" sid="310455145259238" type="number" />
+                    <instance-variable name="SweetAlertID" sid="230854991022906" type="number" />
+                    <instance-variable name="LyricsOffset" sid="116537999998240" type="number" />
+                    <instance-variable name="LyricsLastY" sid="544459516787805" type="number" />
+                    <instance-variable name="CameraMode" sid="725423109630192" type="number" />
+                    <instance-variable name="CameraY" sid="408675497778785" type="number" />
+                    <instance-variable name="LyricsVisible" sid="714805691648667" type="boolean" />
+                    <instance-variable name="Settings" sid="710028684372821" type="boolean" />
+                    <instance-variable name="SettingsSelected" sid="552376810045015" type="number" />
+                    <instance-variable name="BuildInfo" sid="682825849484788" type="string" />
+                    <instance-variable name="OldResp" sid="979493982749885" type="boolean" />
+                    <instance-variable name="LyricsStatic" sid="167807887054230" type="boolean" />
+                    <instance-variable name="More" sid="604603195579764" type="boolean" />
+                    <instance-variable name="LyricsGlobalVisible" sid="902472046294241" type="boolean" />
+                    <instance-variable name="error1" sid="807633728967963" type="string" />
+                    <instance-variable name="TempLogin" sid="441410576565579" type="boolean" />
+                    <instance-variable name="UseHTTPS" sid="379577735670228" type="boolean" />
+                    <instance-variable name="CanScrollLyrics" sid="170374101727813" type="boolean" />
+                </instance-variables>
+            </object-type>
+            <object-type name="PromptWrap" sid="494326756235545">
+                <plugin id="Rex_PromptWrap" />
+            </object-type>
+            <object-type name="NodeDownloader" sid="688787727123482">
+                <plugin id="NodeDownloader" />
+            </object-type>
+            <object-type name="DialogBox" sid="386632438915348">
+                <plugin id="DialogBox" />
+            </object-type>
+            <object-type name="DialogSystemSimple" sid="521930466444530">
+                <plugin id="sirg_dialogsystem_simple" />
+            </object-type>
+            <object-type global="1" name="CallJS" sid="644678058667414">
+                <plugin id="cjs" />
+            </object-type>
+            <object-type name="MoreCursors" sid="580721719599678">
+                <plugin id="MoreCursors" />
+            </object-type>
+            <object-type global="1" name="JSShell" sid="316030895229556">
+                <plugin id="Rex_jsshell" />
+            </object-type>
+            <object-type name="ValerypopoffJS" sid="906154814268101">
+                <plugin id="ValerypopoffJSPlugin" />
+            </object-type>
+            <object-type name="Waker" sid="226829803036080">
+                <plugin id="Rex_Waker" />
+            </object-type>
+            <object-type global="1" name="DownloadHelper" sid="361800691784689">
+                <plugin id="Globals" />
+                <instance-variables>
+                    <instance-variable name="DownloadHelper" sid="172986847255168" type="number" />
+                    <instance-variable name="RunDownloading" sid="302580919631381" type="boolean" />
+                    <instance-variable name="Downloading" sid="994112768858644" type="boolean" />
+                    <instance-variable name="Variable1" sid="987040400947205" type="boolean" />
+                    <instance-variable comment="LOW/HIGH/FLAC" name="Quality" sid="145843941981169" type="string" />
+                    <instance-variable name="ExportProcess" sid="105592861079585" type="boolean" />
+                    <instance-variable name="SaveTo" sid="490896762803229" type="string" />
+                    <instance-variable name="CurrentFileName" sid="518672680907218" type="string" />
+                    <instance-variable name="SizeNotCorrentWarn" sid="683439953877250" type="boolean" />
+                    <instance-variable comment="mp3/flac" name="FileExt" sid="650281642714773" type="string" />
+                    <instance-variable name="CurrentTrack" sid="871861653797765" type="boolean" />
+                </instance-variables>
+            </object-type>
+            <object-type global="1" name="Dictionary" sid="882695246339385">
+                <plugin id="Dictionary" />
+            </object-type>
+            <object-type name="fancyBox" sid="973861576513006">
+                <plugin id="sirg_fancyBox" />
+            </object-type>
+            <object-type name="Notifications" sid="745296885457548">
+                <plugin id="sirg_notifications" />
+            </object-type>
+            <object-type global="1" name="INI" sid="236102793346822">
+                <plugin id="Rex_INI" />
+            </object-type>
+            <object-type name="Dialogs" sid="934841666459110">
+                <plugin id="pix_dialogs" />
+            </object-type>
+        </object-folder>
+        <object-type name="TextBox" sid="993742824946899">
+            <plugin id="TextBox" />
+        </object-type>
+        <object-type name="Text" sid="414599675015813">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="TextBox2" sid="829996981861295">
+            <plugin id="TextBox" />
+        </object-type>
+        <object-type name="TextBox3" sid="157281090538218">
+            <plugin id="TextBox" />
+        </object-type>
+        <object-type name="Button" sid="524887805688090">
+            <plugin id="Button" />
+        </object-type>
+        <object-type name="resp" sid="401256382855973">
+            <plugin id="TextBox" />
+        </object-type>
+        <object-type name="Button2" sid="746423343028161">
+            <plugin id="Button" />
+        </object-type>
+        <object-type name="resp2" sid="247468138627971">
+            <plugin id="TextBox" />
+        </object-type>
+        <object-type name="Button3" sid="931140218374110">
+            <plugin id="Button" />
+        </object-type>
+        <object-type name="Button4" sid="305320260085434">
+            <plugin id="Button" />
+        </object-type>
+        <object-type name="Button5" sid="466340184829862">
+            <plugin id="Button" />
+        </object-type>
+        <object-type name="Button6" sid="108987994511095">
+            <plugin id="Button" />
+        </object-type>
+        <object-type name="Text2" sid="599020987993562">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="TokenBox" sid="886022927975759">
+            <plugin id="TextBox" />
+        </object-type>
+        <object-type name="Login" sid="725240421895727">
+            <plugin id="Button" />
+        </object-type>
+        <object-type name="Text3" sid="795004825132837">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="Text4" sid="669618134007866">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="TextBox5" sid="705970094880623">
+            <plugin id="TextBox" />
+        </object-type>
+        <object-type name="Preview" sid="805708731421869">
+            <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable name="LinkPreview" sid="629614635309692" type="string" />
+                <instance-variable name="LinkPreviewHigh" sid="618409297182588" type="string" />
+                <instance-variable name="TrackID" sid="840499733653875" type="string" />
+                <instance-variable name="MetaInfo" sid="611499176369085" type="string" />
+                <instance-variable name="ID" sid="637987582720357" type="number" />
+            </instance-variables>
+            <animation-folder>
+                <animation framecount="12" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="660149610500411" speed="0">
+                    <frame duration="1" hotspotX="0" hotspotY="0" />
+                    <frame duration="1" hotspotX="0" hotspotY="0" />
+                    <frame duration="1" hotspotX="0" hotspotY="0" />
+                    <frame duration="1" hotspotX="0" hotspotY="0" />
+                    <frame duration="1" hotspotX="0" hotspotY="0" />
+                    <frame duration="1" hotspotX="0" hotspotY="0" />
+                    <frame duration="1" hotspotX="0" hotspotY="0" />
+                    <frame duration="1" hotspotX="0" hotspotY="0" />
+                    <frame duration="1" hotspotX="0" hotspotY="0" />
+                    <frame duration="1" hotspotX="0" hotspotY="0" />
+                    <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\Tazik05\Desktop\Безымянный.png" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="SearchBox" sid="594422742658036">
+            <plugin id="TextBox" />
+        </object-type>
+        <object-type name="SearchButton" sid="990081952261788">
+            <plugin id="Button" />
+        </object-type>
+        <object-type name="LetsSearchMusic" sid="694598724961956">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="Text6" sid="760760301285064">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="Text7" sid="372848473542637">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="Text8" sid="961247797503514">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="Sprite2" sid="236535561041785">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="170083424372605" speed="5">
+                    <frame duration="1" hotspotX="1" hotspotY="1" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="volumeico" sid="937036786690182">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="2" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="665019432165572" speed="0">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.470588" hotspotY="0.526316" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="SliderBar" sid="504737196802437">
+            <plugin id="sliderbar" />
+        </object-type>
+        <object-type name="ProgressBar" sid="244016101041145">
+            <plugin id="progressbar" />
+        </object-type>
+        <object-type name="PrevPlay" sid="976050947666911">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="2" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="457866447204236" speed="0">
+                    <frame duration="1" hotspotX="0.518519" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.518519" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="NextPlay" sid="164470713566051">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="2" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="646085132326375" speed="0">
+                    <frame duration="1" hotspotX="0.481481" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.481481" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="PauseStop" sid="962125522138284">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="4" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="842720517848356" speed="0">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="more" sid="538584727802237">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="4" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="763999586523004" speed="0">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Tazik05\Desktop\Безымянны4й.png" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="9patch" sid="171893761919145">
+            <plugin id="NinePatch" />
+            <texture />
+        </object-type>
+        <object-type name="nextpage" sid="489790346598114">
+            <plugin id="Button" />
+        </object-type>
+        <object-type name="prevpage" sid="527284357260523">
+            <plugin id="Button" />
+        </object-type>
+        <object-type name="PageList" sid="959718775075772">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="TrackPlayButton" sid="929315172119991">
+            <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable name="TrackID" sid="198434470682538" type="string" />
+            </instance-variables>
+            <animation-folder>
+                <animation framecount="2" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="552687399850323" speed="0">
+                    <frame duration="1" hotspotX="0" hotspotY="0" />
+                    <frame duration="1" hotspotX="0" hotspotY="0" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="MusicPlayer_Visualiser" sid="387173828133677">
+            <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable name="FreqBin" sid="177499293565095" type="number" />
+                <instance-variable name="OldFreqBin" sid="721898548438115" type="number" />
+            </instance-variables>
+            <effects>
+                <effect-type name="ReplaceColor">
+                    <effect id="replacecolor" />
+                </effect-type>
+                <effect-type name="GlowHorizontal">
+                    <effect id="glowhorizontal" />
+                </effect-type>
+            </effects>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="102177787624981" speed="5">
+                    <frame duration="1" hotspotX="0" hotspotY="1" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Black" sid="287240204768541">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="784705239037456" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="List" sid="992418879868091">
+            <plugin id="List" />
+        </object-type>
+        <object-type name="MiniPreview" sid="486289580622680">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="4" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="932257579087390" speed="0">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="CurrentPlayText" sid="651848607831131">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="Rounder" sid="163641498005221">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="570359983582000" speed="5">
+                    <frame duration="1" hotspotX="0" hotspotY="0" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="VolumePNGActive" sid="953299795388226">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="501765116571700" speed="5">
+                    <frame duration="1" hotspotX="0" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="VolumePNGInctive" sid="560003706400535">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="940338138791271" speed="5">
+                    <frame duration="1" hotspotX="0" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="BG" sid="396376667964061">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="785958184112991" speed="5">
+                    <frame duration="1" hotspotX="0" hotspotY="0" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="TiledSprite" sid="731944066088546">
+            <plugin id="TiledSprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="387129073279716" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="9patch2" sid="689083878664836">
+            <plugin id="NinePatch" />
+            <effects>
+                <effect-type name="ReplaceColor">
+                    <effect id="replacecolor" />
+                </effect-type>
+            </effects>
+            <texture />
+        </object-type>
+        <object-type name="PreviewBIG" sid="148446126742114">
+            <plugin id="Sprite" />
+            <effects>
+                <effect-type name="BlurHorizontal">
+                    <effect id="blurhorizontal" />
+                </effect-type>
+                <effect-type name="BlurVertical">
+                    <effect id="blurvertical" />
+                </effect-type>
+            </effects>
+            <animation-folder>
+                <animation framecount="4" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="161391979225074" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="ListID" sid="988910964206805">
+            <plugin id="List" />
+        </object-type>
+        <object-type name="ListLinks" sid="479215038002640">
+            <plugin id="List" />
+            <behaviors>
+                <behavior-type name="Timer" sid="838135132082237">
+                    <behavior id="Timer" />
+                </behavior-type>
+            </behaviors>
+        </object-type>
+        <object-type name="Button8" sid="956751636268679">
+            <plugin id="Button" />
+        </object-type>
+        <object-type name="downloaded1" sid="545604802907922">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="ProfileIconBG" sid="437149870096280">
+            <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable name="MenuVisible" sid="477301202161562" type="boolean" />
+            </instance-variables>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="770649662301437" speed="5">
+                    <frame duration="1" hotspotX="0.515152" hotspotY="0.515152" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Sprite4" sid="139750012945508">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="451932863881326" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="TiledBackground" sid="815344623387847">
+            <plugin id="TiledBg" />
+            <texture />
+        </object-type>
+        <object-type name="TrackTimeBG" sid="792945861786490">
+            <plugin id="NinePatch" />
+            <texture />
+        </object-type>
+        <object-type name="TrackTimeTEXT" sid="476853895214678">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="PKP_SweetAlert" sid="140183425559954">
+            <plugin id="PKP_SweetAlert" />
+        </object-type>
+        <object-type name="9patch3" sid="566233663381225">
+            <plugin id="NinePatch" />
+            <texture />
+        </object-type>
+        <object-type name="9patch4" sid="908169010171391">
+            <plugin id="NinePatch" />
+            <texture />
+        </object-type>
+        <object-type name="Text5" sid="280023549947360">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="ProfileIcon" sid="163489195739377">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="689022113451565" speed="5">
+                    <frame duration="1" hotspotX="0.515152" hotspotY="0.515152" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="LyricsDebug" sid="377300596717780">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="Text10" sid="547969285129248">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="List2" sid="965814478844645">
+            <plugin id="List" />
+        </object-type>
+        <object-type name="LyricsBG" sid="356653497656632">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="465124468813368" speed="5">
+                    <frame duration="1" hotspotX="0" hotspotY="0" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="CloseLyrics" sid="468068201296188">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="2" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="902860067375456" speed="0">
+                    <frame duration="1" hotspotX="0.511628" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.511628" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="LyricsBIG" sid="173419156523437">
+            <plugin id="Text" />
+            <instance-variables>
+                <instance-variable name="Timing" sid="332270574230034" type="number" />
+                <instance-variable name="Active" sid="872309963584691" type="boolean" />
+                <instance-variable name="TextSize" sid="952926021227720" type="number" />
+                <instance-variable name="Static" sid="720746573135486" type="boolean" />
+            </instance-variables>
+        </object-type>
+        <object-type name="Zone1" sid="223403015720469">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="456197279377852" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="SettingsBG" sid="255354079709774">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="254980472421186" speed="5">
+                    <frame duration="1" hotspotX="0" hotspotY="0" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Sprite5" sid="869285687506416">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="435682877547274" speed="5">
+                    <frame duration="1" hotspotX="0" hotspotY="0" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="SettingTextMain" sid="351304132785014">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="SettingTextGeneral" sid="481734981039985">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="Sprite6" sid="203428563836334">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="499337953673103" speed="5">
+                    <frame duration="1" hotspotX="0" hotspotY="0" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="SliderBar2" sid="815344948278163">
+            <plugin id="sliderbar" />
+        </object-type>
+        <object-type name="Sprite7" sid="590885560280559">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="497274039612621" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Sprite8" sid="432667645826406">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="923969610508156" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Sprite9" sid="687888679259182">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="210483677601273" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Tazik05\Desktop\photo_2022-07-02_17-13-30.jpg" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Sprite10" sid="730529299757026">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="502200196978381" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="E:\копия 10ки\двиг\LinumFrameworkLegacy_v0.2.1\Files\icon-128.png">
+                        <collision-poly>
+                            <point x="0.171875" y="0.171875" />
+                            <point x="0.5" y="0" />
+                            <point x="0.828125" y="0.171875" />
+                            <point x="1" y="0.5" />
+                            <point x="0.859375" y="0.859375" />
+                            <point x="0.5" y="0.953125" />
+                            <point x="0.125" y="0.875" />
+                            <point x="0" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Sprite11" sid="515103075489352">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="897078782493735" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Tazik05\Desktop\origico.png">
+                        <collision-poly>
+                            <point x="0.154297" y="0.154297" />
+                            <point x="0.5" y="0.00976563" />
+                            <point x="0.847656" y="0.152344" />
+                            <point x="0.990234" y="0.5" />
+                            <point x="0.845703" y="0.845703" />
+                            <point x="0.5" y="0.986328" />
+                            <point x="0.15625" y="0.84375" />
+                            <point x="0.0136719" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="AudioVisualChecker" sid="416164566771771">
+            <plugin id="Button" />
+        </object-type>
+        <object-type name="AudioVisualColor" sid="897349672877597">
+            <plugin id="TextBox" />
+        </object-type>
+        <object-type name="Button10" sid="450025888210652">
+            <plugin id="Button" />
+        </object-type>
+        <object-type name="BGPNGChecker" sid="286233906082118">
+            <plugin id="Button" />
+        </object-type>
+        <object-type name="SliderBar3" sid="565060763512182">
+            <plugin id="sliderbar" />
+        </object-type>
+        <object-type name="AudioVisualColor2" sid="197026932097064">
+            <plugin id="TextBox" />
+        </object-type>
+        <object-type name="Button11" sid="929920740180736">
+            <plugin id="Button" />
+        </object-type>
+        <object-type name="CheckUpdate" sid="853061378520604">
+            <plugin id="Button" />
+        </object-type>
+        <object-type name="Button12" sid="255452981028755">
+            <plugin id="Button" />
+        </object-type>
+        <object-type name="List3" sid="790730668658216">
+            <plugin id="List" />
+        </object-type>
+        <object-type name="Button13" sid="994942762779104">
+            <plugin id="Button" />
+        </object-type>
+        <object-type name="Button14" sid="363968137978885">
+            <plugin id="Button" />
+        </object-type>
+        <object-type name="Button15" sid="717530266223819">
+            <plugin id="Button" />
+        </object-type>
+        <object-type name="DiscordRPC" sid="128287674854755">
+            <plugin id="eren_DiscordRPC" />
+        </object-type>
+        <object-type name="9patch5" sid="604446026813555">
+            <plugin id="NinePatch" />
+            <texture />
+        </object-type>
+        <object-type name="Button16" sid="328551388227912">
+            <plugin id="Button" />
+        </object-type>
+        <object-type name="usehttp" sid="693741683473489">
+            <plugin id="Button" />
+        </object-type>
+        <object-type name="Button7" sid="802788955428738">
+            <plugin id="Button" />
+        </object-type>
+        <object-type name="Button18" sid="469553885369493">
+            <plugin id="Button" />
+        </object-type>
+        <object-type name="Button17" sid="919310290776675">
+            <plugin id="Button" />
+        </object-type>
+        <object-type name="WebStorage" sid="460296443641926">
+            <plugin id="WebStorage" />
+        </object-type>
+        <object-type name="DownloadingQuality" sid="866815022737212">
+            <plugin id="List" />
+        </object-type>
+        <object-type name="PlayerQuality" sid="538478429801471">
+            <plugin id="List" />
+        </object-type>
+    </object-folder>
+    <families>
+        <family name="Buttons" plugin-id="Button" sid="325546125245135">
+            <members>
+                <member>Button</member>
+                <member>Button2</member>
+                <member>Button3</member>
+                <member>Button4</member>
+                <member>Button5</member>
+                <member>Button6</member>
+                <member>Login</member>
+                <member>nextpage</member>
+                <member>prevpage</member>
+                <member>SearchButton</member>
+            </members>
+        </family>
+        <family name="Family1" plugin-id="Text" sid="897082133238021">
+            <members>
+                <member>CurrentPlayText</member>
+                <member>downloaded1</member>
+                <member>LetsSearchMusic</member>
+                <member>LyricsBIG</member>
+                <member>LyricsDebug</member>
+                <member>PageList</member>
+                <member>SettingTextGeneral</member>
+                <member>SettingTextMain</member>
+                <member>Text</member>
+                <member>Text10</member>
+                <member>Text2</member>
+                <member>Text3</member>
+                <member>Text4</member>
+                <member>Text5</member>
+                <member>Text6</member>
+                <member>Text7</member>
+                <member>Text8</member>
+                <member>TrackTimeTEXT</member>
+            </members>
+        </family>
+    </families>
+    <layout-folder>
+        <layout>Layout 1.xml</layout>
+        <layout>Auth.xml</layout>
+        <layout>Downloader.xml</layout>
+        <layout>test.xml</layout>
+    </layout-folder>
+    <event-folder>
+        <event-sheet>Event sheet 1.xml</event-sheet>
+        <event-sheet>Event sheet 2.xml</event-sheet>
+        <event-sheet>Downloader.xml</event-sheet>
+        <event-sheet>Event sheet 4.xml</event-sheet>
+        <event-sheet>Settings.xml</event-sheet>
+    </event-folder>
+    <global-instances>
+        <global-instance type="AJAX" uid="0" />
+        <global-instance type="NWjs" uid="11" />
+        <global-instance type="Browser" uid="12" />
+        <global-instance type="Mouse" uid="32" />
+        <global-instance type="Function" uid="45" />
+        <global-instance type="Keyboard" uid="46" />
+        <global-instance type="MoreCursors" uid="49" />
+        <global-instance type="BetterAudio" uid="50">
+            <properties>
+                <timescale-audio>Off</timescale-audio>
+                <saveload>All</saveload>
+                <play-in-background>Yes</play-in-background>
+                <positioned-audio></positioned-audio>
+                <panning-model>HRTF</panning-model>
+                <distance-model>Inverse</distance-model>
+                <listener-z-height>600</listener-z-height>
+                <reference-distance>600</reference-distance>
+                <maximum-distance>10000</maximum-distance>
+                <roll-off-factor>1</roll-off-factor>
+            </properties>
+        </global-instance>
+        <global-instance type="PromptWrap" uid="53">
+            <properties>
+                <enable-wrap>Yes</enable-wrap>
+            </properties>
+        </global-instance>
+        <global-instance type="Waker" uid="34">
+            <properties>
+                <frame-rate>60</frame-rate>
+                <enable>Yes</enable>
+            </properties>
+        </global-instance>
+        <global-instance type="DialogSystemSimple" uid="56" />
+        <global-instance type="DialogBox" uid="57" />
+        <global-instance type="ValerypopoffJS" uid="64">
+            <properties>
+                <script-files></script-files>
+            </properties>
+        </global-instance>
+        <global-instance type="NodeDownloader" uid="70" />
+        <global-instance type="PKP_SweetAlert" uid="78" />
+        <global-instance type="Notifications" uid="84">
+            <properties>
+                <position>bottom-right</position>
+                <fade-in-speed>medium</fade-in-speed>
+                <fade-out-speed>medium</fade-out-speed>
+                <time>5000</time>
+                <max-number>0</max-number>
+                <default-options></default-options>
+                <sticky>true</sticky>
+                <style>Dark</style>
+            </properties>
+        </global-instance>
+        <global-instance type="fancyBox" uid="85" />
+        <global-instance type="DiscordRPC" uid="149">
+            <properties>
+                <client-id>1179048637330898964</client-id>
+                <preview_mode>False</preview_mode>
+            </properties>
+        </global-instance>
+        <global-instance type="WebStorage" uid="173" />
+        <global-instance type="Dialogs" uid="182" />
+    </global-instances>
+    <sounds-folder />
+    <music-folder />
+    <files-folder>
+        <file-folder name="Icons">
+            <file name="icon-16.png" />
+            <file name="icon-32.png" />
+            <file name="icon-114.png" />
+            <file name="icon-128.png" />
+            <file name="icon-256.png" />
+            <file name="loading-logo.png" />
+        </file-folder>
+        <file-folder name="JSONS">
+            <file name="getPlaylistFirstTracks.json" />
+            <file name="getPlaylistFirstTracks10.json" />
+            <file name="getStream.json" />
+            <file name="getPlaylistTracks.json" />
+            <file name="userCollection.json" />
+            <file name="getTracks.json" />
+        </file-folder>
+        <file-folder name="Fonts">
+            <file name="pixel.css" />
+            <file name="Minecraft Rus NEW.otf" />
+        </file-folder>
+    </files-folder>
+</c2project>

@@ -1,0 +1,5 @@
+{
+  "operationName": "userCollection",
+  "variables": {},
+  "query": "query userCollection {\n  collection {\n    tracks {\n      artistTemplate\n    artistNames\n    childParam\n    artists {\n      id\n      title\n      image {\n        src\n        palette\n      }\n    }\n    hasFlac\n    zchan\n    lyrics\n    title\n    searchTitle\n    explicit\n    credits\n    availability\n    position\n    duration\n    id\n    condition\n    release {\n      id\n      genres {\n        name\n      }\n      title\n      image {\n        src\n        palette\n        palette_bottom: paletteBottom\n      }\n    }\n    searchTitle\n    title\n    }\n  }\n}"
+}
