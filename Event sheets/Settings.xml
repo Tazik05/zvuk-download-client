@@ -1624,7 +1624,7 @@
                     </conditions>
                     <actions>
                         <action id="6" name="Set checked" sid="375123843987822" type="usehttpsfordownload">
-                            <param id="0" name="State">1</param>
+                            <param id="0" name="State">0</param>
                         </action>
                     </actions>
                 </event-block>
@@ -1966,5 +1966,69 @@
                 </event-block>
             </sub-events>
         </event-group>
+        <event-block sid="356643008073899">
+            <conditions>
+                <condition id="0" name="On key pressed" sid="327763111998166" type="Keyboard">
+                    <param id="0" name="Key">48</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="125678033483201">
+                    <conditions>
+                        <condition id="-9" name="Layer is visible" sid="600156178691622" type="System">
+                            <param id="0" name="Layer">&quot;Debug&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-16" name="Wait" sid="333088220820963" type="System">
+                            <param id="0" name="Seconds">0.1</param>
+                        </action>
+                        <action id="-4" name="Set layer visible" sid="219778567686910" type="System">
+                            <param id="0" name="Layer">&quot;Debug&quot;</param>
+                            <param id="1" name="Visibility">0</param>
+                        </action>
+                        <action id="-12" name="Set group active" sid="790060591669742" type="System">
+                            <param id="0" name="Group name">&quot;[ Debug ]&quot;</param>
+                            <param id="1" name="State">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="206950441047287">
+                    <conditions>
+                        <condition id="-9" inverted="1" name="Layer is visible" sid="785717339521568" type="System">
+                            <param id="0" name="Layer">&quot;Debug&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-16" name="Wait" sid="545023197098636" type="System">
+                            <param id="0" name="Seconds">0.1</param>
+                        </action>
+                        <action id="-4" name="Set layer visible" sid="259274159129427" type="System">
+                            <param id="0" name="Layer">&quot;Debug&quot;</param>
+                            <param id="1" name="Visibility">1</param>
+                        </action>
+                        <action id="-12" name="Set group active" sid="348523503381157" type="System">
+                            <param id="0" name="Group name">&quot;[ Debug ]&quot;</param>
+                            <param id="1" name="State">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="498342962424685">
+            <conditions>
+                <condition id="2" name="Key is down" sid="197135584269638" type="Keyboard">
+                    <param id="0" name="Key">16</param>
+                </condition>
+                <condition id="2" name="Key is down" sid="660474866257352" type="Keyboard">
+                    <param id="0" name="Key">9</param>
+                </condition>
+                <condition id="-4" name="Trigger once while true" sid="932850982424239" type="System" />
+            </conditions>
+            <actions>
+                <action id="9" name="Reload" sid="404009120089993" type="Browser" />
+            </actions>
+        </event-block>
     </events>
 </c2eventsheet>

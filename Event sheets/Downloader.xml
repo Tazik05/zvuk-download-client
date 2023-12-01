@@ -243,6 +243,9 @@
                         <action id="-15" name="Set visible" sid="167023759918457" type="PreviewBIG">
                             <param id="0" name="Visibility">0</param>
                         </action>
+                        <action id="0" name="Alert" sid="985268887155206" type="Browser">
+                            <param id="0" name="Message">&quot;Внимание! Если у вас аккаунт без подписки и вы хотите скачивать треки, то вы должны зайти в настройки и поставить галочку на пункте &apos;HTTPS для скачивания&apos; ,для пользователей с подпиской нужно снять этот пункт.&quot;&amp;newline&amp;newline&amp;&quot;Чтобы зайти в настройки, нажмите на картинку профиля, нажмите настройки и перейдите в раздел &apos;программа&apos;, и в &apos;запросах&apos; вы найдёте данный пункт&quot;&amp;newline&amp;newline&amp;&quot;Если что-то произошло с приложением, то можете выполнить жёсткую перезагрузку зажав shift + tab&quot;</param>
+                        </action>
                     </actions>
                     <sub-events>
                         <event-block sid="617958195334183">
@@ -2519,7 +2522,7 @@
                                 </action>
                                 <action id="10" name="Load image from URL" sid="151273349880096" type="ProfileIcon">
                                     <param id="0" name="URI">&quot;https://zvuk.com&quot;&amp;replace(replace(Profile.AsJson(0,&quot;result&quot;,&quot;image&quot;,&quot;src&quot;),&quot;{size}&quot;,&quot;32x32&quot;),&quot;&quot;&quot;&quot;,&quot;&quot;)</param>
-                                    <param id="1" name="Size">0</param>
+                                    <param id="1" name="Size">1</param>
                                     <param id="2" name="Cross-origin">0</param>
                                 </action>
                                 <action disabled="1" id="0" name="Alert" sid="219268118345865" type="Browser">
@@ -2574,6 +2577,9 @@
                                 <action id="-10" name="Set value" sid="320503374234175" type="Settings">
                                     <param id="0" name="Instance variable">SweetAlertID</param>
                                     <param id="1" name="Value">0</param>
+                                </action>
+                                <action id="2" name="Remove local value" sid="323586869106188" type="WebStorage">
+                                    <param id="0" name="Key">&quot;token&quot;</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -3048,7 +3054,7 @@
                     </conditions>
                     <actions>
                         <action id="-3" name="Set position" sid="554707254575027" type="PageList">
-                            <param id="0" name="X">768</param>
+                            <param id="0" name="X">764</param>
                             <param id="1" name="Y">344</param>
                         </action>
                         <action id="-3" name="Set position" sid="455776103094207" type="nextpage">
@@ -3056,7 +3062,7 @@
                             <param id="1" name="Y">392</param>
                         </action>
                         <action id="-3" name="Set position" sid="553852892679217" type="prevpage">
-                            <param id="0" name="X">772</param>
+                            <param id="0" name="X">766</param>
                             <param id="1" name="Y">392</param>
                         </action>
                     </actions>
@@ -3070,15 +3076,15 @@
                     </conditions>
                     <actions>
                         <action id="-3" name="Set position" sid="577101269733342" type="PageList">
-                            <param id="0" name="X">454</param>
+                            <param id="0" name="X">452</param>
                             <param id="1" name="Y">344</param>
                         </action>
-                        <action id="-3" name="Set position" sid="286678495218474" type="nextpage">
-                            <param id="0" name="X">494</param>
+                        <action id="-3" name="Set position" sid="286678495218474" type="prevpage">
+                            <param id="0" name="X">454</param>
                             <param id="1" name="Y">392</param>
                         </action>
-                        <action id="-3" name="Set position" sid="684615376460945" type="prevpage">
-                            <param id="0" name="X">458</param>
+                        <action id="-3" name="Set position" sid="684615376460945" type="nextpage">
+                            <param id="0" name="X">496</param>
                             <param id="1" name="Y">392</param>
                         </action>
                     </actions>
@@ -5582,6 +5588,10 @@
                             <param id="0" name="Property name">&quot;border-radius&quot;</param>
                             <param id="1" name="Value">&quot;24px&quot;</param>
                         </action>
+                        <action id="7" name="Set CSS style" sid="524507606935508" type="SearchBox">
+                            <param id="0" name="Property name">&quot;padding-left&quot;</param>
+                            <param id="1" name="Value">&quot;12px&quot;</param>
+                        </action>
                         <action id="5" name="Set CSS style" sid="635546567749175" type="Buttons">
                             <param id="0" name="Property name">&quot;background&quot;</param>
                             <param id="1" name="Value">&quot;#151210&quot;</param>
@@ -7067,6 +7077,9 @@
                                         </condition>
                                     </conditions>
                                     <actions>
+                                        <action disabled="1" id="0" name="Alert" sid="640731451819833" type="Browser">
+                                            <param id="0" name="Message">replace(ListLinks.SelectedText,str(DownloadHelper.ReplaceHTTPS),&quot;http&quot;)</param>
+                                        </action>
                                         <action id="0" name="Start download a file" sid="864037216594263" type="NodeDownloader">
                                             <param id="0" name="Tag">&quot;Download&quot;</param>
                                             <param id="1" name="URL">replace(ListLinks.SelectedText,str(DownloadHelper.ReplaceHTTPS),&quot;http&quot;)</param>

@@ -60,6 +60,10 @@
                     <param id="0" name="Property name">&quot;border&quot;</param>
                     <param id="1" name="Value">&quot;none&quot;</param>
                 </action>
+                <action id="7" name="Set CSS style" sid="191005222085080" type="TokenBox">
+                    <param id="0" name="Property name">&quot;padding-left&quot;</param>
+                    <param id="1" name="Value">&quot;12px&quot;</param>
+                </action>
             </actions>
         </event-block>
         <event-block sid="438217074219471">
@@ -282,6 +286,10 @@
                     <param id="0" name="Instance variable">AuthToken</param>
                     <param id="1" name="Value">TokenBox.Text</param>
                 </action>
+                <action id="0" name="Set local value" sid="236376884131922" type="WebStorage">
+                    <param id="0" name="Key">&quot;token&quot;</param>
+                    <param id="1" name="Value">TokenBox.Text</param>
+                </action>
                 <action id="55" name="Clear" sid="237004546429283" type="Profile">
                     <param id="0" name="Reference point">0</param>
                     <param id="1" name="Key {n}"></param>
@@ -295,6 +303,36 @@
                     <param id="1" name="Value">Settings.AuthToken</param>
                 </action>
                 <action id="0" name="Request URL" sid="329628291617576" type="AJAX">
+                    <param id="0" name="Tag">&quot;getProfile&quot;</param>
+                    <param id="1" name="URL">&quot;https://zvuk.com/api/tiny/profile&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="361095348841501">
+            <conditions>
+                <condition id="3" name="Local key exists" sid="860835796071734" type="WebStorage">
+                    <param id="0" name="Key">&quot;token&quot;</param>
+                </condition>
+                <condition id="-4" name="Trigger once while true" sid="315103906983177" type="System" />
+            </conditions>
+            <actions>
+                <action id="-10" name="Set value" sid="735871013266561" type="Settings">
+                    <param id="0" name="Instance variable">AuthToken</param>
+                    <param id="1" name="Value">WebStorage.LocalValue(&quot;token&quot;)</param>
+                </action>
+                <action id="55" name="Clear" sid="772866011619945" type="Profile">
+                    <param id="0" name="Reference point">0</param>
+                    <param id="1" name="Key {n}"></param>
+                </action>
+                <action id="4" name="Set request header" sid="803337081114144" type="AJAX">
+                    <param id="0" name="Header">&quot;Content-Type&quot;</param>
+                    <param id="1" name="Value">&quot;application/json&quot;</param>
+                </action>
+                <action id="4" name="Set request header" sid="602036409124483" type="AJAX">
+                    <param id="0" name="Header">&quot;X-Auth-Token&quot;</param>
+                    <param id="1" name="Value">Settings.AuthToken</param>
+                </action>
+                <action id="0" name="Request URL" sid="693021794562609" type="AJAX">
                     <param id="0" name="Tag">&quot;getProfile&quot;</param>
                     <param id="1" name="URL">&quot;https://zvuk.com/api/tiny/profile&quot;</param>
                 </action>
