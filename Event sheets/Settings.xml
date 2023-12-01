@@ -1576,6 +1576,58 @@
         </event-group>
         <event-group description="" sid="176018745256355" title="[ Запросы ]">
             <sub-events>
+                <event-block sid="513794356197906">
+                    <conditions>
+                        <condition id="3" name="Local key exists" sid="630000155830507" type="WebStorage">
+                            <param id="0" name="Key">&quot;Usehttpsfordownload&quot;</param>
+                        </condition>
+                        <condition id="-4" name="Trigger once while true" sid="171800905465118" type="System" />
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="103942252251957">
+                            <conditions>
+                                <condition id="6" name="Compare key value (as text)" sid="584598590523174" type="WebStorage">
+                                    <param id="0" name="Key">&quot;Usehttpsfordownload&quot;</param>
+                                    <param id="1" name="Text to compare">&quot;Yes&quot;</param>
+                                    <param id="2" name="Case sensitivity">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="6" name="Set checked" sid="861131384883333" type="usehttpsfordownload">
+                                    <param id="0" name="State">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="725507318681269">
+                            <conditions>
+                                <condition id="6" inverted="1" name="Compare key value (as text)" sid="163527815590576" type="WebStorage">
+                                    <param id="0" name="Key">&quot;Usehttpsfordownload&quot;</param>
+                                    <param id="1" name="Text to compare">&quot;Yes&quot;</param>
+                                    <param id="2" name="Case sensitivity">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="6" name="Set checked" sid="901316562768912" type="usehttpsfordownload">
+                                    <param id="0" name="State">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="806526593129667">
+                    <conditions>
+                        <condition id="3" inverted="1" name="Local key exists" sid="833711823835281" type="WebStorage">
+                            <param id="0" name="Key">&quot;Usehttpsfordownload&quot;</param>
+                        </condition>
+                        <condition id="-4" name="Trigger once while true" sid="637227810914696" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="6" name="Set checked" sid="375123843987822" type="usehttpsfordownload">
+                            <param id="0" name="State">1</param>
+                        </action>
+                    </actions>
+                </event-block>
                 <event-block sid="723044811099990">
                     <conditions>
                         <condition id="3" name="Local key exists" sid="530647064259706" type="WebStorage">
@@ -1648,6 +1700,38 @@
                     <actions>
                         <action id="0" name="Set local value" sid="825349945352514" type="WebStorage">
                             <param id="0" name="Key">&quot;Usehttp&quot;</param>
+                            <param id="1" name="Value">&quot;No&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="401470586127934">
+                    <conditions>
+                        <condition id="1" name="Is checked" sid="816142389084373" type="usehttpsfordownload" />
+                        <condition id="-4" name="Trigger once while true" sid="610011959380632" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Set value" sid="537945586435849" type="DownloadHelper">
+                            <param id="0" name="Instance variable">ReplaceHTTPS</param>
+                            <param id="1" name="Value">&quot;fffffffffffffffffffffffffffffffffffff&quot;</param>
+                        </action>
+                        <action id="0" name="Set local value" sid="548082653294548" type="WebStorage">
+                            <param id="0" name="Key">&quot;Usehttpsfordownload&quot;</param>
+                            <param id="1" name="Value">&quot;Yes&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="384494988195406">
+                    <conditions>
+                        <condition id="1" inverted="1" name="Is checked" sid="971817692183829" type="usehttpsfordownload" />
+                        <condition id="-4" name="Trigger once while true" sid="731816024346552" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Set value" sid="244682477360750" type="DownloadHelper">
+                            <param id="0" name="Instance variable">ReplaceHTTPS</param>
+                            <param id="1" name="Value">&quot;https&quot;</param>
+                        </action>
+                        <action id="0" name="Set local value" sid="970157010649477" type="WebStorage">
+                            <param id="0" name="Key">&quot;Usehttpsfordownload&quot;</param>
                             <param id="1" name="Value">&quot;No&quot;</param>
                         </action>
                     </actions>

@@ -2410,9 +2410,9 @@
                     <effect-fallback>0</effect-fallback>
                     <world>
                         <x>210</x>
-                        <y>244</y>
+                        <y>242</y>
                         <z>0</z>
-                        <width>302</width>
+                        <width>244</width>
                         <height>24</height>
                         <depth>0</depth>
                         <hotspotX>0</hotspotX>
@@ -2460,10 +2460,10 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>514</x>
-                        <y>244</y>
+                        <x>460</x>
+                        <y>242</y>
                         <z>0</z>
-                        <width>322</width>
+                        <width>196</width>
                         <height>24</height>
                         <depth>0</depth>
                         <hotspotX>0</hotspotX>
@@ -2485,11 +2485,11 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>512</x>
-                        <y>262</y>
+                        <x>458</x>
+                        <y>260</y>
                         <z>0</z>
-                        <width>246</width>
-                        <height>38</height>
+                        <width>196</width>
+                        <height>40</height>
                         <depth>0</depth>
                         <hotspotX>0</hotspotX>
                         <hotspotY>0</hotspotY>
@@ -2675,6 +2675,57 @@
                         <hotspotY>0</hotspotY>
                         <angle>0</angle>
                         <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="SettingTextGeneral" uid="184">
+                    <properties>
+                        <text>*Рекомендуется для пользователей без подписки, но и с подпиской тоже можно</text>
+                        <initial-visibility>Visible</initial-visibility>
+                        <font>Arial,-11,400,0</font>
+                        <color>255,255,255</color>
+                        <horizontal-alignment>Left</horizontal-alignment>
+                        <vertical-alignment>Center</vertical-alignment>
+                        <hotspot>Top-left</hotspot>
+                        <wrapping>Word</wrapping>
+                        <line-height>0</line-height>
+                    </properties>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>666</x>
+                        <y>260</y>
+                        <z>0</z>
+                        <width>170</width>
+                        <height>48</height>
+                        <depth>0</depth>
+                        <hotspotX>0</hotspotX>
+                        <hotspotY>0</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="usehttpsfordownload" uid="185">
+                    <properties>
+                        <type>Checkbox</type>
+                        <text>HTTPS для скачивания</text>
+                        <tooltip></tooltip>
+                        <initial-visibility>Visible</initial-visibility>
+                        <enabled>Yes</enabled>
+                        <auto-font-size>Yes</auto-font-size>
+                        <id-optional></id-optional>
+                        <checked>Yes</checked>
+                    </properties>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>664</x>
+                        <y>242</y>
+                        <z>0</z>
+                        <width>322</width>
+                        <height>24</height>
+                        <depth>0</depth>
+                        <hotspotX>0</hotspotX>
+                        <hotspotY>0</hotspotY>
                     </world>
                 </instance>
             </instances>
@@ -3534,6 +3585,7 @@
                 <SizeNotCorrentWarn>false</SizeNotCorrentWarn>
                 <FileExt></FileExt>
                 <CurrentTrack>false</CurrentTrack>
+                <ReplaceHTTPS>fffffffffffffffffffffffffffffffffffffff</ReplaceHTTPS>
             </instance-variables>
         </instance>
         <instance type="Profile" uid="75" />

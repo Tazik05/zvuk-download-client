@@ -2,7 +2,7 @@
 <c2project>
     <name>ZVUK - Download Client</name>
     <description></description>
-    <version>1.0.0</version>
+    <version>1.0.1</version>
     <author></author>
     <author-email></author-email>
     <author-website>http://</author-website>
@@ -215,6 +215,7 @@
                     <instance-variable name="SizeNotCorrentWarn" sid="683439953877250" type="boolean" />
                     <instance-variable comment="mp3/flac" name="FileExt" sid="650281642714773" type="string" />
                     <instance-variable name="CurrentTrack" sid="871861653797765" type="boolean" />
+                    <instance-variable comment="https or any word(for disable)" name="ReplaceHTTPS" sid="668507172740764" type="string" />
                 </instance-variables>
             </object-type>
             <object-type global="1" name="Dictionary" sid="882695246339385">
@@ -808,6 +809,9 @@
         </object-type>
         <object-type name="PlayerQuality" sid="538478429801471">
             <plugin id="List" />
+        </object-type>
+        <object-type name="usehttpsfordownload" sid="295465156780182">
+            <plugin id="Button" />
         </object-type>
     </object-folder>
     <families>

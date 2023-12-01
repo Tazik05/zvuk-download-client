@@ -5658,6 +5658,10 @@
                             <param id="0" name="Property name">&quot;color&quot;</param>
                             <param id="1" name="Value">&quot;White&quot;</param>
                         </action>
+                        <action id="5" name="Set CSS style" sid="215738789798795" type="usehttpsfordownload">
+                            <param id="0" name="Property name">&quot;color&quot;</param>
+                            <param id="1" name="Value">&quot;White&quot;</param>
+                        </action>
                         <action id="5" name="Set CSS style" sid="551192186100981" type="Button14">
                             <param id="0" name="Property name">&quot;color&quot;</param>
                             <param id="1" name="Value">&quot;White&quot;</param>
@@ -7065,7 +7069,7 @@
                                     <actions>
                                         <action id="0" name="Start download a file" sid="864037216594263" type="NodeDownloader">
                                             <param id="0" name="Tag">&quot;Download&quot;</param>
-                                            <param id="1" name="URL">replace(ListLinks.SelectedText,&quot;https&quot;,&quot;http&quot;)</param>
+                                            <param id="1" name="URL">replace(ListLinks.SelectedText,str(DownloadHelper.ReplaceHTTPS),&quot;http&quot;)</param>
                                             <param id="2" name="Path">DownloadHelper.SaveTo&amp;tokenat(ListID.ItemTextAt(ListLinks.SelectedIndex),1,&quot;||&quot;)&amp;&quot;.&quot;&amp;DownloadHelper.FileExt</param>
                                         </action>
                                         <action id="-10" name="Set value" sid="615529001029314" type="DownloadHelper">
@@ -7098,7 +7102,7 @@
                                         </action>
                                         <action id="0" name="Start download a file" sid="165658350857947" type="NodeDownloader">
                                             <param id="0" name="Tag">&quot;Download&quot;</param>
-                                            <param id="1" name="URL">replace(ListLinks.SelectedText,&quot;https&quot;,&quot;http&quot;)</param>
+                                            <param id="1" name="URL">replace(ListLinks.SelectedText,str(DownloadHelper.ReplaceHTTPS),&quot;http&quot;)</param>
                                             <param id="2" name="Path">DownloadHelper.SaveTo&amp;tokenat(ListID.ItemTextAt(ListLinks.SelectedIndex),1,&quot;||&quot;)&amp;&quot;.&quot;&amp;DownloadHelper.FileExt</param>
                                         </action>
                                         <action id="-10" name="Set value" sid="423804288551627" type="DownloadHelper">
@@ -7140,7 +7144,7 @@
                                         </action>
                                         <action id="0" name="Start download a file" sid="328760757428574" type="NodeDownloader">
                                             <param id="0" name="Tag">&quot;Download&quot;</param>
-                                            <param id="1" name="URL">replace(ListLinks.SelectedText,&quot;https&quot;,&quot;http&quot;)</param>
+                                            <param id="1" name="URL">replace(ListLinks.SelectedText,str(DownloadHelper.ReplaceHTTPS),&quot;http&quot;)</param>
                                             <param id="2" name="Path">DownloadHelper.SaveTo&amp;tokenat(ListID.ItemTextAt(ListLinks.SelectedIndex),1,&quot;||&quot;)&amp;&quot;.&quot;&amp;DownloadHelper.FileExt</param>
                                         </action>
                                         <action id="-10" name="Set value" sid="402051624000968" type="DownloadHelper">
@@ -7173,7 +7177,7 @@
                                         </action>
                                         <action id="0" name="Start download a file" sid="679821030157348" type="NodeDownloader">
                                             <param id="0" name="Tag">&quot;Download&quot;</param>
-                                            <param id="1" name="URL">replace(ListLinks.SelectedText,&quot;https&quot;,&quot;http&quot;)</param>
+                                            <param id="1" name="URL">replace(ListLinks.SelectedText,str(DownloadHelper.ReplaceHTTPS),&quot;http&quot;)</param>
                                             <param id="2" name="Path">DownloadHelper.SaveTo&amp;tokenat(ListID.ItemTextAt(ListLinks.SelectedIndex),1,&quot;||&quot;)&amp;&quot;.flac&quot;</param>
                                         </action>
                                         <action id="-10" name="Set value" sid="626909688247388" type="DownloadHelper">
