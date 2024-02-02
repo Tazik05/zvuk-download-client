@@ -46,6 +46,10 @@
                 </action>
                 <action id="-9" name="Destroy" sid="566912623462706" type="Preview" />
                 <action id="-9" name="Destroy" sid="493894384370663" type="Text8" />
+                <action id="55" name="Clear" sid="192778550196809" type="Podcasts">
+                    <param id="0" name="Reference point">0</param>
+                    <param id="1" name="Key {n}"></param>
+                </action>
                 <action id="55" name="Clear" sid="877458152829725" type="Books">
                     <param id="0" name="Reference point">0</param>
                     <param id="1" name="Key {n}"></param>
@@ -140,6 +144,35 @@
                                 </action>
                             </actions>
                         </event-block>
+                        <event-block sid="798600801623061">
+                            <conditions>
+                                <condition id="-8" inverted="1" name="Compare two values" sid="757094269706991" type="System">
+                                    <param id="0" name="First value">find(replace(SearchBox.Text, &quot;?&quot;&amp;tokenat(SearchBox.Text, 1,&quot;?&quot;),&quot;&quot;), &quot;podcast&quot;)</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Second value">-1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action disabled="1" id="0" name="Alert" sid="187792745556803" type="Browser">
+                                    <param id="0" name="Message">&quot;жопа 2&quot;</param>
+                                </action>
+                                <action id="4" name="Set request header" sid="832032667275042" type="AJAX">
+                                    <param id="0" name="Header">&quot;Content-Type&quot;</param>
+                                    <param id="1" name="Value">&quot;application/json&quot;</param>
+                                </action>
+                                <action id="4" name="Set request header" sid="909862751891003" type="AJAX">
+                                    <param id="0" name="Header">&quot;X-Auth-Token&quot;</param>
+                                    <param id="1" name="Value">Settings.AuthToken</param>
+                                </action>
+                                <action id="0" name="Request URL" sid="561934736657900" type="AJAX">
+                                    <param id="0" name="Tag">&quot;getPodcast&quot;</param>
+                                    <param id="1" name="URL">&quot;https://zvuk.com/_next/data/&quot;&amp;Settings.PodcastAPIVersion&amp;&quot;/podcast/&quot;&amp;tokenat(replace(SearchBox.Text, &quot;?&quot;&amp;tokenat(SearchBox.Text, 1,&quot;?&quot;),&quot;&quot;),tokencount(SearchBox.Text, &quot;/&quot;)-1,&quot;/&quot;)&amp;&quot;.json&quot;</param>
+                                </action>
+                                <action disabled="1" id="0" name="Alert" sid="830548472142038" type="Browser">
+                                    <param id="0" name="Message">&quot;https://zvuk.com/_next/data/&quot;&amp;Settings.PodcastAPIVersion&amp;&quot;/podcast/&quot;&amp;tokenat(replace(SearchBox.Text, &quot;?&quot;&amp;tokenat(SearchBox.Text, 1,&quot;?&quot;),&quot;&quot;),tokencount(SearchBox.Text, &quot;/&quot;)-1,&quot;/&quot;)&amp;&quot;.json&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
                         <event-block bookmark="1" sid="635451511246531">
                             <conditions>
                                 <condition id="-8" inverted="1" name="Compare two values" sid="325104269410713" type="System">
@@ -220,13 +253,20 @@
                 </event-block>
             </sub-events>
         </event-block>
-        <event-block sid="919839323022888">
+        <event-block sid="745251722804758">
             <conditions>
-                <condition id="0" name="On key pressed" sid="691372771787845" type="Keyboard">
-                    <param id="0" name="Key">65</param>
+                <condition id="70" inverted="1" name="Is Empty" sid="911675542179417" type="Podcasts">
+                    <param id="0" name="Reference point">0</param>
+                    <param id="1" name="Key {n}"></param>
                 </condition>
+                <condition id="-4" name="Trigger once while true" sid="489838436873583" type="System" />
             </conditions>
-            <actions />
+            <actions>
+                <action id="0" name="Call function" sid="931231810404375" type="Function">
+                    <param id="0" name="Name">&quot;GetListPodcasts&quot;</param>
+                    <param id="1" name="Parameter {n}"></param>
+                </action>
+            </actions>
         </event-block>
         <event-block sid="325974656486391">
             <conditions>
@@ -359,6 +399,103 @@
                             <param id="0" name="Message">&quot;ok&quot;</param>
                         </action>
                     </actions>
+                </event-block>
+                <event-block sid="528365209996905">
+                    <conditions>
+                        <condition id="1" name="On error" sid="794228755061263" type="AJAX">
+                            <param id="0" name="Tag">&quot;getPodcast&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Alert" sid="485453670374434" type="Browser">
+                            <param id="0" name="Message">&quot;API ответило ошибкой. Возможно, что оно устарело? Сообщите автору программы об этом&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="144328257888134">
+                    <conditions>
+                        <condition id="0" name="On completed" sid="614649908770516" type="AJAX">
+                            <param id="0" name="Tag">&quot;getPodcast&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action disabled="1" id="0" name="Alert" sid="789023708397501" type="Browser">
+                            <param id="0" name="Message">AJAX.LastData</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="567172920391215">
+                            <conditions>
+                                <condition id="-8" inverted="1" name="Compare two values" sid="107518389342138" type="System">
+                                    <param id="0" name="First value">find(AJAX.LastData, &quot;Playlist not found&quot;)</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Second value">-1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Alert" sid="210482790105997" type="Browser">
+                                    <param id="0" name="Message">&quot;Плейлист не найден!&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="563166718115367">
+                            <conditions>
+                                <condition id="-8" inverted="1" name="Compare two values" sid="768101003272815" type="System">
+                                    <param id="0" name="First value">find(AJAX.LastData, &quot;Request parameters are incorrect&quot;)</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Second value">-1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Alert" sid="116285981904785" type="Browser">
+                                    <param id="0" name="Message">&quot;Ошибка в параметрах запроса. Возможно, вы допустили ошибку в ссылке, или плейлист не существует?&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="427377235589846">
+                            <conditions>
+                                <condition id="-8" inverted="1" name="Compare two values" sid="814770419486321" type="System">
+                                    <param id="0" name="First value">find(AJAX.LastData, Settings.error1)</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Second value">-1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Alert" sid="617409644293214" type="Browser">
+                                    <param id="0" name="Message">&quot;Невозможно получить данные от плейлиста. Может, он скрыт?&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="138632453634750">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="644776532378133" type="System">
+                                    <param id="0" name="First value">find(AJAX.LastData, &quot;Playlist not found&quot;)</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Second value">-1</param>
+                                </condition>
+                                <condition id="-8" name="Compare two values" sid="494499519053414" type="System">
+                                    <param id="0" name="First value">find(AJAX.LastData, Settings.error1)</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Second value">-1</param>
+                                </condition>
+                                <condition id="-8" name="Compare two values" sid="249896768911724" type="System">
+                                    <param id="0" name="First value">find(AJAX.LastData, &quot;Request parameters are incorrect&quot;)</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Second value">-1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="60" name="LoadJSON" sid="142687120881427" type="Podcasts">
+                                    <param id="0" name="JSON">AJAX.LastData</param>
+                                    <param id="1" name="Reference point">0</param>
+                                    <param id="2" name="Key {n}"></param>
+                                </action>
+                                <action id="0" name="Alert" sid="759722908394503" type="Browser">
+                                    <param id="0" name="Message">AJAX.LastData</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
                 </event-block>
                 <event-block sid="989485418597292">
                     <conditions>
@@ -680,7 +817,7 @@
                 <event-block sid="440721035883402">
                     <conditions>
                         <condition id="0" name="On function" sid="687335581637583" type="Function">
-                            <param id="0" name="Name">&quot;GetListBooks&quot;</param>
+                            <param id="0" name="Name">&quot;GetListPodcasts&quot;</param>
                         </condition>
                     </conditions>
                     <actions />
@@ -712,14 +849,14 @@
                                 </action>
                                 <action id="-10" name="Set value" sid="274442850409198" type="Settings">
                                     <param id="0" name="Instance variable">PlayListSize</param>
-                                    <param id="1" name="Value">Books.Size(0,&quot;pageProps&quot;,&quot;audioBook&quot;,&quot;chapters&quot;)</param>
+                                    <param id="1" name="Value">Podcasts.Size(0,&quot;pageProps&quot;,&quot;podcast&quot;,&quot;episodes&quot;)</param>
                                 </action>
                             </actions>
                             <sub-events>
                                 <event-block sid="297592913421756">
                                     <conditions>
                                         <condition id="-10" name="For" sid="938658743509958" type="System">
-                                            <param id="0" name="Name">&quot;GetBooksInfo&quot;</param>
+                                            <param id="0" name="Name">&quot;GetPodcastsInfo&quot;</param>
                                             <param id="1" name="Start index">Settings.StartIndex</param>
                                             <param id="2" name="End index">Settings.EndIndex</param>
                                         </condition>
@@ -730,7 +867,7 @@
                                         <event-block bookmark="1" sid="914020685244518">
                                             <conditions>
                                                 <condition id="-8" inverted="1" name="Compare two values" sid="213011311454903" type="System">
-                                                    <param id="0" name="First value">Books.Value(0,&quot;pageProps&quot;,&quot;audioBook&quot;,&quot;chapters&quot;,loopindex,&quot;title&quot;)</param>
+                                                    <param id="0" name="First value">Podcasts.Value(0,&quot;pageProps&quot;,&quot;podcast&quot;,&quot;episodes&quot;,loopindex,&quot;title&quot;)</param>
                                                     <param id="1" name="Comparison">0</param>
                                                     <param id="2" name="Second value">&quot;undefined&quot;</param>
                                                 </condition>
@@ -743,7 +880,7 @@
                                                     <param id="3" name="Y">Settings.LastPreviewY+2</param>
                                                 </action>
                                                 <action id="0" name="Set text" sid="724205322918074" type="Text8">
-                                                    <param id="0" name="Text">Books.Value(0,&quot;pageProps&quot;,&quot;audioBook&quot;,&quot;chapters&quot;,loopindex,&quot;title&quot;)&amp;newline&amp;Books.Value(0,&quot;pageProps&quot;,&quot;audioBook&quot;,&quot;chapters&quot;,loopindex,&quot;bookAuthors&quot;,0,&quot;name&quot;)</param>
+                                                    <param id="0" name="Text">Podcasts.Value(0,&quot;pageProps&quot;,&quot;podcast&quot;,&quot;episodes&quot;,loopindex,&quot;title&quot;)&amp;newline&amp;Podcasts.Value(0,&quot;pageProps&quot;,&quot;podcast&quot;,&quot;episodes&quot;,loopindex,&quot;podcast_title&quot;)</param>
                                                 </action>
                                                 <action id="4" name="Set font color" sid="197955468715813" type="Text8">
                                                     <param id="0" name="Color">rgb(0, 0, 0)</param>
@@ -755,7 +892,7 @@
                                                     <param id="3" name="Y">Settings.LastPreviewY</param>
                                                 </action>
                                                 <action id="0" name="Set text" sid="422261600662269" type="Text8">
-                                                    <param id="0" name="Text">Books.Value(0,&quot;pageProps&quot;,&quot;audioBook&quot;,&quot;chapters&quot;,loopindex,&quot;title&quot;)&amp;newline&amp;Books.Value(0,&quot;pageProps&quot;,&quot;audioBook&quot;,&quot;chapters&quot;,loopindex,&quot;bookAuthors&quot;,0,&quot;name&quot;)</param>
+                                                    <param id="0" name="Text">Podcasts.Value(0,&quot;pageProps&quot;,&quot;podcast&quot;,&quot;episodes&quot;,loopindex,&quot;title&quot;)&amp;newline&amp;Podcasts.Value(0,&quot;pageProps&quot;,&quot;podcast&quot;,&quot;episodes&quot;,loopindex,&quot;podcast_title&quot;)</param>
                                                 </action>
                                                 <action id="-3" name="Create object" sid="829022050979288" type="System">
                                                     <param id="0" name="Object to create">Rounder</param>
@@ -775,25 +912,25 @@
                                                 </action>
                                                 <action id="-10" name="Set value" sid="227212312979749" type="Preview">
                                                     <param id="0" name="Instance variable">MetaInfo</param>
-                                                    <param id="1" name="Value">Books.Value(0,&quot;pageProps&quot;,&quot;audioBook&quot;,&quot;chapters&quot;,loopindex,&quot;title&quot;)&amp;newline&amp;Books.Value(0,&quot;pageProps&quot;,&quot;audioBook&quot;,&quot;chapters&quot;,loopindex,&quot;bookAuthors&quot;,0,&quot;name&quot;)</param>
+                                                    <param id="1" name="Value">Podcasts.Value(0,&quot;pageProps&quot;,&quot;podcast&quot;,&quot;episodes&quot;,loopindex,&quot;title&quot;)&amp;newline&amp;Podcasts.Value(0,&quot;pageProps&quot;,&quot;podcast&quot;,&quot;episodes&quot;,loopindex,&quot;podcast_title&quot;)</param>
                                                 </action>
                                                 <action id="-10" name="Set value" sid="636423441997070" type="Preview">
                                                     <param id="0" name="Instance variable">TrackID</param>
-                                                    <param id="1" name="Value">Books.Value(0,&quot;pageProps&quot;,&quot;audioBook&quot;,&quot;chapters&quot;, loopindex,&quot;id&quot;)</param>
+                                                    <param id="1" name="Value">Podcasts.Value(0,&quot;pageProps&quot;,&quot;podcast&quot;,&quot;episodes&quot;,loopindex,&quot;id&quot;)</param>
                                                 </action>
                                                 <action id="-10" name="Set value" sid="562682296660215" type="Preview">
                                                     <param id="0" name="Instance variable">LinkPreview</param>
-                                                    <param id="1" name="Value">replace(Books.Value(0,&quot;pageProps&quot;,&quot;audioBook&quot;,&quot;chapters&quot;,loopindex,&quot;image&quot;,&quot;src&quot;),&quot;{size}&quot;,&quot;96x96&quot;)</param>
+                                                    <param id="1" name="Value">replace(Podcasts.Value(0,&quot;pageProps&quot;,&quot;podcast&quot;,&quot;episodes&quot;,loopindex,&quot;image&quot;,&quot;src&quot;),&quot;{size}&quot;,&quot;96x96&quot;)</param>
                                                 </action>
                                                 <action id="-10" name="Set value" sid="518579861393443" type="Preview">
                                                     <param id="0" name="Instance variable">LinkPreviewHigh</param>
-                                                    <param id="1" name="Value">replace(Books.Value(0,&quot;pageProps&quot;,&quot;audioBook&quot;,&quot;chapters&quot;,loopindex,&quot;image&quot;,&quot;src&quot;),&quot;{size}&quot;,&quot;300x300&quot;)</param>
+                                                    <param id="1" name="Value">replace(Podcasts.Value(0,&quot;pageProps&quot;,&quot;podcast&quot;,&quot;episodes&quot;,loopindex,&quot;image&quot;,&quot;src&quot;),&quot;{size}&quot;,&quot;300x300&quot;)</param>
                                                 </action>
                                                 <action id="5" name="Set frame" sid="406860774974270" type="Preview">
                                                     <param id="0" name="Frame number">Settings.LastImage</param>
                                                 </action>
                                                 <action id="10" name="Load image from URL" sid="679123211163609" type="Preview">
-                                                    <param id="0" name="URI">replace(Books.Value(0,&quot;pageProps&quot;,&quot;audioBook&quot;,&quot;chapters&quot;,loopindex,&quot;image&quot;,&quot;src&quot;),&quot;{size}&quot;,&quot;96x96&quot;)</param>
+                                                    <param id="0" name="URI">replace(Podcasts.Value(0,&quot;pageProps&quot;,&quot;podcast&quot;,&quot;episodes&quot;,loopindex,&quot;image&quot;,&quot;src&quot;),&quot;{size}&quot;,&quot;96x96&quot;)</param>
                                                     <param id="1" name="Size">1</param>
                                                     <param id="2" name="Cross-origin">0</param>
                                                 </action>
@@ -811,7 +948,7 @@
                                         <event-block sid="698824319190156">
                                             <conditions>
                                                 <condition id="-8" name="Compare two values" sid="911773152048867" type="System">
-                                                    <param id="0" name="First value">getPlaylistFirstTracks.Value(0,&quot;pageProps&quot;,&quot;audioBook&quot;,&quot;chapters&quot;,loopindex,&quot;title&quot;)</param>
+                                                    <param id="0" name="First value">Podcasts.Value(0,&quot;pageProps&quot;,&quot;podcast&quot;,&quot;episodes&quot;,loopindex,&quot;title&quot;)</param>
                                                     <param id="1" name="Comparison">0</param>
                                                     <param id="2" name="Second value">&quot;null&quot;</param>
                                                 </condition>
@@ -824,7 +961,7 @@
                                                     <param id="3" name="Y">Settings.LastPreviewY+2</param>
                                                 </action>
                                                 <action id="0" name="Set text" sid="408920396006827" type="Text8">
-                                                    <param id="0" name="Text">&quot;Невозможно получить данные трека!&quot;&amp;newline&amp;&quot;Возможно, трек удалён. Он будет пропущен&quot;&amp;newline&amp;&quot;loopindex: &quot;&amp;loopindex&amp;&quot; | &quot;&amp;&quot;ID Трека: &quot;&amp;getPlaylistFirstTracks.Value(0,&quot;data&quot;,&quot;playlistTracks&quot;,loopindex,&quot;id&quot;)</param>
+                                                    <param id="0" name="Text">&quot;Невозможно получить данные трека!&quot;&amp;newline&amp;&quot;Возможно, трек удалён. Он будет пропущен&quot;&amp;newline&amp;&quot;loopindex: &quot;&amp;loopindex&amp;&quot; | &quot;&amp;&quot;ID Трека: &quot;&amp;Podcasts.Value(0,&quot;pageProps&quot;,&quot;podcast&quot;,&quot;episodes&quot;,loopindex,&quot;id&quot;)</param>
                                                 </action>
                                                 <action id="4" name="Set font color" sid="387768674886615" type="Text8">
                                                     <param id="0" name="Color">rgb(0, 0, 0)</param>
@@ -836,7 +973,7 @@
                                                     <param id="3" name="Y">Settings.LastPreviewY</param>
                                                 </action>
                                                 <action id="0" name="Set text" sid="631033309168243" type="Text8">
-                                                    <param id="0" name="Text">&quot;Невозможно получить данные трека!&quot;&amp;newline&amp;&quot;Возможно, трек удалён. Он будет пропущен&quot;&amp;newline&amp;&quot;loopindex: &quot;&amp;loopindex&amp;&quot; | &quot;&amp;&quot;ID Трека: &quot;&amp;getPlaylistFirstTracks.Value(0,&quot;data&quot;,&quot;playlistTracks&quot;,loopindex,&quot;id&quot;)</param>
+                                                    <param id="0" name="Text">&quot;Невозможно получить данные трека!&quot;&amp;newline&amp;&quot;Возможно, трек удалён. Он будет пропущен&quot;&amp;newline&amp;&quot;loopindex: &quot;&amp;loopindex&amp;&quot; | &quot;&amp;&quot;ID Трека: &quot;&amp;Podcasts.Value(0,&quot;pageProps&quot;,&quot;podcast&quot;,&quot;episodes&quot;,loopindex,&quot;id&quot;)</param>
                                                 </action>
                                                 <action id="-3" name="Create object" sid="191156365295355" type="System">
                                                     <param id="0" name="Object to create">Rounder</param>
@@ -870,6 +1007,207 @@
                                                     <param id="1" name="Value">24</param>
                                                 </action>
                                                 <action id="-24" name="Move to top" sid="540932337394363" type="TrackPlayButton" />
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="501946150647420">
+                    <conditions>
+                        <condition id="0" name="On function" sid="787526345270317" type="Function">
+                            <param id="0" name="Name">&quot;GetListBooks&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="500073189444750">
+                            <conditions>
+                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="804176746126139" type="Settings">
+                                    <param id="0" name="Instance variable">OldResp</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Destroy" sid="368203593849936" type="Rounder" />
+                                <action id="-9" name="Destroy" sid="107170637677961" type="Preview" />
+                                <action id="-9" name="Destroy" sid="544248895700515" type="Text8" />
+                                <action id="-10" name="Set value" sid="222049260777524" type="Settings">
+                                    <param id="0" name="Instance variable">LastImage</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="646186596083965" type="Settings">
+                                    <param id="0" name="Instance variable">LastPreviewY</param>
+                                    <param id="1" name="Value">86</param>
+                                </action>
+                                <action id="0" name="Call function" sid="911658896722044" type="Function">
+                                    <param id="0" name="Name">&quot;UpdatePage&quot;</param>
+                                    <param id="1" name="Parameter {n}"></param>
+                                </action>
+                                <action id="-15" name="Set visible" sid="517309132515474" type="LetsSearchMusic">
+                                    <param id="0" name="Visibility">0</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="485163035897276" type="Settings">
+                                    <param id="0" name="Instance variable">PlayListSize</param>
+                                    <param id="1" name="Value">Books.Size(0,&quot;pageProps&quot;,&quot;audioBook&quot;,&quot;chapters&quot;)</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="623505409482379">
+                                    <conditions>
+                                        <condition id="-10" name="For" sid="136345642663113" type="System">
+                                            <param id="0" name="Name">&quot;GetBooksInfo&quot;</param>
+                                            <param id="1" name="Start index">Settings.StartIndex</param>
+                                            <param id="2" name="End index">Settings.EndIndex</param>
+                                        </condition>
+                                        <condition id="-4" name="Trigger once while true" sid="324452900673740" type="System" />
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block bookmark="1" sid="932482339952215">
+                                            <conditions>
+                                                <condition id="-8" inverted="1" name="Compare two values" sid="499976325038840" type="System">
+                                                    <param id="0" name="First value">Books.Value(0,&quot;pageProps&quot;,&quot;audioBook&quot;,&quot;chapters&quot;,loopindex,&quot;title&quot;)</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Second value">&quot;undefined&quot;</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-3" name="Create object" sid="479615975254761" type="System">
+                                                    <param id="0" name="Object to create">Text8</param>
+                                                    <param id="1" name="Layer">&quot;UI&quot;</param>
+                                                    <param id="2" name="X">160+2</param>
+                                                    <param id="3" name="Y">Settings.LastPreviewY+2</param>
+                                                </action>
+                                                <action id="0" name="Set text" sid="805327360061212" type="Text8">
+                                                    <param id="0" name="Text">Books.Value(0,&quot;pageProps&quot;,&quot;audioBook&quot;,&quot;chapters&quot;,loopindex,&quot;title&quot;)&amp;newline&amp;Books.Value(0,&quot;pageProps&quot;,&quot;audioBook&quot;,&quot;chapters&quot;,loopindex,&quot;bookAuthors&quot;,0,&quot;name&quot;)</param>
+                                                </action>
+                                                <action id="4" name="Set font color" sid="422774313239091" type="Text8">
+                                                    <param id="0" name="Color">rgb(0, 0, 0)</param>
+                                                </action>
+                                                <action id="-3" name="Create object" sid="479269525465860" type="System">
+                                                    <param id="0" name="Object to create">Text8</param>
+                                                    <param id="1" name="Layer">&quot;UI&quot;</param>
+                                                    <param id="2" name="X">160</param>
+                                                    <param id="3" name="Y">Settings.LastPreviewY</param>
+                                                </action>
+                                                <action id="0" name="Set text" sid="745665276063478" type="Text8">
+                                                    <param id="0" name="Text">Books.Value(0,&quot;pageProps&quot;,&quot;audioBook&quot;,&quot;chapters&quot;,loopindex,&quot;title&quot;)&amp;newline&amp;Books.Value(0,&quot;pageProps&quot;,&quot;audioBook&quot;,&quot;chapters&quot;,loopindex,&quot;bookAuthors&quot;,0,&quot;name&quot;)</param>
+                                                </action>
+                                                <action id="-3" name="Create object" sid="565704542487183" type="System">
+                                                    <param id="0" name="Object to create">Rounder</param>
+                                                    <param id="1" name="Layer">&quot;UI&quot;</param>
+                                                    <param id="2" name="X">36</param>
+                                                    <param id="3" name="Y">Settings.LastPreviewY</param>
+                                                </action>
+                                                <action id="-3" name="Create object" sid="759897730141173" type="System">
+                                                    <param id="0" name="Object to create">Preview</param>
+                                                    <param id="1" name="Layer">&quot;UI&quot;</param>
+                                                    <param id="2" name="X">36</param>
+                                                    <param id="3" name="Y">Settings.LastPreviewY</param>
+                                                </action>
+                                                <action id="-10" name="Set value" sid="621357668189851" type="Preview">
+                                                    <param id="0" name="Instance variable">ID</param>
+                                                    <param id="1" name="Value">loopindex</param>
+                                                </action>
+                                                <action id="-10" name="Set value" sid="243387517273735" type="Preview">
+                                                    <param id="0" name="Instance variable">MetaInfo</param>
+                                                    <param id="1" name="Value">Books.Value(0,&quot;pageProps&quot;,&quot;audioBook&quot;,&quot;chapters&quot;,loopindex,&quot;title&quot;)&amp;newline&amp;Books.Value(0,&quot;pageProps&quot;,&quot;audioBook&quot;,&quot;chapters&quot;,loopindex,&quot;bookAuthors&quot;,0,&quot;name&quot;)</param>
+                                                </action>
+                                                <action id="-10" name="Set value" sid="452694997088319" type="Preview">
+                                                    <param id="0" name="Instance variable">TrackID</param>
+                                                    <param id="1" name="Value">Books.Value(0,&quot;pageProps&quot;,&quot;audioBook&quot;,&quot;chapters&quot;, loopindex,&quot;id&quot;)</param>
+                                                </action>
+                                                <action id="-10" name="Set value" sid="847866192507334" type="Preview">
+                                                    <param id="0" name="Instance variable">LinkPreview</param>
+                                                    <param id="1" name="Value">replace(Books.Value(0,&quot;pageProps&quot;,&quot;audioBook&quot;,&quot;chapters&quot;,loopindex,&quot;image&quot;,&quot;src&quot;),&quot;{size}&quot;,&quot;96x96&quot;)</param>
+                                                </action>
+                                                <action id="-10" name="Set value" sid="348528319672582" type="Preview">
+                                                    <param id="0" name="Instance variable">LinkPreviewHigh</param>
+                                                    <param id="1" name="Value">replace(Books.Value(0,&quot;pageProps&quot;,&quot;audioBook&quot;,&quot;chapters&quot;,loopindex,&quot;image&quot;,&quot;src&quot;),&quot;{size}&quot;,&quot;300x300&quot;)</param>
+                                                </action>
+                                                <action id="5" name="Set frame" sid="602438939782822" type="Preview">
+                                                    <param id="0" name="Frame number">Settings.LastImage</param>
+                                                </action>
+                                                <action id="10" name="Load image from URL" sid="566790691012559" type="Preview">
+                                                    <param id="0" name="URI">replace(Books.Value(0,&quot;pageProps&quot;,&quot;audioBook&quot;,&quot;chapters&quot;,loopindex,&quot;image&quot;,&quot;src&quot;),&quot;{size}&quot;,&quot;96x96&quot;)</param>
+                                                    <param id="1" name="Size">1</param>
+                                                    <param id="2" name="Cross-origin">0</param>
+                                                </action>
+                                                <action id="-11" name="Add to" sid="785065346847199" type="Settings">
+                                                    <param id="0" name="Instance variable">LastImage</param>
+                                                    <param id="1" name="Value">1</param>
+                                                </action>
+                                                <action id="-11" name="Add to" sid="772585829950229" type="Settings">
+                                                    <param id="0" name="Instance variable">LastPreviewY</param>
+                                                    <param id="1" name="Value">24</param>
+                                                </action>
+                                                <action id="-24" name="Move to top" sid="693637316712887" type="TrackPlayButton" />
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="866266134619810">
+                                            <conditions>
+                                                <condition id="-8" name="Compare two values" sid="110207747044166" type="System">
+                                                    <param id="0" name="First value">getPlaylistFirstTracks.Value(0,&quot;pageProps&quot;,&quot;audioBook&quot;,&quot;chapters&quot;,loopindex,&quot;title&quot;)</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Second value">&quot;null&quot;</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-3" name="Create object" sid="697418418308884" type="System">
+                                                    <param id="0" name="Object to create">Text8</param>
+                                                    <param id="1" name="Layer">&quot;UI&quot;</param>
+                                                    <param id="2" name="X">160+2</param>
+                                                    <param id="3" name="Y">Settings.LastPreviewY+2</param>
+                                                </action>
+                                                <action id="0" name="Set text" sid="133671989126539" type="Text8">
+                                                    <param id="0" name="Text">&quot;Невозможно получить данные трека!&quot;&amp;newline&amp;&quot;Возможно, трек удалён. Он будет пропущен&quot;&amp;newline&amp;&quot;loopindex: &quot;&amp;loopindex&amp;&quot; | &quot;&amp;&quot;ID Трека: &quot;&amp;getPlaylistFirstTracks.Value(0,&quot;data&quot;,&quot;playlistTracks&quot;,loopindex,&quot;id&quot;)</param>
+                                                </action>
+                                                <action id="4" name="Set font color" sid="284866448233374" type="Text8">
+                                                    <param id="0" name="Color">rgb(0, 0, 0)</param>
+                                                </action>
+                                                <action id="-3" name="Create object" sid="291825364903349" type="System">
+                                                    <param id="0" name="Object to create">Text8</param>
+                                                    <param id="1" name="Layer">&quot;UI&quot;</param>
+                                                    <param id="2" name="X">160</param>
+                                                    <param id="3" name="Y">Settings.LastPreviewY</param>
+                                                </action>
+                                                <action id="0" name="Set text" sid="496323127779096" type="Text8">
+                                                    <param id="0" name="Text">&quot;Невозможно получить данные трека!&quot;&amp;newline&amp;&quot;Возможно, трек удалён. Он будет пропущен&quot;&amp;newline&amp;&quot;loopindex: &quot;&amp;loopindex&amp;&quot; | &quot;&amp;&quot;ID Трека: &quot;&amp;getPlaylistFirstTracks.Value(0,&quot;data&quot;,&quot;playlistTracks&quot;,loopindex,&quot;id&quot;)</param>
+                                                </action>
+                                                <action id="-3" name="Create object" sid="702152575968333" type="System">
+                                                    <param id="0" name="Object to create">Rounder</param>
+                                                    <param id="1" name="Layer">&quot;UI&quot;</param>
+                                                    <param id="2" name="X">36</param>
+                                                    <param id="3" name="Y">Settings.LastPreviewY</param>
+                                                </action>
+                                                <action id="-3" name="Create object" sid="535865097975763" type="System">
+                                                    <param id="0" name="Object to create">Preview</param>
+                                                    <param id="1" name="Layer">&quot;UI&quot;</param>
+                                                    <param id="2" name="X">36</param>
+                                                    <param id="3" name="Y">Settings.LastPreviewY</param>
+                                                </action>
+                                                <action disabled="1" id="-10" name="Set value" sid="194804253712745" type="Preview">
+                                                    <param id="0" name="Instance variable">ID</param>
+                                                    <param id="1" name="Value">loopindex</param>
+                                                </action>
+                                                <action id="-10" name="Set value" sid="175756277557326" type="Preview">
+                                                    <param id="0" name="Instance variable">TrackID</param>
+                                                    <param id="1" name="Value">&quot;Error&quot;</param>
+                                                </action>
+                                                <action id="5" name="Set frame" sid="176897612192331" type="Preview">
+                                                    <param id="0" name="Frame number">10</param>
+                                                </action>
+                                                <action id="-11" name="Add to" sid="872212972439337" type="Settings">
+                                                    <param id="0" name="Instance variable">LastImage</param>
+                                                    <param id="1" name="Value">1</param>
+                                                </action>
+                                                <action id="-11" name="Add to" sid="121193983060271" type="Settings">
+                                                    <param id="0" name="Instance variable">LastPreviewY</param>
+                                                    <param id="1" name="Value">24</param>
+                                                </action>
+                                                <action id="-24" name="Move to top" sid="749949989369614" type="TrackPlayButton" />
                                             </actions>
                                         </event-block>
                                     </sub-events>
@@ -1419,7 +1757,7 @@
         </event-group>
         <event-group description="" sid="554847497762366" title="[ UI ]">
             <sub-events>
-                <event-group description="" sid="623696225702461" title="[ Pages ]">
+                <event-group bookmark="1" description="" sid="623696225702461" title="[ Pages ]">
                     <sub-events>
                         <event-block sid="857828766525126">
                             <conditions>
@@ -1469,8 +1807,20 @@
                                             <param id="0" name="Name">&quot;UpdatePage&quot;</param>
                                             <param id="1" name="Parameter {n}"></param>
                                         </action>
-                                        <action id="0" name="Call function" sid="767849085761052" type="Function">
+                                        <action id="0" name="Call function" sid="556566538941759" type="Function">
+                                            <param id="0" name="Name">&quot;GetListBooks&quot;</param>
+                                            <param id="1" name="Parameter {n}"></param>
+                                        </action>
+                                        <action id="0" name="Call function" sid="799736232711940" type="Function">
+                                            <param id="0" name="Name">&quot;GetListPodcasts&quot;</param>
+                                            <param id="1" name="Parameter {n}"></param>
+                                        </action>
+                                        <action id="0" name="Call function" sid="730162245689310" type="Function">
                                             <param id="0" name="Name">&quot;GetListMusic&quot;</param>
+                                            <param id="1" name="Parameter {n}"></param>
+                                        </action>
+                                        <action id="0" name="Call function" sid="775278863062164" type="Function">
+                                            <param id="0" name="Name">&quot;GetUserMusic&quot;</param>
                                             <param id="1" name="Parameter {n}"></param>
                                         </action>
                                     </actions>
@@ -1488,6 +1838,116 @@
                             </sub-events>
                         </event-block>
                         <comment></comment>
+                        <comment></comment>
+                        <comment>для подкастов</comment>
+                        <event-block sid="846301711632784">
+                            <conditions>
+                                <condition id="70" inverted="1" name="Is Empty" sid="587773445917521" type="Podcasts">
+                                    <param id="0" name="Reference point">0</param>
+                                    <param id="1" name="Key {n}"></param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="972663376488066">
+                                    <conditions>
+                                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="402657676280982" type="Settings">
+                                            <param id="0" name="Instance variable">OldResp</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block sid="216940093882199">
+                                            <conditions>
+                                                <condition id="-7" name="Compare instance variable" sid="604559164042181" type="Settings">
+                                                    <param id="0" name="Instance variable">CurrentPage</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">int(Podcasts.Size(0,&quot;pageProps&quot;,&quot;podcast&quot;,&quot;episodes&quot;)/3)</param>
+                                                </condition>
+                                                <condition id="-4" name="Trigger once while true" sid="927825532928617" type="System" />
+                                            </conditions>
+                                            <actions>
+                                                <action id="3" name="Set enabled" sid="423489672739309" type="nextpage">
+                                                    <param id="0" name="Mode">0</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="196980896277843">
+                                            <conditions>
+                                                <condition id="-7" inverted="1" name="Compare instance variable" sid="597853345884138" type="Settings">
+                                                    <param id="0" name="Instance variable">CurrentPage</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">int(Podcasts.Size(0,&quot;pageProps&quot;,&quot;podcast&quot;,&quot;episodes&quot;)/3)</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions />
+                                            <sub-events>
+                                                <event-block sid="770531666524313">
+                                                    <conditions>
+                                                        <condition id="-4" name="Trigger once while true" sid="658270345677716" type="System" />
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="3" name="Set enabled" sid="939288532442007" type="nextpage">
+                                                            <param id="0" name="Mode">1</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                                <event-block sid="928921104618147">
+                                                    <conditions>
+                                                        <condition id="0" name="On key pressed" sid="663497298288564" type="Keyboard">
+                                                            <param id="0" name="Key">39</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="-10" name="Set value" sid="434684710244591" type="Settings">
+                                                            <param id="0" name="Instance variable">StartIndex</param>
+                                                            <param id="1" name="Value">Self.StartIndex+3</param>
+                                                        </action>
+                                                        <action id="-10" name="Set value" sid="605740726408126" type="Settings">
+                                                            <param id="0" name="Instance variable">EndIndex</param>
+                                                            <param id="1" name="Value">Self.EndIndex+3</param>
+                                                        </action>
+                                                        <action id="-11" name="Add to" sid="137503208824622" type="Settings">
+                                                            <param id="0" name="Instance variable">CurrentPage</param>
+                                                            <param id="1" name="Value">1</param>
+                                                        </action>
+                                                        <action id="0" name="Call function" sid="318104624944388" type="Function">
+                                                            <param id="0" name="Name">&quot;UpdatePage&quot;</param>
+                                                            <param id="1" name="Parameter {n}"></param>
+                                                        </action>
+                                                        <action id="0" name="Call function" sid="984776190609970" type="Function">
+                                                            <param id="0" name="Name">&quot;GetListPodcasts&quot;</param>
+                                                            <param id="1" name="Parameter {n}"></param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                            </sub-events>
+                                        </event-block>
+                                        <event-block sid="311089369825467">
+                                            <conditions>
+                                                <condition id="0" name="On function" sid="472924948791280" type="Function">
+                                                    <param id="0" name="Name">&quot;UpdatePage&quot;</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="0" name="Set text" sid="607494211950502" type="PageList">
+                                                    <param id="0" name="Text">Settings.CurrentPage+1&amp;&quot; / &quot;&amp;int(Podcasts.Size(0,&quot;pageProps&quot;,&quot;podcast&quot;,&quot;episodes&quot;)/3)+1</param>
+                                                </action>
+                                                <action id="-15" name="Set visible" sid="758529248167210" type="PageList">
+                                                    <param id="0" name="Visibility">1</param>
+                                                </action>
+                                                <action id="2" name="Set visible" sid="208018000918999" type="prevpage">
+                                                    <param id="0" name="Visibility">1</param>
+                                                </action>
+                                                <action id="2" name="Set visible" sid="301975130845367" type="nextpage">
+                                                    <param id="0" name="Visibility">1</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
                         <comment>для книг</comment>
                         <event-block sid="760828848788241">
                             <conditions>
@@ -1928,6 +2388,20 @@
                                 </action>
                             </actions>
                             <sub-events>
+                                <event-block sid="602796098801934">
+                                    <conditions>
+                                        <condition id="70" inverted="1" name="Is Empty" sid="825683994778416" type="Podcasts">
+                                            <param id="0" name="Reference point">0</param>
+                                            <param id="1" name="Key {n}"></param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Call function" sid="596979685462693" type="Function">
+                                            <param id="0" name="Name">&quot;GetListPodcasts&quot;</param>
+                                            <param id="1" name="Parameter {n}"></param>
+                                        </action>
+                                    </actions>
+                                </event-block>
                                 <event-block sid="946307838328210">
                                     <conditions>
                                         <condition id="70" inverted="1" name="Is Empty" sid="780589516520326" type="Books">
@@ -1995,6 +2469,20 @@
                                 </action>
                             </actions>
                             <sub-events>
+                                <event-block sid="319227955328827">
+                                    <conditions>
+                                        <condition id="70" inverted="1" name="Is Empty" sid="962500252471335" type="Podcasts">
+                                            <param id="0" name="Reference point">0</param>
+                                            <param id="1" name="Key {n}"></param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Call function" sid="228230049495604" type="Function">
+                                            <param id="0" name="Name">&quot;GetListPodcasts&quot;</param>
+                                            <param id="1" name="Parameter {n}"></param>
+                                        </action>
+                                    </actions>
+                                </event-block>
                                 <event-block sid="648361855903053">
                                     <conditions>
                                         <condition id="70" inverted="1" name="Is Empty" sid="310210532904221" type="Books">
@@ -2045,7 +2533,11 @@
                     <sub-events>
                         <event-block any="1" sid="788165821481153">
                             <conditions>
-                                <condition id="70" inverted="1" name="Is Empty" sid="527051790053376" type="Books">
+                                <condition id="70" inverted="1" name="Is Empty" sid="527051790053376" type="Podcasts">
+                                    <param id="0" name="Reference point">0</param>
+                                    <param id="1" name="Key {n}"></param>
+                                </condition>
+                                <condition id="70" inverted="1" name="Is Empty" sid="105754503192193" type="Books">
                                     <param id="0" name="Reference point">0</param>
                                     <param id="1" name="Key {n}"></param>
                                 </condition>
@@ -2351,6 +2843,10 @@
                         </event-block>
                         <event-block sid="297692458602490">
                             <conditions>
+                                <condition id="70" name="Is Empty" sid="103590572150037" type="Podcasts">
+                                    <param id="0" name="Reference point">0</param>
+                                    <param id="1" name="Key {n}"></param>
+                                </condition>
                                 <condition id="70" name="Is Empty" sid="922951936538893" type="Books">
                                     <param id="0" name="Reference point">0</param>
                                     <param id="1" name="Key {n}"></param>
@@ -2459,6 +2955,10 @@
                             <sub-events>
                                 <event-block any="1" sid="854458555016197">
                                     <conditions>
+                                        <condition id="70" inverted="1" name="Is Empty" sid="126784534998395" type="Podcasts">
+                                            <param id="0" name="Reference point">0</param>
+                                            <param id="1" name="Key {n}"></param>
+                                        </condition>
                                         <condition id="70" inverted="1" name="Is Empty" sid="846973984855207" type="Books">
                                             <param id="0" name="Reference point">0</param>
                                             <param id="1" name="Key {n}"></param>
@@ -2721,6 +3221,28 @@
                                             </conditions>
                                             <actions />
                                             <sub-events>
+                                                <event-block any="1" bookmark="1" sid="876902704568763">
+                                                    <conditions>
+                                                        <condition id="70" inverted="1" name="Is Empty" sid="499695837161099" type="Podcasts">
+                                                            <param id="0" name="Reference point">0</param>
+                                                            <param id="1" name="Key {n}"></param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="-10" name="Set value" sid="484114798089279" type="Settings">
+                                                            <param id="0" name="Instance variable">PlayListSize</param>
+                                                            <param id="1" name="Value">Podcasts.Size(0,&quot;pageProps&quot;,&quot;podcast&quot;,&quot;episodes&quot;)</param>
+                                                        </action>
+                                                        <action id="0" name="Call function" sid="377232441820646" type="Function">
+                                                            <param id="0" name="Name">&quot;Export_NewExport&quot;</param>
+                                                            <param id="1" name="Parameter {n}"></param>
+                                                        </action>
+                                                        <action id="-13" name="Set boolean" sid="891853616587055" type="DownloadHelper">
+                                                            <param id="0" name="Instance variable">CurrentTrack</param>
+                                                            <param id="1" name="Value">0</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
                                                 <event-block any="1" bookmark="1" sid="156819889536262">
                                                     <conditions>
                                                         <condition id="70" inverted="1" name="Is Empty" sid="951258432513130" type="Books">
@@ -2861,6 +3383,10 @@
                                                             <param id="1" name="Key {n}"></param>
                                                         </condition>
                                                         <condition id="70" inverted="1" name="Is Empty" sid="823328238908436" type="Books">
+                                                            <param id="0" name="Reference point">0</param>
+                                                            <param id="1" name="Key {n}"></param>
+                                                        </condition>
+                                                        <condition id="70" inverted="1" name="Is Empty" sid="471908323139506" type="Podcasts">
                                                             <param id="0" name="Reference point">0</param>
                                                             <param id="1" name="Key {n}"></param>
                                                         </condition>
@@ -5070,7 +5596,7 @@
                         <comment></comment>
                         <event-block sid="691493153067123">
                             <conditions>
-                                <condition id="70" inverted="1" name="Is Empty" sid="178747120085070" type="Books">
+                                <condition id="70" inverted="1" name="Is Empty" sid="178747120085070" type="Podcasts">
                                     <param id="0" name="Reference point">0</param>
                                     <param id="1" name="Key {n}"></param>
                                 </condition>
@@ -5090,7 +5616,7 @@
                                         </action>
                                     </actions>
                                     <sub-events>
-                                        <event-block sid="329105937954942">
+                                        <event-block bookmark="1" sid="329105937954942">
                                             <conditions>
                                                 <condition id="-8" name="Compare two values" sid="218422192736700" type="System">
                                                     <param id="0" name="First value">Settings.CurPlaying</param>
@@ -5105,19 +5631,19 @@
                                                 </action>
                                                 <action id="0" name="Call function" sid="205450390837309" type="Function">
                                                     <param id="0" name="Name">&quot;Player_GetMusic&quot;</param>
-                                                    <param id="1" name="Parameter {n}">Books.Value(0,&quot;pageProps&quot;,&quot;audioBook&quot;,&quot;chapters&quot;, Settings.CurPlaying,&quot;id&quot;){###}Preview.LinkPreview{###}replace(Books.Value(0,&quot;pageProps&quot;,&quot;audioBook&quot;,&quot;chapters&quot;,Settings.CurPlaying,&quot;image&quot;,&quot;src&quot;),&quot;{size}&quot;,&quot;300x300&quot;)</param>
+                                                    <param id="1" name="Parameter {n}">Podcasts.Value(0,&quot;pageProps&quot;,&quot;podcast&quot;,&quot;episodes&quot;,Settings.CurPlaying,&quot;id&quot;){###}Preview.LinkPreview{###}replace(Books.Value(0,&quot;pageProps&quot;,&quot;podcast&quot;,&quot;episodes&quot;,Settings.CurPlaying,&quot;image&quot;,&quot;src&quot;),&quot;{size}&quot;,&quot;300x300&quot;)</param>
                                                 </action>
                                                 <action id="5" name="Set frame" sid="789711004030928" type="MiniPreview">
                                                     <param id="0" name="Frame number">0</param>
                                                 </action>
                                                 <action id="10" name="Load image from URL" sid="991538433306678" type="MiniPreview">
-                                                    <param id="0" name="URI">replace(Books.Value(0,&quot;pageProps&quot;,&quot;audioBook&quot;,&quot;chapters&quot;,Settings.CurPlaying,&quot;image&quot;,&quot;src&quot;),&quot;{size}&quot;,&quot;96x96&quot;)</param>
+                                                    <param id="0" name="URI">replace(Podcasts.Value(0,&quot;pageProps&quot;,&quot;podcast&quot;,&quot;episodes&quot;,loopindex,&quot;image&quot;,&quot;src&quot;),&quot;{size}&quot;,&quot;96x96&quot;)</param>
                                                     <param id="1" name="Size">1</param>
                                                     <param id="2" name="Cross-origin">0</param>
                                                 </action>
                                                 <action id="-10" name="Set value" sid="507304793351573" type="Settings">
                                                     <param id="0" name="Instance variable">TrackInfo</param>
-                                                    <param id="1" name="Value">Books.Value(0,&quot;pageProps&quot;,&quot;audioBook&quot;,&quot;chapters&quot;,Settings.CurPlaying,&quot;title&quot;)&amp;newline&amp;Books.Value(0,&quot;pageProps&quot;,&quot;audioBook&quot;,&quot;chapters&quot;,Settings.CurPlaying,&quot;bookAuthors&quot;,0,&quot;name&quot;)</param>
+                                                    <param id="1" name="Value">Podcasts.Value(0,&quot;pageProps&quot;,&quot;podcast&quot;,&quot;episodes&quot;,Settings.CurPlaying,&quot;title&quot;)&amp;newline&amp;Podcasts.Value(0,&quot;pageProps&quot;,&quot;podcast&quot;,&quot;episodes&quot;,Settings.CurPlaying,&quot;podcast_title&quot;)</param>
                                                 </action>
                                             </actions>
                                         </event-block>
@@ -5130,21 +5656,21 @@
                                                 </condition>
                                             </conditions>
                                             <actions>
-                                                <action id="0" name="Call function" sid="911481883922121" type="Function">
+                                                <action id="0" name="Call function" sid="987552765999686" type="Function">
                                                     <param id="0" name="Name">&quot;Player_GetMusic&quot;</param>
-                                                    <param id="1" name="Parameter {n}">Books.Value(0,&quot;pageProps&quot;,&quot;audioBook&quot;,&quot;chapters&quot;, Settings.CurPlaying,&quot;id&quot;){###}Preview.LinkPreview{###}replace(Books.Value(0,&quot;pageProps&quot;,&quot;audioBook&quot;,&quot;chapters&quot;,Settings.CurPlaying,&quot;image&quot;,&quot;src&quot;),&quot;{size}&quot;,&quot;300x300&quot;)</param>
+                                                    <param id="1" name="Parameter {n}">Podcasts.Value(0,&quot;pageProps&quot;,&quot;podcast&quot;,&quot;episodes&quot;,Settings.CurPlaying,&quot;id&quot;){###}Preview.LinkPreview{###}replace(Books.Value(0,&quot;pageProps&quot;,&quot;podcast&quot;,&quot;episodes&quot;,Settings.CurPlaying,&quot;image&quot;,&quot;src&quot;),&quot;{size}&quot;,&quot;300x300&quot;)</param>
                                                 </action>
-                                                <action id="5" name="Set frame" sid="757428047985566" type="MiniPreview">
+                                                <action id="5" name="Set frame" sid="552867087783480" type="MiniPreview">
                                                     <param id="0" name="Frame number">0</param>
                                                 </action>
-                                                <action id="10" name="Load image from URL" sid="727099220542894" type="MiniPreview">
-                                                    <param id="0" name="URI">replace(Books.Value(0,&quot;pageProps&quot;,&quot;audioBook&quot;,&quot;chapters&quot;,Settings.CurPlaying,&quot;image&quot;,&quot;src&quot;),&quot;{size}&quot;,&quot;96x96&quot;)</param>
+                                                <action id="10" name="Load image from URL" sid="752250068267911" type="MiniPreview">
+                                                    <param id="0" name="URI">replace(Podcasts.Value(0,&quot;pageProps&quot;,&quot;podcast&quot;,&quot;episodes&quot;,loopindex,&quot;image&quot;,&quot;src&quot;),&quot;{size}&quot;,&quot;96x96&quot;)</param>
                                                     <param id="1" name="Size">1</param>
                                                     <param id="2" name="Cross-origin">0</param>
                                                 </action>
-                                                <action id="-10" name="Set value" sid="263946272806716" type="Settings">
+                                                <action id="-10" name="Set value" sid="539769942788674" type="Settings">
                                                     <param id="0" name="Instance variable">TrackInfo</param>
-                                                    <param id="1" name="Value">Books.Value(0,&quot;pageProps&quot;,&quot;audioBook&quot;,&quot;chapters&quot;,Settings.CurPlaying,&quot;title&quot;)&amp;newline&amp;Books.Value(0,&quot;pageProps&quot;,&quot;audioBook&quot;,&quot;chapters&quot;,Settings.CurPlaying,&quot;bookAuthors&quot;,0,&quot;name&quot;)</param>
+                                                    <param id="1" name="Value">Podcasts.Value(0,&quot;pageProps&quot;,&quot;podcast&quot;,&quot;episodes&quot;,Settings.CurPlaying,&quot;title&quot;)&amp;newline&amp;Podcasts.Value(0,&quot;pageProps&quot;,&quot;podcast&quot;,&quot;episodes&quot;,Settings.CurPlaying,&quot;podcast_title&quot;)</param>
                                                 </action>
                                             </actions>
                                         </event-block>
@@ -5176,21 +5702,21 @@
                                                     <param id="0" name="Instance variable">CurPlaying</param>
                                                     <param id="1" name="Value">Settings.PlayListSize-1</param>
                                                 </action>
-                                                <action id="0" name="Call function" sid="129154202267320" type="Function">
+                                                <action id="0" name="Call function" sid="342001747083548" type="Function">
                                                     <param id="0" name="Name">&quot;Player_GetMusic&quot;</param>
-                                                    <param id="1" name="Parameter {n}">Books.Value(0,&quot;pageProps&quot;,&quot;audioBook&quot;,&quot;chapters&quot;, Settings.CurPlaying,&quot;id&quot;){###}Preview.LinkPreview{###}replace(Books.Value(0,&quot;pageProps&quot;,&quot;audioBook&quot;,&quot;chapters&quot;,Settings.CurPlaying,&quot;image&quot;,&quot;src&quot;),&quot;{size}&quot;,&quot;300x300&quot;)</param>
+                                                    <param id="1" name="Parameter {n}">Podcasts.Value(0,&quot;pageProps&quot;,&quot;podcast&quot;,&quot;episodes&quot;,Settings.CurPlaying,&quot;id&quot;){###}Preview.LinkPreview{###}replace(Books.Value(0,&quot;pageProps&quot;,&quot;podcast&quot;,&quot;episodes&quot;,Settings.CurPlaying,&quot;image&quot;,&quot;src&quot;),&quot;{size}&quot;,&quot;300x300&quot;)</param>
                                                 </action>
-                                                <action id="5" name="Set frame" sid="206269646535023" type="MiniPreview">
+                                                <action id="5" name="Set frame" sid="759611000901771" type="MiniPreview">
                                                     <param id="0" name="Frame number">0</param>
                                                 </action>
-                                                <action id="10" name="Load image from URL" sid="459673738348554" type="MiniPreview">
-                                                    <param id="0" name="URI">replace(Books.Value(0,&quot;pageProps&quot;,&quot;audioBook&quot;,&quot;chapters&quot;,Settings.CurPlaying,&quot;image&quot;,&quot;src&quot;),&quot;{size}&quot;,&quot;96x96&quot;)</param>
+                                                <action id="10" name="Load image from URL" sid="476405039668381" type="MiniPreview">
+                                                    <param id="0" name="URI">replace(Podcasts.Value(0,&quot;pageProps&quot;,&quot;podcast&quot;,&quot;episodes&quot;,loopindex,&quot;image&quot;,&quot;src&quot;),&quot;{size}&quot;,&quot;96x96&quot;)</param>
                                                     <param id="1" name="Size">1</param>
                                                     <param id="2" name="Cross-origin">0</param>
                                                 </action>
-                                                <action id="-10" name="Set value" sid="381707400223939" type="Settings">
+                                                <action id="-10" name="Set value" sid="768901663480152" type="Settings">
                                                     <param id="0" name="Instance variable">TrackInfo</param>
-                                                    <param id="1" name="Value">Books.Value(0,&quot;pageProps&quot;,&quot;audioBook&quot;,&quot;chapters&quot;,Settings.CurPlaying,&quot;title&quot;)&amp;newline&amp;Books.Value(0,&quot;pageProps&quot;,&quot;audioBook&quot;,&quot;chapters&quot;,Settings.CurPlaying,&quot;bookAuthors&quot;,0,&quot;name&quot;)</param>
+                                                    <param id="1" name="Value">Podcasts.Value(0,&quot;pageProps&quot;,&quot;podcast&quot;,&quot;episodes&quot;,Settings.CurPlaying,&quot;title&quot;)&amp;newline&amp;Podcasts.Value(0,&quot;pageProps&quot;,&quot;podcast&quot;,&quot;episodes&quot;,Settings.CurPlaying,&quot;podcast_title&quot;)</param>
                                                 </action>
                                             </actions>
                                         </event-block>
@@ -5203,19 +5729,176 @@
                                                 </condition>
                                             </conditions>
                                             <actions>
-                                                <action id="0" name="Call function" sid="698267583035164" type="Function">
+                                                <action id="0" name="Call function" sid="596278861274034" type="Function">
+                                                    <param id="0" name="Name">&quot;Player_GetMusic&quot;</param>
+                                                    <param id="1" name="Parameter {n}">Podcasts.Value(0,&quot;pageProps&quot;,&quot;podcast&quot;,&quot;episodes&quot;,Settings.CurPlaying,&quot;id&quot;){###}Preview.LinkPreview{###}replace(Books.Value(0,&quot;pageProps&quot;,&quot;podcast&quot;,&quot;episodes&quot;,Settings.CurPlaying,&quot;image&quot;,&quot;src&quot;),&quot;{size}&quot;,&quot;300x300&quot;)</param>
+                                                </action>
+                                                <action id="5" name="Set frame" sid="980707066755079" type="MiniPreview">
+                                                    <param id="0" name="Frame number">0</param>
+                                                </action>
+                                                <action id="10" name="Load image from URL" sid="759462936728082" type="MiniPreview">
+                                                    <param id="0" name="URI">replace(Podcasts.Value(0,&quot;pageProps&quot;,&quot;podcast&quot;,&quot;episodes&quot;,loopindex,&quot;image&quot;,&quot;src&quot;),&quot;{size}&quot;,&quot;96x96&quot;)</param>
+                                                    <param id="1" name="Size">1</param>
+                                                    <param id="2" name="Cross-origin">0</param>
+                                                </action>
+                                                <action id="-10" name="Set value" sid="461725856127109" type="Settings">
+                                                    <param id="0" name="Instance variable">TrackInfo</param>
+                                                    <param id="1" name="Value">Podcasts.Value(0,&quot;pageProps&quot;,&quot;podcast&quot;,&quot;episodes&quot;,Settings.CurPlaying,&quot;title&quot;)&amp;newline&amp;Podcasts.Value(0,&quot;pageProps&quot;,&quot;podcast&quot;,&quot;episodes&quot;,Settings.CurPlaying,&quot;podcast_title&quot;)</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="292107693799077">
+                            <conditions>
+                                <condition id="70" inverted="1" name="Is Empty" sid="679230733502043" type="Books">
+                                    <param id="0" name="Reference point">0</param>
+                                    <param id="1" name="Key {n}"></param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="520463345555388">
+                                    <conditions>
+                                        <condition id="0" name="On function" sid="614920519344345" type="Function">
+                                            <param id="0" name="Name">&quot;Player_NextTrack&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-11" name="Add to" sid="594273960700192" type="Settings">
+                                            <param id="0" name="Instance variable">CurPlaying</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                    </actions>
+                                    <sub-events>
+                                        <event-block sid="718704754957885">
+                                            <conditions>
+                                                <condition id="-8" name="Compare two values" sid="948159733376471" type="System">
+                                                    <param id="0" name="First value">Settings.CurPlaying</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Second value">Settings.PlayListSize</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-10" name="Set value" sid="914912638468935" type="Settings">
+                                                    <param id="0" name="Instance variable">CurPlaying</param>
+                                                    <param id="1" name="Value">0</param>
+                                                </action>
+                                                <action id="0" name="Call function" sid="305374429832859" type="Function">
                                                     <param id="0" name="Name">&quot;Player_GetMusic&quot;</param>
                                                     <param id="1" name="Parameter {n}">Books.Value(0,&quot;pageProps&quot;,&quot;audioBook&quot;,&quot;chapters&quot;, Settings.CurPlaying,&quot;id&quot;){###}Preview.LinkPreview{###}replace(Books.Value(0,&quot;pageProps&quot;,&quot;audioBook&quot;,&quot;chapters&quot;,Settings.CurPlaying,&quot;image&quot;,&quot;src&quot;),&quot;{size}&quot;,&quot;300x300&quot;)</param>
                                                 </action>
-                                                <action id="5" name="Set frame" sid="677380309290080" type="MiniPreview">
+                                                <action id="5" name="Set frame" sid="716425501643142" type="MiniPreview">
                                                     <param id="0" name="Frame number">0</param>
                                                 </action>
-                                                <action id="10" name="Load image from URL" sid="250703018381047" type="MiniPreview">
+                                                <action id="10" name="Load image from URL" sid="235317217167814" type="MiniPreview">
                                                     <param id="0" name="URI">replace(Books.Value(0,&quot;pageProps&quot;,&quot;audioBook&quot;,&quot;chapters&quot;,Settings.CurPlaying,&quot;image&quot;,&quot;src&quot;),&quot;{size}&quot;,&quot;96x96&quot;)</param>
                                                     <param id="1" name="Size">1</param>
                                                     <param id="2" name="Cross-origin">0</param>
                                                 </action>
-                                                <action id="-10" name="Set value" sid="614459383210400" type="Settings">
+                                                <action id="-10" name="Set value" sid="152396179290063" type="Settings">
+                                                    <param id="0" name="Instance variable">TrackInfo</param>
+                                                    <param id="1" name="Value">Books.Value(0,&quot;pageProps&quot;,&quot;audioBook&quot;,&quot;chapters&quot;,Settings.CurPlaying,&quot;title&quot;)&amp;newline&amp;Books.Value(0,&quot;pageProps&quot;,&quot;audioBook&quot;,&quot;chapters&quot;,Settings.CurPlaying,&quot;bookAuthors&quot;,0,&quot;name&quot;)</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="881206120105591">
+                                            <conditions>
+                                                <condition id="-8" name="Compare two values" sid="168835507555528" type="System">
+                                                    <param id="0" name="First value">Settings.CurPlaying</param>
+                                                    <param id="1" name="Comparison">2</param>
+                                                    <param id="2" name="Second value">Settings.PlayListSize</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="0" name="Call function" sid="920075620919872" type="Function">
+                                                    <param id="0" name="Name">&quot;Player_GetMusic&quot;</param>
+                                                    <param id="1" name="Parameter {n}">Books.Value(0,&quot;pageProps&quot;,&quot;audioBook&quot;,&quot;chapters&quot;, Settings.CurPlaying,&quot;id&quot;){###}Preview.LinkPreview{###}replace(Books.Value(0,&quot;pageProps&quot;,&quot;audioBook&quot;,&quot;chapters&quot;,Settings.CurPlaying,&quot;image&quot;,&quot;src&quot;),&quot;{size}&quot;,&quot;300x300&quot;)</param>
+                                                </action>
+                                                <action id="5" name="Set frame" sid="412156715271459" type="MiniPreview">
+                                                    <param id="0" name="Frame number">0</param>
+                                                </action>
+                                                <action id="10" name="Load image from URL" sid="467496970566806" type="MiniPreview">
+                                                    <param id="0" name="URI">replace(Books.Value(0,&quot;pageProps&quot;,&quot;audioBook&quot;,&quot;chapters&quot;,Settings.CurPlaying,&quot;image&quot;,&quot;src&quot;),&quot;{size}&quot;,&quot;96x96&quot;)</param>
+                                                    <param id="1" name="Size">1</param>
+                                                    <param id="2" name="Cross-origin">0</param>
+                                                </action>
+                                                <action id="-10" name="Set value" sid="708466859472062" type="Settings">
+                                                    <param id="0" name="Instance variable">TrackInfo</param>
+                                                    <param id="1" name="Value">Books.Value(0,&quot;pageProps&quot;,&quot;audioBook&quot;,&quot;chapters&quot;,Settings.CurPlaying,&quot;title&quot;)&amp;newline&amp;Books.Value(0,&quot;pageProps&quot;,&quot;audioBook&quot;,&quot;chapters&quot;,Settings.CurPlaying,&quot;bookAuthors&quot;,0,&quot;name&quot;)</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                                <event-block sid="364265108813950">
+                                    <conditions>
+                                        <condition id="0" name="On function" sid="526817940739555" type="Function">
+                                            <param id="0" name="Name">&quot;Player_PrevTrack&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-11" name="Add to" sid="951032464460326" type="Settings">
+                                            <param id="0" name="Instance variable">CurPlaying</param>
+                                            <param id="1" name="Value">-1</param>
+                                        </action>
+                                    </actions>
+                                    <sub-events>
+                                        <event-block sid="636860189675381">
+                                            <conditions>
+                                                <condition id="-8" name="Compare two values" sid="358564564081618" type="System">
+                                                    <param id="0" name="First value">Settings.CurPlaying</param>
+                                                    <param id="1" name="Comparison">2</param>
+                                                    <param id="2" name="Second value">0</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-10" name="Set value" sid="393747959430200" type="Settings">
+                                                    <param id="0" name="Instance variable">CurPlaying</param>
+                                                    <param id="1" name="Value">Settings.PlayListSize-1</param>
+                                                </action>
+                                                <action id="0" name="Call function" sid="658190633432287" type="Function">
+                                                    <param id="0" name="Name">&quot;Player_GetMusic&quot;</param>
+                                                    <param id="1" name="Parameter {n}">Books.Value(0,&quot;pageProps&quot;,&quot;audioBook&quot;,&quot;chapters&quot;, Settings.CurPlaying,&quot;id&quot;){###}Preview.LinkPreview{###}replace(Books.Value(0,&quot;pageProps&quot;,&quot;audioBook&quot;,&quot;chapters&quot;,Settings.CurPlaying,&quot;image&quot;,&quot;src&quot;),&quot;{size}&quot;,&quot;300x300&quot;)</param>
+                                                </action>
+                                                <action id="5" name="Set frame" sid="448244458498435" type="MiniPreview">
+                                                    <param id="0" name="Frame number">0</param>
+                                                </action>
+                                                <action id="10" name="Load image from URL" sid="806633733601172" type="MiniPreview">
+                                                    <param id="0" name="URI">replace(Books.Value(0,&quot;pageProps&quot;,&quot;audioBook&quot;,&quot;chapters&quot;,Settings.CurPlaying,&quot;image&quot;,&quot;src&quot;),&quot;{size}&quot;,&quot;96x96&quot;)</param>
+                                                    <param id="1" name="Size">1</param>
+                                                    <param id="2" name="Cross-origin">0</param>
+                                                </action>
+                                                <action id="-10" name="Set value" sid="952796772584558" type="Settings">
+                                                    <param id="0" name="Instance variable">TrackInfo</param>
+                                                    <param id="1" name="Value">Books.Value(0,&quot;pageProps&quot;,&quot;audioBook&quot;,&quot;chapters&quot;,Settings.CurPlaying,&quot;title&quot;)&amp;newline&amp;Books.Value(0,&quot;pageProps&quot;,&quot;audioBook&quot;,&quot;chapters&quot;,Settings.CurPlaying,&quot;bookAuthors&quot;,0,&quot;name&quot;)</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="442702019448187">
+                                            <conditions>
+                                                <condition id="-8" name="Compare two values" sid="653971779394307" type="System">
+                                                    <param id="0" name="First value">Settings.CurPlaying</param>
+                                                    <param id="1" name="Comparison">5</param>
+                                                    <param id="2" name="Second value">0</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="0" name="Call function" sid="487853478679837" type="Function">
+                                                    <param id="0" name="Name">&quot;Player_GetMusic&quot;</param>
+                                                    <param id="1" name="Parameter {n}">Books.Value(0,&quot;pageProps&quot;,&quot;audioBook&quot;,&quot;chapters&quot;, Settings.CurPlaying,&quot;id&quot;){###}Preview.LinkPreview{###}replace(Books.Value(0,&quot;pageProps&quot;,&quot;audioBook&quot;,&quot;chapters&quot;,Settings.CurPlaying,&quot;image&quot;,&quot;src&quot;),&quot;{size}&quot;,&quot;300x300&quot;)</param>
+                                                </action>
+                                                <action id="5" name="Set frame" sid="592099910162985" type="MiniPreview">
+                                                    <param id="0" name="Frame number">0</param>
+                                                </action>
+                                                <action id="10" name="Load image from URL" sid="606193616829733" type="MiniPreview">
+                                                    <param id="0" name="URI">replace(Books.Value(0,&quot;pageProps&quot;,&quot;audioBook&quot;,&quot;chapters&quot;,Settings.CurPlaying,&quot;image&quot;,&quot;src&quot;),&quot;{size}&quot;,&quot;96x96&quot;)</param>
+                                                    <param id="1" name="Size">1</param>
+                                                    <param id="2" name="Cross-origin">0</param>
+                                                </action>
+                                                <action id="-10" name="Set value" sid="655954571593254" type="Settings">
                                                     <param id="0" name="Instance variable">TrackInfo</param>
                                                     <param id="1" name="Value">Books.Value(0,&quot;pageProps&quot;,&quot;audioBook&quot;,&quot;chapters&quot;,Settings.CurPlaying,&quot;title&quot;)&amp;newline&amp;Books.Value(0,&quot;pageProps&quot;,&quot;audioBook&quot;,&quot;chapters&quot;,Settings.CurPlaying,&quot;bookAuthors&quot;,0,&quot;name&quot;)</param>
                                                 </action>
@@ -7109,6 +7792,9 @@
                     </actions>
                 </event-block>
                 <comment></comment>
+                <comment></comment>
+                <comment></comment>
+                <comment></comment>
                 <event-block sid="474463347980216">
                     <conditions>
                         <condition id="-7" name="Compare instance variable" sid="463161959714100" type="DownloadHelper">
@@ -7163,7 +7849,7 @@
                             <sub-events>
                                 <event-block sid="804587287015070">
                                     <conditions>
-                                        <condition id="70" inverted="1" name="Is Empty" sid="392978671007860" type="Books">
+                                        <condition id="70" inverted="1" name="Is Empty" sid="392978671007860" type="Podcasts">
                                             <param id="0" name="Reference point">0</param>
                                             <param id="1" name="Key {n}"></param>
                                         </condition>
@@ -7181,6 +7867,35 @@
                                             </conditions>
                                             <actions>
                                                 <action id="7" name="Add item" sid="714772091249967" type="ListID">
+                                                    <param id="0" name="Text">Podcasts.Value(0,&quot;pageProps&quot;,&quot;podcast&quot;,&quot;episodes&quot;,loopindex,&quot;id&quot;)&amp;&quot;||&quot;&amp;Podcasts.Value(0,&quot;pageProps&quot;,&quot;podcast&quot;,&quot;episodes&quot;,loopindex,&quot;title&quot;)</param>
+                                                </action>
+                                            </actions>
+                                            <sub-events>
+                                                <comment>для плейлистов</comment>
+                                            </sub-events>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                                <event-block sid="966501421273444">
+                                    <conditions>
+                                        <condition id="70" inverted="1" name="Is Empty" sid="258058855454913" type="Books">
+                                            <param id="0" name="Reference point">0</param>
+                                            <param id="1" name="Key {n}"></param>
+                                        </condition>
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <comment>если хранилище треков не пусто,то начать перечисление из него</comment>
+                                        <event-block bookmark="1" sid="297055983662283">
+                                            <conditions>
+                                                <condition id="-10" name="For" sid="697458320054401" type="System">
+                                                    <param id="0" name="Name">&quot;Export&quot;</param>
+                                                    <param id="1" name="Start index">0</param>
+                                                    <param id="2" name="End index">Settings.PlayListSize-1</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="7" name="Add item" sid="271189311252991" type="ListID">
                                                     <param id="0" name="Text">Books.Value(0,&quot;pageProps&quot;,&quot;audioBook&quot;,&quot;chapters&quot;, loopindex,&quot;id&quot;)&amp;&quot;||&quot;&amp;Books.Value(0,&quot;pageProps&quot;,&quot;audioBook&quot;,&quot;chapters&quot;,loopindex,&quot;title&quot;)</param>
                                                 </action>
                                             </actions>
@@ -7299,6 +8014,44 @@
                             </conditions>
                             <actions />
                             <sub-events>
+                                <event-block any="1" sid="741844724969855">
+                                    <conditions>
+                                        <condition id="70" inverted="1" name="Is Empty" sid="975893054544737" type="Podcasts">
+                                            <param id="0" name="Reference point">0</param>
+                                            <param id="1" name="Key {n}"></param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-10" name="Set value" sid="408795437937957" type="Settings">
+                                            <param id="0" name="Instance variable">PlayListSize</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                        <action id="7" name="Add item" sid="122025776102318" type="ListID">
+                                            <param id="0" name="Text">Settings.TrackID&amp;&quot;||&quot;&amp;Podcasts.Value(0,&quot;pageProps&quot;,&quot;podcast&quot;,&quot;episodes&quot;,Settings.CurPlaying,&quot;title&quot;)</param>
+                                        </action>
+                                        <action id="0" name="Set selection" sid="213467736145427" type="ListID">
+                                            <param id="0" name="Index">0</param>
+                                        </action>
+                                        <action id="7" name="Add item" sid="344768662956596" type="ListID">
+                                            <param id="0" name="Text">&quot;End&quot;</param>
+                                        </action>
+                                        <action id="0" name="Call function" sid="662360833533119" type="Function">
+                                            <param id="0" name="Name">&quot;AddItemToList&quot;</param>
+                                            <param id="1" name="Parameter {n}"></param>
+                                        </action>
+                                        <action id="-16" name="Wait" sid="611307565621993" type="System">
+                                            <param id="0" name="Seconds">0.5</param>
+                                        </action>
+                                        <action disabled="1" id="-13" name="Set boolean" sid="744719007079034" type="DownloadHelper">
+                                            <param id="0" name="Instance variable">Downloading</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                        <action disabled="1" id="-13" name="Set boolean" sid="314400949120519" type="DownloadHelper">
+                                            <param id="0" name="Instance variable">RunDownloading</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
                                 <event-block any="1" sid="125420022101722">
                                     <conditions>
                                         <condition id="70" inverted="1" name="Is Empty" sid="296838437056679" type="Books">
@@ -7419,7 +8172,11 @@
                 </event-block>
                 <event-block any="1" sid="885652877419494">
                     <conditions>
-                        <condition id="70" inverted="1" name="Is Empty" sid="886335164782773" type="Books">
+                        <condition id="70" inverted="1" name="Is Empty" sid="886335164782773" type="Podcasts">
+                            <param id="0" name="Reference point">0</param>
+                            <param id="1" name="Key {n}"></param>
+                        </condition>
+                        <condition id="70" inverted="1" name="Is Empty" sid="696410545024758" type="Books">
                             <param id="0" name="Reference point">0</param>
                             <param id="1" name="Key {n}"></param>
                         </condition>

@@ -317,7 +317,7 @@
                 <instance type="SearchBox" uid="27">
                     <properties>
                         <text></text>
-                        <placeholder>Введите ссылку для скачивания плейлиста, трека или книги</placeholder>
+                        <placeholder>Введите ссылку для скачивания плейлиста, трека или книги (только прямые ссылки)</placeholder>
                         <tooltip></tooltip>
                         <initial-visibility>Visible</initial-visibility>
                         <enabled>Yes</enabled>

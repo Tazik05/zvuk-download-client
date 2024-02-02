@@ -2,7 +2,7 @@
 <c2project>
     <name>ZVUK - Download Client</name>
     <description></description>
-    <version>1.0.3</version>
+    <version>1.0.4</version>
     <author></author>
     <author-email></author-email>
     <author-website>http://</author-website>
@@ -110,6 +110,9 @@
             <object-type global="1" name="Books" sid="494000123927041">
                 <plugin id="JSON" />
             </object-type>
+            <object-type global="1" name="Podcasts" sid="960121724115843">
+                <plugin id="JSON" />
+            </object-type>
         </object-folder>
         <object-folder name=".System">
             <object-type name="AJAX" sid="786078397470826">
@@ -176,6 +179,7 @@
                     <instance-variable name="UseHTTPS" sid="379577735670228" type="boolean" />
                     <instance-variable name="CanScrollLyrics" sid="170374101727813" type="boolean" />
                     <instance-variable comment="апи книг,часто меняется,лол" name="BooksAPIVersion" sid="678186509549811" type="string" />
+                    <instance-variable name="PodcastAPIVersion" sid="846894497000260" type="string" />
                 </instance-variables>
             </object-type>
             <object-type name="PromptWrap" sid="494326756235545">
