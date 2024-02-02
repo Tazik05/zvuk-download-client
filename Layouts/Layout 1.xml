@@ -458,7 +458,7 @@
                 <UseHTTPS>false</UseHTTPS>
                 <CanScrollLyrics>false</CanScrollLyrics>
                 <BooksAPIVersion></BooksAPIVersion>
-                <PodcastAPIVersion>v35.0.2</PodcastAPIVersion>
+                <PodcastAPIVersion></PodcastAPIVersion>
             </instance-variables>
         </instance>
         <instance type="TempStorageMusicPath" uid="68" />
