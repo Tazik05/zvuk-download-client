@@ -4,6 +4,20 @@
     <name>Downloader</name>
     <events>
         <include>Settings</include>
+        <event-block sid="996601942979167">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="622017884924703" type="System" />
+            </conditions>
+            <actions>
+                <action id="-16" name="Wait" sid="804496931214199" type="System">
+                    <param id="0" name="Seconds">0.1</param>
+                </action>
+                <action id="12" name="Remove all effects" sid="719048996883148" type="BetterAudio">
+                    <param id="0" name="Tag">&quot;MusicPlayer&quot;</param>
+                </action>
+                <action id="33" name="Stop all" sid="814964053184337" type="BetterAudio" />
+            </actions>
+        </event-block>
         <event-block sid="265794876520077">
             <conditions>
                 <condition id="0" name="On clicked" sid="636650239509656" type="SearchButton" />
