@@ -1936,7 +1936,15 @@
                         </condition>
                         <condition id="-4" name="Trigger once while true" sid="302423018314276" type="System" />
                     </conditions>
-                    <actions />
+                    <actions>
+                        <action id="-10" name="Set value" sid="788234378183024" type="Settings">
+                            <param id="0" name="Instance variable">BooksAPIVersion</param>
+                            <param id="1" name="Value">Updater.Value(0, &quot;API&quot;,&quot;Books&quot;)</param>
+                        </action>
+                        <action disabled="1" id="0" name="Alert" sid="248307891121975" type="Browser">
+                            <param id="0" name="Message">Updater.Value(0, &quot;API&quot;,&quot;Books&quot;)</param>
+                        </action>
+                    </actions>
                     <sub-events>
                         <event-block sid="387307998151381">
                             <conditions>

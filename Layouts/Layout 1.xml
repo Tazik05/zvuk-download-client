@@ -457,7 +457,7 @@
                 <TempLogin>false</TempLogin>
                 <UseHTTPS>false</UseHTTPS>
                 <CanScrollLyrics>false</CanScrollLyrics>
-                <BooksAPIVersion>v35.0.2</BooksAPIVersion>
+                <BooksAPIVersion></BooksAPIVersion>
             </instance-variables>
         </instance>
         <instance type="TempStorageMusicPath" uid="68" />
