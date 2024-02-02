@@ -143,6 +143,152 @@
                     </sub-events>
                 </event-block>
                 <comment></comment>
+                <event-block sid="324963018044264">
+                    <conditions>
+                        <condition id="-2" name="On start of layout" sid="905309043355572" type="System" />
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="502279252187977">
+                            <conditions>
+                                <condition id="-14" name="Pick by unique ID" sid="766187044966850" type="SettingTextGeneral">
+                                    <param id="0" name="Unique ID">98</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="3" name="Set font size" sid="478395463393310" type="SettingTextGeneral">
+                                    <param id="0" name="Size (pt)">12</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="288415790763456" type="SettingTextGeneral">
+                                    <param id="0" name="Instance variable">Size</param>
+                                    <param id="1" name="Value">Self.FaceSize</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="424862660625588">
+                            <conditions>
+                                <condition id="-14" name="Pick by unique ID" sid="390995555684753" type="SettingTextGeneral">
+                                    <param id="0" name="Unique ID">100</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="3" name="Set font size" sid="118963291925569" type="SettingTextGeneral">
+                                    <param id="0" name="Size (pt)">12</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="854704272780783" type="SettingTextGeneral">
+                                    <param id="0" name="Instance variable">Size</param>
+                                    <param id="1" name="Value">Self.FaceSize</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="159566974922367">
+                            <conditions>
+                                <condition id="-14" name="Pick by unique ID" sid="873915967919306" type="SettingTextGeneral">
+                                    <param id="0" name="Unique ID">106</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="3" name="Set font size" sid="848409381844875" type="SettingTextGeneral">
+                                    <param id="0" name="Size (pt)">12</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="736023613003595" type="SettingTextGeneral">
+                                    <param id="0" name="Instance variable">Size</param>
+                                    <param id="1" name="Value">Self.FaceSize</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="141208140753893">
+                            <conditions>
+                                <condition id="-14" name="Pick by unique ID" sid="117442581309179" type="SettingTextGeneral">
+                                    <param id="0" name="Unique ID">127</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="3" name="Set font size" sid="785216530162952" type="SettingTextGeneral">
+                                    <param id="0" name="Size (pt)">12</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="825672006399783" type="SettingTextGeneral">
+                                    <param id="0" name="Instance variable">Size</param>
+                                    <param id="1" name="Value">Self.FaceSize</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="483923924535557">
+                            <conditions>
+                                <condition id="-14" name="Pick by unique ID" sid="970606904999738" type="SettingTextGeneral">
+                                    <param id="0" name="Unique ID">142</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="3" name="Set font size" sid="660971329719403" type="SettingTextGeneral">
+                                    <param id="0" name="Size (pt)">12</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="417143766502667" type="SettingTextGeneral">
+                                    <param id="0" name="Instance variable">Size</param>
+                                    <param id="1" name="Value">Self.FaceSize</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="813701225349541">
+                            <conditions>
+                                <condition id="-14" name="Pick by unique ID" sid="141627839278832" type="SettingTextGeneral">
+                                    <param id="0" name="Unique ID">152</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="3" name="Set font size" sid="146871424170008" type="SettingTextGeneral">
+                                    <param id="0" name="Size (pt)">12</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="214508854428874" type="SettingTextGeneral">
+                                    <param id="0" name="Instance variable">Size</param>
+                                    <param id="1" name="Value">Self.FaceSize</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="844242789494135">
+                            <conditions>
+                                <condition id="-14" inverted="1" name="Pick by unique ID" sid="190725298508566" type="SettingTextGeneral">
+                                    <param id="0" name="Unique ID">98</param>
+                                </condition>
+                                <condition id="-14" inverted="1" name="Pick by unique ID" sid="897808108494006" type="SettingTextGeneral">
+                                    <param id="0" name="Unique ID">100</param>
+                                </condition>
+                                <condition id="-14" inverted="1" name="Pick by unique ID" sid="476970551655267" type="SettingTextGeneral">
+                                    <param id="0" name="Unique ID">106</param>
+                                </condition>
+                                <condition id="-14" inverted="1" name="Pick by unique ID" sid="830348737590844" type="SettingTextGeneral">
+                                    <param id="0" name="Unique ID">127</param>
+                                </condition>
+                                <condition id="-14" inverted="1" name="Pick by unique ID" sid="145616402334034" type="SettingTextGeneral">
+                                    <param id="0" name="Unique ID">142</param>
+                                </condition>
+                                <condition id="-14" inverted="1" name="Pick by unique ID" sid="281254945464489" type="SettingTextGeneral">
+                                    <param id="0" name="Unique ID">152</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-10" name="Set value" sid="437991707927834" type="SettingTextGeneral">
+                                    <param id="0" name="Instance variable">Size</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="442841159757176">
+                    <conditions>
+                        <condition id="-7" inverted="1" name="Compare instance variable" sid="329140967128105" type="SettingTextGeneral">
+                            <param id="0" name="Instance variable">Size</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="3" name="Set font size" sid="499600378465505" type="SettingTextGeneral">
+                            <param id="0" name="Size (pt)">SettingTextGeneral.Size</param>
+                        </action>
+                    </actions>
+                </event-block>
                 <event-block sid="711440271270964">
                     <conditions>
                         <condition id="-8" name="Is boolean instance variable set" sid="205927504180918" type="Settings">
@@ -151,6 +297,222 @@
                     </conditions>
                     <actions />
                     <sub-events>
+                        <event-block sid="789953610843883">
+                            <conditions>
+                                <condition id="-14" name="Pick by unique ID" sid="227333601848978" type="SettingTextGeneral">
+                                    <param id="0" name="Unique ID">98</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="119618798730267">
+                                    <conditions>
+                                        <condition id="7" name="Cursor is over object" sid="908704252773638" type="Mouse">
+                                            <param id="0" name="Object">SettingTextGeneral</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-10" name="Set value" sid="280923005596110" type="SettingTextGeneral">
+                                            <param id="0" name="Instance variable">Size</param>
+                                            <param id="1" name="Value">lerp(Self.Size, 14, Settings.EQVISUALSPEED)</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="672900257886532">
+                                    <conditions>
+                                        <condition id="7" inverted="1" name="Cursor is over object" sid="893257623134443" type="Mouse">
+                                            <param id="0" name="Object">SettingTextGeneral</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-10" name="Set value" sid="807258002897601" type="SettingTextGeneral">
+                                            <param id="0" name="Instance variable">Size</param>
+                                            <param id="1" name="Value">lerp(Self.Size, 12, Settings.EQVISUALSPEED)</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="664107635993408">
+                            <conditions>
+                                <condition id="-14" name="Pick by unique ID" sid="595063246434996" type="SettingTextGeneral">
+                                    <param id="0" name="Unique ID">100</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="352695396982742">
+                                    <conditions>
+                                        <condition id="7" name="Cursor is over object" sid="785923213376602" type="Mouse">
+                                            <param id="0" name="Object">SettingTextGeneral</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-10" name="Set value" sid="976954974366842" type="SettingTextGeneral">
+                                            <param id="0" name="Instance variable">Size</param>
+                                            <param id="1" name="Value">lerp(Self.Size, 14, Settings.EQVISUALSPEED)</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="625956236328311">
+                                    <conditions>
+                                        <condition id="7" inverted="1" name="Cursor is over object" sid="789306578762617" type="Mouse">
+                                            <param id="0" name="Object">SettingTextGeneral</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-10" name="Set value" sid="409378511052973" type="SettingTextGeneral">
+                                            <param id="0" name="Instance variable">Size</param>
+                                            <param id="1" name="Value">lerp(Self.Size, 12, Settings.EQVISUALSPEED)</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="690603470343379">
+                            <conditions>
+                                <condition id="-14" name="Pick by unique ID" sid="766256949765528" type="SettingTextGeneral">
+                                    <param id="0" name="Unique ID">106</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="598961377458758">
+                                    <conditions>
+                                        <condition id="7" name="Cursor is over object" sid="952855292337998" type="Mouse">
+                                            <param id="0" name="Object">SettingTextGeneral</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-10" name="Set value" sid="996211680137981" type="SettingTextGeneral">
+                                            <param id="0" name="Instance variable">Size</param>
+                                            <param id="1" name="Value">lerp(Self.Size, 14, Settings.EQVISUALSPEED)</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="261266166737413">
+                                    <conditions>
+                                        <condition id="7" inverted="1" name="Cursor is over object" sid="365185883464015" type="Mouse">
+                                            <param id="0" name="Object">SettingTextGeneral</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-10" name="Set value" sid="625548847023897" type="SettingTextGeneral">
+                                            <param id="0" name="Instance variable">Size</param>
+                                            <param id="1" name="Value">lerp(Self.Size, 12, Settings.EQVISUALSPEED)</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="614741610736298">
+                            <conditions>
+                                <condition id="-14" name="Pick by unique ID" sid="323454271817396" type="SettingTextGeneral">
+                                    <param id="0" name="Unique ID">127</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="373456463928572">
+                                    <conditions>
+                                        <condition id="7" name="Cursor is over object" sid="823850033282570" type="Mouse">
+                                            <param id="0" name="Object">SettingTextGeneral</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-10" name="Set value" sid="945976651288935" type="SettingTextGeneral">
+                                            <param id="0" name="Instance variable">Size</param>
+                                            <param id="1" name="Value">lerp(Self.Size, 14, Settings.EQVISUALSPEED)</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="633861360521825">
+                                    <conditions>
+                                        <condition id="7" inverted="1" name="Cursor is over object" sid="447617456003950" type="Mouse">
+                                            <param id="0" name="Object">SettingTextGeneral</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-10" name="Set value" sid="845791774308717" type="SettingTextGeneral">
+                                            <param id="0" name="Instance variable">Size</param>
+                                            <param id="1" name="Value">lerp(Self.Size, 12, Settings.EQVISUALSPEED)</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="672117268754219">
+                            <conditions>
+                                <condition id="-14" name="Pick by unique ID" sid="845080345020283" type="SettingTextGeneral">
+                                    <param id="0" name="Unique ID">142</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="812981888726450">
+                                    <conditions>
+                                        <condition id="7" name="Cursor is over object" sid="796272499700059" type="Mouse">
+                                            <param id="0" name="Object">SettingTextGeneral</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-10" name="Set value" sid="574014780410060" type="SettingTextGeneral">
+                                            <param id="0" name="Instance variable">Size</param>
+                                            <param id="1" name="Value">lerp(Self.Size, 14, Settings.EQVISUALSPEED)</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="162341377455848">
+                                    <conditions>
+                                        <condition id="7" inverted="1" name="Cursor is over object" sid="270039835844238" type="Mouse">
+                                            <param id="0" name="Object">SettingTextGeneral</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-10" name="Set value" sid="546533794362161" type="SettingTextGeneral">
+                                            <param id="0" name="Instance variable">Size</param>
+                                            <param id="1" name="Value">lerp(Self.Size, 12, Settings.EQVISUALSPEED)</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="902296036890537">
+                            <conditions>
+                                <condition id="-14" name="Pick by unique ID" sid="905538681665596" type="SettingTextGeneral">
+                                    <param id="0" name="Unique ID">152</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="588953979800974">
+                                    <conditions>
+                                        <condition id="7" name="Cursor is over object" sid="451580014099088" type="Mouse">
+                                            <param id="0" name="Object">SettingTextGeneral</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-10" name="Set value" sid="299102087671752" type="SettingTextGeneral">
+                                            <param id="0" name="Instance variable">Size</param>
+                                            <param id="1" name="Value">lerp(Self.Size, 14, Settings.EQVISUALSPEED)</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="271548849091653">
+                                    <conditions>
+                                        <condition id="7" inverted="1" name="Cursor is over object" sid="383752957160874" type="Mouse">
+                                            <param id="0" name="Object">SettingTextGeneral</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-10" name="Set value" sid="423624875262959" type="SettingTextGeneral">
+                                            <param id="0" name="Instance variable">Size</param>
+                                            <param id="1" name="Value">lerp(Self.Size, 12, Settings.EQVISUALSPEED)</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
                         <event-block sid="376040805494340">
                             <conditions>
                                 <condition id="-4" name="Trigger once while true" sid="758360208337816" type="System" />
@@ -336,6 +698,44 @@
                                         </action>
                                         <action id="0" name="Set cursor style" sid="667585497328009" type="Mouse">
                                             <param id="0" name="Cursor style">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="737757677932511">
+                            <conditions>
+                                <condition id="7" name="Cursor is over object" sid="110123647505362" type="Mouse">
+                                    <param id="0" name="Object">SettingTextGeneral</param>
+                                </condition>
+                                <condition id="-4" name="Trigger once while true" sid="132679233796423" type="System" />
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="682344238824661">
+                                    <conditions>
+                                        <condition id="-14" inverted="1" name="Pick by unique ID" sid="431472259198449" type="SettingTextGeneral">
+                                            <param id="0" name="Unique ID">98</param>
+                                        </condition>
+                                        <condition id="-14" inverted="1" name="Pick by unique ID" sid="979404818458391" type="SettingTextGeneral">
+                                            <param id="0" name="Unique ID">100</param>
+                                        </condition>
+                                        <condition id="-14" inverted="1" name="Pick by unique ID" sid="802299135201648" type="SettingTextGeneral">
+                                            <param id="0" name="Unique ID">106</param>
+                                        </condition>
+                                        <condition id="-14" inverted="1" name="Pick by unique ID" sid="671619286785226" type="SettingTextGeneral">
+                                            <param id="0" name="Unique ID">142</param>
+                                        </condition>
+                                        <condition id="-14" inverted="1" name="Pick by unique ID" sid="745859302112515" type="SettingTextGeneral">
+                                            <param id="0" name="Unique ID">127</param>
+                                        </condition>
+                                        <condition id="-14" inverted="1" name="Pick by unique ID" sid="389676442036581" type="SettingTextGeneral">
+                                            <param id="0" name="Unique ID">152</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="4" name="Set font color" sid="158483620247686" type="SettingTextGeneral">
+                                            <param id="0" name="Color">rgb(255, 255, 255)</param>
                                         </action>
                                     </actions>
                                 </event-block>
@@ -1045,6 +1445,17 @@
                         <action id="0" name="Set local value" sid="383064133764491" type="WebStorage">
                             <param id="0" name="Key">&quot;PreviewPlayer&quot;</param>
                             <param id="1" name="Value">&quot;False&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="732846408267127">
+                    <conditions>
+                        <condition id="1" inverted="1" name="Is checked" sid="463438454417264" type="BGPNGChecker" />
+                        <condition id="-9" name="Is visible" sid="733682465758065" type="PreviewBIG" />
+                    </conditions>
+                    <actions>
+                        <action id="-15" name="Set visible" sid="796302731758576" type="PreviewBIG">
+                            <param id="0" name="Visibility">0</param>
                         </action>
                     </actions>
                 </event-block>

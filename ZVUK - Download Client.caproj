@@ -2,7 +2,7 @@
 <c2project>
     <name>ZVUK - Download Client</name>
     <description></description>
-    <version>1.0.2</version>
+    <version>1.0.3</version>
     <author></author>
     <author-email></author-email>
     <author-website>http://</author-website>
@@ -107,6 +107,9 @@
             <object-type global="1" name="Updater" sid="242679535008461">
                 <plugin id="JSON" />
             </object-type>
+            <object-type global="1" name="Books" sid="494000123927041">
+                <plugin id="JSON" />
+            </object-type>
         </object-folder>
         <object-folder name=".System">
             <object-type name="AJAX" sid="786078397470826">
@@ -172,6 +175,7 @@
                     <instance-variable name="TempLogin" sid="441410576565579" type="boolean" />
                     <instance-variable name="UseHTTPS" sid="379577735670228" type="boolean" />
                     <instance-variable name="CanScrollLyrics" sid="170374101727813" type="boolean" />
+                    <instance-variable comment="апи книг,часто меняется,лол" name="BooksAPIVersion" sid="678186509549811" type="string" />
                 </instance-variables>
             </object-type>
             <object-type name="PromptWrap" sid="494326756235545">
@@ -232,6 +236,9 @@
             </object-type>
             <object-type name="Dialogs" sid="934841666459110">
                 <plugin id="pix_dialogs" />
+            </object-type>
+            <object-type name="DiscordRPC" sid="128287674854755">
+                <plugin id="eren_DiscordRPC" />
             </object-type>
         </object-folder>
         <object-type name="TextBox" sid="993742824946899">
@@ -666,6 +673,9 @@
         </object-type>
         <object-type name="SettingTextGeneral" sid="481734981039985">
             <plugin id="Text" />
+            <instance-variables>
+                <instance-variable name="Size" sid="403504464438285" type="number" />
+            </instance-variables>
         </object-type>
         <object-type name="Sprite6" sid="203428563836334">
             <plugin id="Sprite" />
@@ -779,9 +789,6 @@
         <object-type name="Button15" sid="717530266223819">
             <plugin id="Button" />
         </object-type>
-        <object-type name="DiscordRPC" sid="128287674854755">
-            <plugin id="eren_DiscordRPC" />
-        </object-type>
         <object-type name="9patch5" sid="604446026813555">
             <plugin id="NinePatch" />
             <texture />
@@ -812,6 +819,14 @@
         </object-type>
         <object-type name="usehttpsfordownload" sid="295465156780182">
             <plugin id="Button" />
+        </object-type>
+        <object-type name="Sprite" sid="555198016756496">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="838987580613699" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
         </object-type>
     </object-folder>
     <families>
@@ -849,6 +864,25 @@
                 <member>Text7</member>
                 <member>Text8</member>
                 <member>TrackTimeTEXT</member>
+            </members>
+        </family>
+        <family name="UI_Settings_TextBox" plugin-id="TextBox" sid="871017574696986">
+            <members>
+                <member>AudioVisualColor</member>
+                <member>AudioVisualColor2</member>
+            </members>
+        </family>
+        <family name="UI_Settings_Buttons" plugin-id="Button" sid="946600712623235">
+            <members>
+                <member>Button10</member>
+                <member>Button11</member>
+                <member>Button17</member>
+            </members>
+        </family>
+        <family name="UI_Settings_List" plugin-id="List" sid="943579246879055">
+            <members>
+                <member>DownloadingQuality</member>
+                <member>PlayerQuality</member>
             </members>
         </family>
     </families>
@@ -923,7 +957,7 @@
         <global-instance type="DiscordRPC" uid="149">
             <properties>
                 <client-id>1179048637330898964</client-id>
-                <preview_mode>False</preview_mode>
+                <preview_mode>True</preview_mode>
             </properties>
         </global-instance>
         <global-instance type="WebStorage" uid="173" />

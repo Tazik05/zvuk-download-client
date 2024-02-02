@@ -448,7 +448,7 @@
                 <LyricsVisible>false</LyricsVisible>
                 <Settings>false</Settings>
                 <SettingsSelected>0</SettingsSelected>
-                <BuildInfo>V 1.0.2 Build 02.12.23</BuildInfo>
+                <BuildInfo>V 1.0.3 Build 02.02.24</BuildInfo>
                 <OldResp>false</OldResp>
                 <LyricsStatic>false</LyricsStatic>
                 <More>false</More>
@@ -457,6 +457,7 @@
                 <TempLogin>false</TempLogin>
                 <UseHTTPS>false</UseHTTPS>
                 <CanScrollLyrics>false</CanScrollLyrics>
+                <BooksAPIVersion>v35.0.2</BooksAPIVersion>
             </instance-variables>
         </instance>
         <instance type="TempStorageMusicPath" uid="68" />
@@ -465,6 +466,7 @@
         <instance type="TrackInfo" uid="174" />
         <instance type="Updater" uid="180" />
         <instance type="INI" uid="181" />
+        <instance type="Books" uid="183" />
     </nonworld-instances>
     <effects />
 </c2layout>
