@@ -961,7 +961,7 @@
         <global-instance type="DiscordRPC" uid="149">
             <properties>
                 <client-id>1179048637330898964</client-id>
-                <preview_mode>True</preview_mode>
+                <preview_mode>False</preview_mode>
             </properties>
         </global-instance>
         <global-instance type="WebStorage" uid="173" />
